@@ -1,2 +1,5 @@
-# im-helper
-im  helper
+# xhtkyy/im-helper
+
+```
+composer require xhtkyy/im-helper dev-main
+```
