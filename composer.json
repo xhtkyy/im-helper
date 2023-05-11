@@ -9,7 +9,10 @@
     "description": "im helper",
     "autoload": {
         "psr-4": {
-            "Xhtkyy\\ImHelper\\": "src/"
+            "Xhtkyy\\ImHelper\\": "src/",
+            "Iam\\": "grpc/Iam",
+            "Im\\": "grpc/Im",
+            "GPBMetadata\\": "grpc/GPBMetadata"
         }
     },
     "autoload-dev": {
@@ -41,7 +44,8 @@
     "scripts": {
         "test": "phpunit -c phpunit.xml --colors=always",
         "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
-        "cs-fix": "php-cs-fixer fix $1"
+        "cs-fix": "php-cs-fixer fix $1",
+        "protoc": "vendor/xhtkyy/hyperf-tools/bin/grpc-generator -protoPath=../../protos,../../protos/third_party -clientExtendClass=\\Xhtkyy\\HyperfTools\\GrpcClient\\BaseGrpcClient -path=./ -proto=$1"
     },
     "extra": {
         "hyperf": {
