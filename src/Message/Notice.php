@@ -19,7 +19,7 @@ class Notice
     {
     }
 
-    public function send(int $typ, array $openids, string $content): bool
+    public function send(array $openids, string $content, string $typ = NoticeType::APP_NOTIFY): bool
     {
         [, $status] = $this->notifySrvClient->Send(
             (new ThirdMessage())->setUsers($openids)->setTyp($typ)->setContent($content)
