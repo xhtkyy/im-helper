@@ -55,16 +55,26 @@ abstract class NoticeTemplateAbstract
      */
     public function getScene(string $constant): int
     {
+        $scenes = $this->getSceneArr();
+        if (!isset($scenes[$constant])) {
+            throw new ConstantNotFoundException("通知消息枚举值{$constant}未找到");
+        }
+        return (int)$scenes[$constant];
+    }
+
+    /**
+     * @return array
+     * @throws ClassNotFoundException
+     */
+    public function getSceneArr(): array
+    {
         if (!isset($this->scene[$this->scene_class])) {
             if (!class_exists($this->scene_class)) {
                 throw new ClassNotFoundException();
             }
             $this->scene[$this->scene_class] = (new \ReflectionClass($this->scene_class))->getConstants();
         }
-        if (!isset($this->scene[$this->scene_class][$constant])) {
-            throw new ConstantNotFoundException("通知消息枚举值{$constant}未找到");
-        }
-        return (int)$this->scene[$this->scene_class][$constant];
+        return $this->scene[$this->scene_class];
     }
 
     /**
@@ -79,7 +89,8 @@ abstract class NoticeTemplateAbstract
     {
         //兼容多个
         if ($name == "byScene") {
-            $name = $arguments[0] ?? '';
+            $flipScenes = array_flip($this->getSceneArr());
+            $name = $flipScenes[$arguments[0] ?? ''] ?? '';
             unset($arguments[0]);
         }
         //获取场景值
