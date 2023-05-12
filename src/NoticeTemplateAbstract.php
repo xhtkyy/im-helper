@@ -77,8 +77,6 @@ abstract class NoticeTemplateAbstract
      */
     public function __call(string $name, array $arguments): TemplateInterface
     {
-        //初始化模板
-        $template = $this->initTemplate($this->template);
         //兼容多个
         if ($name == "byScene") {
             $name = $arguments[0] ?? '';
@@ -88,6 +86,14 @@ abstract class NoticeTemplateAbstract
         $scene = $this->getScene(strtoupper($name));
         //设置
         $config = $this->config[$scene] ?? [];
+        //支持string
+        if (is_string($this->config[$scene])) {
+            $config = ['title' => $this->config[$scene]];
+        }
+
+        //初始化模板
+        $template = $this->initTemplate($config['template'] ?? $this->template);
+
         $template->setConfig($config)
             ->setType($this->typ)
             ->setScene($scene)
