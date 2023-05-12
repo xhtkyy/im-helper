@@ -12,6 +12,7 @@ use Xhtkyy\ImHelper\Message\NoticeType;
 
 abstract class TemplateAbstract implements TemplateInterface
 {
+    protected Notice $notice;
     protected string $template; //模板
 
     protected string $type = NoticeType::APP_NOTIFY; //通知类型
@@ -21,11 +22,11 @@ abstract class TemplateAbstract implements TemplateInterface
     protected array $extend = []; //扩展参数
     protected array $config = []; //配置
 
-    public function __construct(
-        protected Notice $notice
-    )
+    public function __construct()
     {
+        $this->notice = di(Notice::class);
     }
+
 
     public function setConfig(array $config): self
     {
