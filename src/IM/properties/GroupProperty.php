@@ -3,6 +3,11 @@
 namespace Xhtkyy\ImHelper\IM\properties;
 
 class GroupProperty {
+
+    /**
+     * @var string
+     */
+    private string $imGroup;
     /**
      * @var string
      */
@@ -43,5 +48,23 @@ class GroupProperty {
         $this->groupLeader = $groupLeader;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getImGroup(): string {
+        return $this->imGroup;
+    }
+
+    /**
+     * @param string $imGroup
+     * @return GroupProperty
+     */
+    public function setImGroup(string $imGroup): static {
+        $this->imGroup = $imGroup;
+        return $this;
+    }
+
+
 
 }

@@ -50,4 +50,20 @@ interface GroupInterface {
      * @return bool
      */
     public function updateGroup(GroupProperty $group): bool;
+
+    /**
+     * 获取群的具体详情
+     * @param string $imGroup 群标识
+     * @return array
+     */
+    public function getGroupInfo(string $imGroup): array;
+
+    /**
+     * 获取群成员列表
+     * @param string $imGroup 群标识
+     * @param int $index 默认为 0
+     * @param int $size 因存在获取全部的情况默认就给10000吧
+     * @return array
+     */
+    public function getGroupMembers(string $imGroup, int $index = 0, int $size = 10000): array;
 }

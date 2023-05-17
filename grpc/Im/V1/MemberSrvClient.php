@@ -7,7 +7,7 @@ namespace Im\V1;
  * IM会话成员服务
  */
 class MemberSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
-
+    protected string $hostname = 'docker.for.mac.host.internal:8056';
     /**
      * CreateMember 创建会话
      * @param \Im\V1\MemberCreat $argument input argument

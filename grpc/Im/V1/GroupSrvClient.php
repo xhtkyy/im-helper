@@ -7,7 +7,7 @@ namespace Im\V1;
  * IM群组服务
  */
 class GroupSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
-
+    protected string $hostname = 'docker.for.mac.host.internal:8056';
     /**
      * CreateGroup 创建群组
      * @param \Im\V1\GroupCreat $argument input argument

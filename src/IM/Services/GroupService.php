@@ -2,6 +2,7 @@
 
 namespace Xhtkyy\ImHelper\IM\Services;
 
+use Exception;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\Grpc\StatusCode;
 use Im\V1\Group;
@@ -11,7 +12,10 @@ use Im\V1\GroupTypCode;
 use Im\V1\ID;
 use Im\V1\Member;
 use Im\V1\MemberID;
+use Im\V1\MemberQuery;
 use Im\V1\MemberSrvClient;
+use Im\V1\Pagination;
+use Im\V1\RespArr;
 use Xhtkyy\ImHelper\IM\Interface\GroupInterface;
 use Xhtkyy\ImHelper\IM\properties\DepartmentProperty;
 use Xhtkyy\ImHelper\IM\properties\GroupProperty;
@@ -74,7 +78,7 @@ class GroupService implements GroupInterface {
     }
 
     public function updateGroup(GroupProperty $group): bool {
-        $imGroup = new Group();
+        $imGroup = (new Group())->setGroup($group->getImGroup());
         if (!empty($group->getGroupName())) {
             $imGroup->setName($group->getGroupName()); //群名称
         }
@@ -87,5 +91,43 @@ class GroupService implements GroupInterface {
             return $status == StatusCode::OK;
         }
         return true;
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function getGroupInfo(string $imGroup): array {
+        $groupID = (new ID())->setId($imGroup);
+        /**
+         * @var Group $reply
+         */
+        [$reply, $status] = $this->groupSrvClient->GetGroup($groupID);
+        if ($status != StatusCode::OK) {
+            throw new Exception('调用groupSrv GetGroup失败.');
+        }
+        return json_decode($reply->serializeToJsonString(), true);
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function getGroupMembers(string $imGroup, int $index = 0, int $size = 10000): array {
+        $memberQuery = (new MemberQuery())->setGroup($imGroup);
+        $pagination  = (new Pagination())
+            ->setIndex($index)
+            ->setSize($size)
+            ->setMember($memberQuery);
+        /**
+         * @var RespArr $reply
+         */
+        [$reply, $status] = $this->memberSrvClient->ListMember($pagination);
+        if ($status != StatusCode::OK) {
+            throw new Exception('调用memberSrv ListMember失败.');
+        }
+        $result = json_decode($reply->serializeToJsonString(), true);
+        if (empty($result['members']['arr'])) {
+            throw new Exception('调用memberSrv ListMember返回数据不合法，返回结果：' . $reply->serializeToJsonString());
+        }
+        return $result['members']['arr'];
     }
 }
