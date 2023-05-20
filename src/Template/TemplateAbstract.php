@@ -107,7 +107,7 @@ abstract class TemplateAbstract implements TemplateInterface
 
     public function toJson(): string
     {
-        return json_encode($this->toArray(), JSON_UNESCAPED_UNICODE);
+        return json_encode($this->toArray());
     }
 
     public function toArray(): array
