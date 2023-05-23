@@ -22,4 +22,6 @@ class NoticeType
     const APP_SQUARE = "APP_SQUARE";
     const APP_CLOUD_DISK = "APP_CLOUD_DISK";
     const APP_APPROVAL = "APP_APPROVAL";
+    const APP_ADDRESS_BOOK = "APP_ADDRESS_BOOK"; //通讯录
+    const APP_TEAMS = "APP_TEAMS"; //组织
 }
