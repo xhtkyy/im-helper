@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class Notifies extends \Google\Protobuf\Internal\Message
 {
     /**
+     * &#64;gotags: json:"arr"
+     *
      * Generated from protobuf field <code>repeated .im.v1.Notify arr = 1;</code>
      */
     private $arr;
@@ -25,6 +27,7 @@ class Notifies extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Im\V1\Notify[]|\Google\Protobuf\Internal\RepeatedField $arr
+     *           &#64;gotags: json:"arr"
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +36,8 @@ class Notifies extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"arr"
+     *
      * Generated from protobuf field <code>repeated .im.v1.Notify arr = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -42,6 +47,8 @@ class Notifies extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"arr"
+     *
      * Generated from protobuf field <code>repeated .im.v1.Notify arr = 1;</code>
      * @param \Im\V1\Notify[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this

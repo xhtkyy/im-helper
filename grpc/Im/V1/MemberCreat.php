@@ -32,7 +32,7 @@ class MemberCreat extends \Google\Protobuf\Internal\Message
      *
      *     @type string $rid
      *           在融云注册的ID，再次加群不用传
-     *     @type \Im\V1\Member $member
+     *     @type \App\Grpc\Im\Schema\Member $member
      * }
      */
     public function __construct($data = NULL) {
@@ -68,7 +68,7 @@ class MemberCreat extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.im.v1.Member member = 2;</code>
-     * @return \Im\V1\Member|null
+     * @return \App\Grpc\Im\Schema\Member|null
      */
     public function getMember()
     {
@@ -87,12 +87,12 @@ class MemberCreat extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.im.v1.Member member = 2;</code>
-     * @param \Im\V1\Member $var
+     * @param \App\Grpc\Im\Schema\Member $var
      * @return $this
      */
     public function setMember($var)
     {
-        GPBUtil::checkMessage($var, \Im\V1\Member::class);
+        GPBUtil::checkMessage($var, \App\Grpc\Im\Schema\Member::class);
         $this->member = $var;
 
         return $this;

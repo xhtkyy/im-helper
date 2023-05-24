@@ -6,8 +6,8 @@ namespace Im\V1;
 /**
  * IM会话成员服务
  */
-class MemberSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
-//    protected string $hostname = 'docker.for.mac.host.internal:8056';
+class MemberSrvClient extends XhtkyyHyperfToolsGrpcClientBaseGrpcClient {
+
     /**
      * CreateMember 创建会话
      * @param \Im\V1\MemberCreat $argument input argument
@@ -19,7 +19,7 @@ class MemberSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.MemberSrv/CreateMember',
         $argument,
-        ['\Im\V1\Member', 'decode'],
+        ['\App\Grpc\Im\Schema\Member', 'decode'],
         $metadata, $options);
     }
 
@@ -34,18 +34,18 @@ class MemberSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.MemberSrv/GetMember',
         $argument,
-        ['\Im\V1\Member', 'decode'],
+        ['\App\Grpc\Im\Schema\Member', 'decode'],
         $metadata, $options);
     }
 
     /**
      * UpdateMember 编辑成员
-     * @param \Im\V1\Member $argument input argument
+     * @param \App\Grpc\Im\Schema\Member $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function UpdateMember(\Im\V1\Member $argument,
+    public function UpdateMember(\App\Grpc\Im\Schema\Member $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.MemberSrv/UpdateMember',
         $argument,

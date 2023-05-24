@@ -29,6 +29,12 @@ class GroupQuery extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string card_ids = 4;</code>
      */
     private $card_ids;
+    /**
+     * 查询通讯录
+     *
+     * Generated from protobuf field <code>bool addr = 5;</code>
+     */
+    protected $addr = false;
 
     /**
      * Constructor.
@@ -40,6 +46,8 @@ class GroupQuery extends \Google\Protobuf\Internal\Message
      *     @type string $host
      *     @type string $owner
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $card_ids
+     *     @type bool $addr
+     *           查询通讯录
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +139,32 @@ class GroupQuery extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->card_ids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * 查询通讯录
+     *
+     * Generated from protobuf field <code>bool addr = 5;</code>
+     * @return bool
+     */
+    public function getAddr()
+    {
+        return $this->addr;
+    }
+
+    /**
+     * 查询通讯录
+     *
+     * Generated from protobuf field <code>bool addr = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAddr($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->addr = $var;
 
         return $this;
     }

@@ -6,20 +6,20 @@ namespace Im\V1;
 /**
  * IM关系服务
  */
-class PairSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class PairSrvClient extends XhtkyyHyperfToolsGrpcClientBaseGrpcClient {
 
     /**
      * CreatePair 创建关系
-     * @param \Im\V1\Pair $argument input argument
+     * @param \App\Grpc\Im\Schema\Pair $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function CreatePair(\Im\V1\Pair $argument,
+    public function CreatePair(\App\Grpc\Im\Schema\Pair $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.PairSrv/CreatePair',
         $argument,
-        ['\Im\V1\Pair', 'decode'],
+        ['\App\Grpc\Im\Schema\Pair', 'decode'],
         $metadata, $options);
     }
 
@@ -34,18 +34,18 @@ class PairSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.PairSrv/GetPair',
         $argument,
-        ['\Im\V1\Pair', 'decode'],
+        ['\App\Grpc\Im\Schema\Pair', 'decode'],
         $metadata, $options);
     }
 
     /**
      * UpdatePair 编辑关系
-     * @param \Im\V1\Pair $argument input argument
+     * @param \App\Grpc\Im\Schema\Pair $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function UpdatePair(\Im\V1\Pair $argument,
+    public function UpdatePair(\App\Grpc\Im\Schema\Pair $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.PairSrv/UpdatePair',
         $argument,
@@ -95,6 +95,21 @@ class PairSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
         return $this->_simpleRequest('/im.v1.PairSrv/UpdatePairActive',
         $argument,
         ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * PairCreatedCheck 已创建关系检查
+     * @param \Im\V1\PairRelaStatusQuery $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function PairCreatedCheck(\Im\V1\PairRelaStatusQuery $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.PairSrv/PairCreatedCheck',
+        $argument,
+        ['\Im\V1\PairRelaStatus', 'decode'],
         $metadata, $options);
     }
 

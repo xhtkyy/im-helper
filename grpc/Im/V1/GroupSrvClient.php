@@ -6,8 +6,8 @@ namespace Im\V1;
 /**
  * IM群组服务
  */
-class GroupSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
-//    protected string $hostname = 'docker.for.mac.host.internal:8056';
+class GroupSrvClient extends XhtkyyHyperfToolsGrpcClientBaseGrpcClient {
+
     /**
      * CreateGroup 创建群组
      * @param \Im\V1\GroupCreat $argument input argument
@@ -19,7 +19,7 @@ class GroupSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.GroupSrv/CreateGroup',
         $argument,
-        ['\Im\V1\Group', 'decode'],
+        ['\App\Grpc\Im\Schema\Group', 'decode'],
         $metadata, $options);
     }
 
@@ -34,18 +34,18 @@ class GroupSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.GroupSrv/GetGroup',
         $argument,
-        ['\Im\V1\Group', 'decode'],
+        ['\App\Grpc\Im\Schema\Group', 'decode'],
         $metadata, $options);
     }
 
     /**
      * UpdateGroup 编辑群组
-     * @param \Im\V1\Group $argument input argument
+     * @param \App\Grpc\Im\Schema\Group $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function UpdateGroup(\Im\V1\Group $argument,
+    public function UpdateGroup(\App\Grpc\Im\Schema\Group $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.GroupSrv/UpdateGroup',
         $argument,
@@ -95,6 +95,21 @@ class GroupSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
         return $this->_simpleRequest('/im.v1.GroupSrv/UpdateGroupActive',
         $argument,
         ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * GroupDetailWithCards 个人在群的详情
+     * @param \Im\V1\GroupDetailQuery $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function GroupDetailWithCards(\Im\V1\GroupDetailQuery $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.GroupSrv/GroupDetailWithCards',
+        $argument,
+        ['\App\Grpc\Im\Schema\Group', 'decode'],
         $metadata, $options);
     }
 

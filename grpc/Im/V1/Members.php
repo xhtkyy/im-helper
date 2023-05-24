@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class Members extends \Google\Protobuf\Internal\Message
 {
     /**
+     * &#64;gotags: json:"arr"
+     *
      * Generated from protobuf field <code>repeated .im.v1.Member arr = 1;</code>
      */
     private $arr;
@@ -24,7 +26,8 @@ class Members extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Im\V1\Member[]|\Google\Protobuf\Internal\RepeatedField $arr
+     *     @type \App\Grpc\Im\Schema\Member[]|\Google\Protobuf\Internal\RepeatedField $arr
+     *           &#64;gotags: json:"arr"
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +36,8 @@ class Members extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"arr"
+     *
      * Generated from protobuf field <code>repeated .im.v1.Member arr = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -42,13 +47,15 @@ class Members extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"arr"
+     *
      * Generated from protobuf field <code>repeated .im.v1.Member arr = 1;</code>
-     * @param \Im\V1\Member[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \App\Grpc\Im\Schema\Member[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setArr($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Im\V1\Member::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \App\Grpc\Im\Schema\Member::class);
         $this->arr = $arr;
 
         return $this;

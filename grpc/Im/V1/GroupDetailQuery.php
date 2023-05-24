@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>im.v1.PairQuery</code>
+ * Generated from protobuf message <code>im.v1.GroupDetailQuery</code>
  */
-class PairQuery extends \Google\Protobuf\Internal\Message
+class GroupDetailQuery extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>bool all = 1;</code>
+     * Generated from protobuf field <code>string group = 1;</code>
      */
-    protected $all = false;
+    protected $group = '';
     /**
      * Generated from protobuf field <code>repeated string card_ids = 2;</code>
      */
@@ -28,7 +28,7 @@ class PairQuery extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type bool $all
+     *     @type string $group
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $card_ids
      * }
      */
@@ -38,23 +38,23 @@ class PairQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool all = 1;</code>
-     * @return bool
+     * Generated from protobuf field <code>string group = 1;</code>
+     * @return string
      */
-    public function getAll()
+    public function getGroup()
     {
-        return $this->all;
+        return $this->group;
     }
 
     /**
-     * Generated from protobuf field <code>bool all = 1;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>string group = 1;</code>
+     * @param string $var
      * @return $this
      */
-    public function setAll($var)
+    public function setGroup($var)
     {
-        GPBUtil::checkBool($var);
-        $this->all = $var;
+        GPBUtil::checkString($var, True);
+        $this->group = $var;
 
         return $this;
     }
