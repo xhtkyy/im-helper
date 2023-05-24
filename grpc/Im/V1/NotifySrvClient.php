@@ -6,7 +6,7 @@ namespace Im\V1;
 /**
  * 通知&消息相关服务
  */
-class NotifySrvClient extends XhtkyyHyperfToolsGrpcClientBaseGrpcClient {
+class NotifySrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
 
     /**
      * Send 发送消息

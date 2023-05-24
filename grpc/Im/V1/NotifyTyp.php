@@ -35,12 +35,33 @@ class NotifyTyp
      * Generated from protobuf enum <code>APP_CLOUD_DISK = 3;</code>
      */
     const APP_CLOUD_DISK = 3;
+    /**
+     *审批
+     *
+     * Generated from protobuf enum <code>APP_APPROVAL = 4;</code>
+     */
+    const APP_APPROVAL = 4;
+    /**
+     *通讯录
+     *
+     * Generated from protobuf enum <code>APP_ADDRESS_BOOK = 5;</code>
+     */
+    const APP_ADDRESS_BOOK = 5;
+    /**
+     *组织
+     *
+     * Generated from protobuf enum <code>APP_TEAMS = 6;</code>
+     */
+    const APP_TEAMS = 6;
 
     private static $valueToName = [
         self::APP_KNOW => 'APP_KNOW',
         self::APP_SQUARE => 'APP_SQUARE',
         self::APP_NOTIFY => 'APP_NOTIFY',
         self::APP_CLOUD_DISK => 'APP_CLOUD_DISK',
+        self::APP_APPROVAL => 'APP_APPROVAL',
+        self::APP_ADDRESS_BOOK => 'APP_ADDRESS_BOOK',
+        self::APP_TEAMS => 'APP_TEAMS',
     ];
 
     public static function name($value)

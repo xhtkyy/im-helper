@@ -5,7 +5,7 @@ namespace Im\V1;
 
 /**
  */
-class WebOfficeSrvClient extends XhtkyyHyperfToolsGrpcClientBaseGrpcClient {
+class WebOfficeSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
 
     /**
      * CreateWebOffice 创建预览回调文件
