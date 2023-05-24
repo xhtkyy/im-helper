@@ -10,16 +10,16 @@ class PairSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
 
     /**
      * CreatePair 创建关系
-     * @param \App\Grpc\Im\Schema\Pair $argument input argument
+     * @param \Im\V1\Pair $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function CreatePair(\App\Grpc\Im\Schema\Pair $argument,
+    public function CreatePair(\Im\V1\Pair $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.PairSrv/CreatePair',
         $argument,
-        ['\App\Grpc\Im\Schema\Pair', 'decode'],
+        ['\Im\V1\Pair', 'decode'],
         $metadata, $options);
     }
 
@@ -34,18 +34,18 @@ class PairSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.PairSrv/GetPair',
         $argument,
-        ['\App\Grpc\Im\Schema\Pair', 'decode'],
+        ['\Im\V1\Pair', 'decode'],
         $metadata, $options);
     }
 
     /**
      * UpdatePair 编辑关系
-     * @param \App\Grpc\Im\Schema\Pair $argument input argument
+     * @param \Im\V1\Pair $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function UpdatePair(\App\Grpc\Im\Schema\Pair $argument,
+    public function UpdatePair(\Im\V1\Pair $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.PairSrv/UpdatePair',
         $argument,

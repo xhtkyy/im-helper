@@ -19,7 +19,7 @@ class GroupSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.GroupSrv/CreateGroup',
         $argument,
-        ['\App\Grpc\Im\Schema\Group', 'decode'],
+        ['\Im\V1\Group', 'decode'],
         $metadata, $options);
     }
 
@@ -34,18 +34,18 @@ class GroupSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.GroupSrv/GetGroup',
         $argument,
-        ['\App\Grpc\Im\Schema\Group', 'decode'],
+        ['\Im\V1\Group', 'decode'],
         $metadata, $options);
     }
 
     /**
      * UpdateGroup 编辑群组
-     * @param \App\Grpc\Im\Schema\Group $argument input argument
+     * @param \Im\V1\Group $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function UpdateGroup(\App\Grpc\Im\Schema\Group $argument,
+    public function UpdateGroup(\Im\V1\Group $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.GroupSrv/UpdateGroup',
         $argument,
@@ -109,7 +109,7 @@ class GroupSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.GroupSrv/GroupDetailWithCards',
         $argument,
-        ['\App\Grpc\Im\Schema\Group', 'decode'],
+        ['\Im\V1\Group', 'decode'],
         $metadata, $options);
     }
 

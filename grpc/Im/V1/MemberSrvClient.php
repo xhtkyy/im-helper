@@ -19,7 +19,7 @@ class MemberSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.MemberSrv/CreateMember',
         $argument,
-        ['\App\Grpc\Im\Schema\Member', 'decode'],
+        ['\Im\V1\Member', 'decode'],
         $metadata, $options);
     }
 
@@ -34,18 +34,18 @@ class MemberSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.MemberSrv/GetMember',
         $argument,
-        ['\App\Grpc\Im\Schema\Member', 'decode'],
+        ['\Im\V1\Member', 'decode'],
         $metadata, $options);
     }
 
     /**
      * UpdateMember 编辑成员
-     * @param \App\Grpc\Im\Schema\Member $argument input argument
+     * @param \Im\V1\Member $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function UpdateMember(\App\Grpc\Im\Schema\Member $argument,
+    public function UpdateMember(\Im\V1\Member $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.MemberSrv/UpdateMember',
         $argument,

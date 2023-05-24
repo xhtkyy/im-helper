@@ -32,9 +32,9 @@ class GroupCreat extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \App\Grpc\Im\Schema\Group $group
+     *     @type \Im\V1\Group $group
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $rids
-     *     @type \App\Grpc\Im\Schema\Member[]|\Google\Protobuf\Internal\RepeatedField $members
+     *     @type \Im\V1\Member[]|\Google\Protobuf\Internal\RepeatedField $members
      * }
      */
     public function __construct($data = NULL) {
@@ -44,7 +44,7 @@ class GroupCreat extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.im.v1.Group group = 1;</code>
-     * @return \App\Grpc\Im\Schema\Group|null
+     * @return \Im\V1\Group|null
      */
     public function getGroup()
     {
@@ -63,12 +63,12 @@ class GroupCreat extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.im.v1.Group group = 1;</code>
-     * @param \App\Grpc\Im\Schema\Group $var
+     * @param \Im\V1\Group $var
      * @return $this
      */
     public function setGroup($var)
     {
-        GPBUtil::checkMessage($var, \App\Grpc\Im\Schema\Group::class);
+        GPBUtil::checkMessage($var, \Im\V1\Group::class);
         $this->group = $var;
 
         return $this;
@@ -107,12 +107,12 @@ class GroupCreat extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .im.v1.Member members = 3;</code>
-     * @param \App\Grpc\Im\Schema\Member[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Im\V1\Member[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMembers($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \App\Grpc\Im\Schema\Member::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Im\V1\Member::class);
         $this->members = $arr;
 
         return $this;

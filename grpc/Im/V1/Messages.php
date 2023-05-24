@@ -34,7 +34,7 @@ class Messages extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $ts
      *     @type string $sender
-     *     @type \App\Grpc\Im\Schema\Unified[]|\Google\Protobuf\Internal\RepeatedField $arr
+     *     @type \Im\V1\Unified[]|\Google\Protobuf\Internal\RepeatedField $arr
      * }
      */
     public function __construct($data = NULL) {
@@ -97,12 +97,12 @@ class Messages extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .im.v1.Unified arr = 3;</code>
-     * @param \App\Grpc\Im\Schema\Unified[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Im\V1\Unified[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setArr($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \App\Grpc\Im\Schema\Unified::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Im\V1\Unified::class);
         $this->arr = $arr;
 
         return $this;

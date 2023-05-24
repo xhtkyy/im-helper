@@ -26,7 +26,7 @@ class Members extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \App\Grpc\Im\Schema\Member[]|\Google\Protobuf\Internal\RepeatedField $arr
+     *     @type \Im\V1\Member[]|\Google\Protobuf\Internal\RepeatedField $arr
      *           &#64;gotags: json:"arr"
      * }
      */
@@ -50,12 +50,12 @@ class Members extends \Google\Protobuf\Internal\Message
      * &#64;gotags: json:"arr"
      *
      * Generated from protobuf field <code>repeated .im.v1.Member arr = 1;</code>
-     * @param \App\Grpc\Im\Schema\Member[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Im\V1\Member[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setArr($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \App\Grpc\Im\Schema\Member::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Im\V1\Member::class);
         $this->arr = $arr;
 
         return $this;

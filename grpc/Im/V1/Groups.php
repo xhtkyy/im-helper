@@ -26,7 +26,7 @@ class Groups extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \App\Grpc\Im\Schema\Group[]|\Google\Protobuf\Internal\RepeatedField $arr
+     *     @type \Im\V1\Group[]|\Google\Protobuf\Internal\RepeatedField $arr
      *           &#64;gotags: json:"arr"
      * }
      */
@@ -50,12 +50,12 @@ class Groups extends \Google\Protobuf\Internal\Message
      * &#64;gotags: json:"arr"
      *
      * Generated from protobuf field <code>repeated .im.v1.Group arr = 1;</code>
-     * @param \App\Grpc\Im\Schema\Group[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Im\V1\Group[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setArr($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \App\Grpc\Im\Schema\Group::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Im\V1\Group::class);
         $this->arr = $arr;
 
         return $this;
