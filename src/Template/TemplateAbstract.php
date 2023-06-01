@@ -127,6 +127,6 @@ abstract class TemplateAbstract implements TemplateInterface
 
     public function send(array $openids): bool
     {
-        return $this->notice->send($openids, $this->toJson(), $this->type);
+        return $this->notice->send($openids, $this->toJson(), $this->scene ?? 0, $this->type);
     }
 }

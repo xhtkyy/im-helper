@@ -22,17 +22,17 @@ class ThirdMessage extends \Google\Protobuf\Internal\Message
      */
     protected $notify = false;
     /**
-     * 消息类型
+     * 发送者
      *
-     * Generated from protobuf field <code>string typ = 2;</code>
+     * Generated from protobuf field <code>string sender = 2;</code>
      */
-    protected $typ = '';
+    protected $sender = '';
     /**
      * 消息内容
      *
-     * Generated from protobuf field <code>string content = 3;</code>
+     * Generated from protobuf field <code>.im.v1.RCNotify content = 3;</code>
      */
-    protected $content = '';
+    protected $content = null;
     /**
      * 消息接收者
      *
@@ -48,9 +48,9 @@ class ThirdMessage extends \Google\Protobuf\Internal\Message
      *
      *     @type bool $notify
      *           是否系统通知
-     *     @type string $typ
-     *           消息类型
-     *     @type string $content
+     *     @type string $sender
+     *           发送者
+     *     @type \Im\V1\RCNotify $content
      *           消息内容
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $users
      *           消息接收者
@@ -88,27 +88,27 @@ class ThirdMessage extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 消息类型
+     * 发送者
      *
-     * Generated from protobuf field <code>string typ = 2;</code>
+     * Generated from protobuf field <code>string sender = 2;</code>
      * @return string
      */
-    public function getTyp()
+    public function getSender()
     {
-        return $this->typ;
+        return $this->sender;
     }
 
     /**
-     * 消息类型
+     * 发送者
      *
-     * Generated from protobuf field <code>string typ = 2;</code>
+     * Generated from protobuf field <code>string sender = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setTyp($var)
+    public function setSender($var)
     {
         GPBUtil::checkString($var, True);
-        $this->typ = $var;
+        $this->sender = $var;
 
         return $this;
     }
@@ -116,24 +116,34 @@ class ThirdMessage extends \Google\Protobuf\Internal\Message
     /**
      * 消息内容
      *
-     * Generated from protobuf field <code>string content = 3;</code>
-     * @return string
+     * Generated from protobuf field <code>.im.v1.RCNotify content = 3;</code>
+     * @return \Im\V1\RCNotify|null
      */
     public function getContent()
     {
         return $this->content;
     }
 
+    public function hasContent()
+    {
+        return isset($this->content);
+    }
+
+    public function clearContent()
+    {
+        unset($this->content);
+    }
+
     /**
      * 消息内容
      *
-     * Generated from protobuf field <code>string content = 3;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.im.v1.RCNotify content = 3;</code>
+     * @param \Im\V1\RCNotify $var
      * @return $this
      */
     public function setContent($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Im\V1\RCNotify::class);
         $this->content = $var;
 
         return $this;
