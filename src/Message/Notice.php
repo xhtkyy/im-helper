@@ -21,10 +21,18 @@ class Notice
     {
     }
 
-    public function send(array $openids, string $content, int $scene, string $typ = NoticeType::APP_NOTIFY): bool
+    /**
+     * @param array $openids 接收者
+     * @param string $content 内容
+     * @param int $scene 场景值
+     * @param string $typ 类型
+     * @param string $from 来源用户
+     * @return bool
+     */
+    public function send(array $openids, string $content, int $scene, string $typ = NoticeType::APP_NOTIFY, string $from = ''): bool
     {
         [, $status] = $this->notifySrvClient->Send(
-            (new ThirdMessage())->setNotify(true)->setUsers($openids)->setContent(
+            (new ThirdMessage())->setNotify(true)->setSender($from)->setUsers($openids)->setContent(
                 (new RCNotify())->setType($typ)->setScene($scene)->setContent($content)
             )
         );

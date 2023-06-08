@@ -125,8 +125,13 @@ abstract class TemplateAbstract implements TemplateInterface
         ];
     }
 
-    public function send(array $openids): bool
+    /**
+     * @param array $openids 接收者
+     * @param string $from 来源用户
+     * @return bool
+     */
+    public function send(array $openids, string $from = ''): bool
     {
-        return $this->notice->send($openids, $this->toJson(), $this->scene ?? 0, $this->type);
+        return $this->notice->send($openids, $this->toJson(), $this->scene ?? 0, $this->type, $from);
     }
 }
