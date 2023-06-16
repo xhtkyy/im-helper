@@ -38,7 +38,7 @@ class Notice
                 (new RCNotify())->setType($typ)->setScene($scene)->setContent($content)
             )
         );
-        $this->stdoutLogger->debug("Template Msg: $status", compact("openids", "content", "scene", "typ", "from"));
+        $this->stdoutLogger->debug("Template Msg status: $status Params: " . json_encode(compact("openids", "content", "scene", "typ", "from")));
         return $status == StatusCode::OK;
     }
 }
