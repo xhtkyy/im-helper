@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 namespace Xhtkyy\ImHelper\Message;
 
+use Hyperf\Contract\StdoutLoggerInterface;
 use Hyperf\Grpc\StatusCode;
 use Im\V1\Header;
 use Im\V1\NotifySrvClient;
@@ -16,7 +17,8 @@ use Im\V1\ThirdMessage;
 class Notice
 {
     public function __construct(
-        protected NotifySrvClient $notifySrvClient
+        protected NotifySrvClient       $notifySrvClient,
+        protected StdoutLoggerInterface $stdoutLogger
     )
     {
     }
@@ -36,6 +38,7 @@ class Notice
                 (new RCNotify())->setType($typ)->setScene($scene)->setContent($content)
             )
         );
+        $this->stdoutLogger->debug("Template Msg", compact("openids", "content", "scene", "typ", "from"));
         return $status == StatusCode::OK;
     }
 }
