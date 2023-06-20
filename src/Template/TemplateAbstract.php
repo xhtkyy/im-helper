@@ -116,7 +116,7 @@ abstract class TemplateAbstract implements TemplateInterface
             "template" => $this->template,
             "type" => $this->type,
             "scene" => $this->scene,
-            "header" => $this->header,
+            "header" => empty($this->header) ? new \stdClass() : $this->header,
             "content" => [
                 'title' => $this->content['title'],
                 'body' => $this->content['body'] ?? []
