@@ -35,6 +35,7 @@ class Pagination extends \Google\Protobuf\Internal\Message
      *     @type \Im\V1\GroupQuery $group
      *     @type \Im\V1\MemberQuery $member
      *     @type \Im\V1\HistoryQuery $history
+     *     @type \Im\V1\ApplyQuery $apply
      * }
      */
     public function __construct($data = NULL) {
@@ -190,6 +191,33 @@ class Pagination extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Im\V1\HistoryQuery::class);
         $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.im.v1.ApplyQuery apply = 7;</code>
+     * @return \Im\V1\ApplyQuery|null
+     */
+    public function getApply()
+    {
+        return $this->readOneof(7);
+    }
+
+    public function hasApply()
+    {
+        return $this->hasOneof(7);
+    }
+
+    /**
+     * Generated from protobuf field <code>.im.v1.ApplyQuery apply = 7;</code>
+     * @param \Im\V1\ApplyQuery $var
+     * @return $this
+     */
+    public function setApply($var)
+    {
+        GPBUtil::checkMessage($var, \Im\V1\ApplyQuery::class);
+        $this->writeOneof(7, $var);
 
         return $this;
     }

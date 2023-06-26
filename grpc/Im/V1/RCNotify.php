@@ -33,6 +33,12 @@ class RCNotify extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string content = 3;</code>
      */
     protected $content = '';
+    /**
+     * &#64;gotags: json:"seq"
+     *
+     * Generated from protobuf field <code>int64 seq = 4;</code>
+     */
+    protected $seq = 0;
 
     /**
      * Constructor.
@@ -46,6 +52,8 @@ class RCNotify extends \Google\Protobuf\Internal\Message
      *           &#64;gotags: json:"scene"
      *     @type string $content
      *           &#64;gotags: json:"content"
+     *     @type int|string $seq
+     *           &#64;gotags: json:"seq"
      * }
      */
     public function __construct($data = NULL) {
@@ -127,6 +135,32 @@ class RCNotify extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"seq"
+     *
+     * Generated from protobuf field <code>int64 seq = 4;</code>
+     * @return int|string
+     */
+    public function getSeq()
+    {
+        return $this->seq;
+    }
+
+    /**
+     * &#64;gotags: json:"seq"
+     *
+     * Generated from protobuf field <code>int64 seq = 4;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setSeq($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->seq = $var;
 
         return $this;
     }

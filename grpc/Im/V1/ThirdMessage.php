@@ -39,6 +39,12 @@ class ThirdMessage extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string users = 4;</code>
      */
     private $users;
+    /**
+     * 通知序号，红点
+     *
+     * Generated from protobuf field <code>int64 seq = 5;</code>
+     */
+    protected $seq = 0;
 
     /**
      * Constructor.
@@ -54,6 +60,8 @@ class ThirdMessage extends \Google\Protobuf\Internal\Message
      *           消息内容
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $users
      *           消息接收者
+     *     @type int|string $seq
+     *           通知序号，红点
      * }
      */
     public function __construct($data = NULL) {
@@ -171,6 +179,32 @@ class ThirdMessage extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->users = $arr;
+
+        return $this;
+    }
+
+    /**
+     * 通知序号，红点
+     *
+     * Generated from protobuf field <code>int64 seq = 5;</code>
+     * @return int|string
+     */
+    public function getSeq()
+    {
+        return $this->seq;
+    }
+
+    /**
+     * 通知序号，红点
+     *
+     * Generated from protobuf field <code>int64 seq = 5;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setSeq($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->seq = $var;
 
         return $this;
     }

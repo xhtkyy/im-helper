@@ -113,4 +113,49 @@ class GroupSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
         $metadata, $options);
     }
 
+    /**
+     * CreateGroupBatch 批量创建群
+     * @param \Im\V1\GroupCreateBatch $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function CreateGroupBatch(\Im\V1\GroupCreateBatch $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.GroupSrv/CreateGroupBatch',
+        $argument,
+        ['\Im\V1\GroupCreateBatch', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * TransferGroup 群转让
+     * @param \Im\V1\GroupTransfer $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function TransferGroup(\Im\V1\GroupTransfer $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.GroupSrv/TransferGroup',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * CloseGroupFileSync 关闭群文件同步
+     * @param \Im\V1\ID $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function CloseGroupFileSync(\Im\V1\ID $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.GroupSrv/CloseGroupFileSync',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
 }

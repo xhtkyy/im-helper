@@ -21,6 +21,10 @@ class PairID extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string peer = 2;</code>
      */
     protected $peer = '';
+    /**
+     * Generated from protobuf field <code>bool history = 3;</code>
+     */
+    protected $history = false;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class PairID extends \Google\Protobuf\Internal\Message
      *
      *     @type string $main
      *     @type string $peer
+     *     @type bool $history
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class PairID extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->peer = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool history = 3;</code>
+     * @return bool
+     */
+    public function getHistory()
+    {
+        return $this->history;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool history = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHistory($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->history = $var;
 
         return $this;
     }

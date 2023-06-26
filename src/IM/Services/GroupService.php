@@ -166,4 +166,10 @@ class GroupService implements GroupInterface
 
         return $reply->hasGroups() ? json_decode($reply->getGroups()->serializeToJsonString(), true)['arr'] : [];
     }
+
+    public function CloseSyncDisk(string $groupId): bool
+    {
+        [, $status] = $this->groupSrvClient->CloseGroupFileSync((new ID())->setId($groupId));
+        return $status == StatusCode::OK;
+    }
 }

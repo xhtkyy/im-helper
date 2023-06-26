@@ -31,6 +31,8 @@ class RespArr extends \Google\Protobuf\Internal\Message
      *           &#64;gotags: json:"messages"
      *     @type \Im\V1\Notifies $notifies
      *           &#64;gotags: json:"notifies"
+     *     @type \Im\V1\Applies $applies
+     *           &#64;gotags: json:"applies"
      * }
      */
     public function __construct($data = NULL) {
@@ -189,6 +191,37 @@ class RespArr extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Im\V1\Notifies::class);
         $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"applies"
+     *
+     * Generated from protobuf field <code>.im.v1.Applies applies = 6;</code>
+     * @return \Im\V1\Applies|null
+     */
+    public function getApplies()
+    {
+        return $this->readOneof(6);
+    }
+
+    public function hasApplies()
+    {
+        return $this->hasOneof(6);
+    }
+
+    /**
+     * &#64;gotags: json:"applies"
+     *
+     * Generated from protobuf field <code>.im.v1.Applies applies = 6;</code>
+     * @param \Im\V1\Applies $var
+     * @return $this
+     */
+    public function setApplies($var)
+    {
+        GPBUtil::checkMessage($var, \Im\V1\Applies::class);
+        $this->writeOneof(6, $var);
 
         return $this;
     }
