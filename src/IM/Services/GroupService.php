@@ -7,6 +7,7 @@ use Hyperf\Di\Annotation\Inject;
 use Hyperf\Grpc\StatusCode;
 use Im\V1\Group;
 use Im\V1\GroupCreat;
+use Im\V1\GroupQuery;
 use Im\V1\GroupSrvClient;
 use Im\V1\GroupTypCode;
 use Im\V1\ID;
@@ -21,22 +22,24 @@ use Xhtkyy\ImHelper\IM\properties\DepartmentProperty;
 use Xhtkyy\ImHelper\IM\properties\GroupProperty;
 use Xhtkyy\ImHelper\IM\properties\MemberProperty;
 
-class GroupService implements GroupInterface {
+class GroupService implements GroupInterface
+{
     #[Inject]
     protected GroupSrvClient $groupSrvClient;
     #[Inject]
     protected MemberSrvClient $memberSrvClient;
 
-    public function create(DepartmentProperty $department, array $rids, array $openIDs, bool $isAllStaff = false): string {
-        $current   = time();
+    public function create(DepartmentProperty $department, array $rids, array $openIDs, bool $isAllStaff = false): string
+    {
+        $current = time();
         $groupType = $isAllStaff ? GroupTypCode::COMPANY : GroupTypCode::DEPARTMENT;
-        $group     = (new Group())->setTeam($department->getTeamId()) //所属组织
+        $group = (new Group())->setTeam($department->getTeamId()) //所属组织
         ->setType($groupType) //类型
         ->setName($department->getDepartmentName()) //群名称
         ->setCreator($department->getGroupLeader()) //创建人 系统创建的根据成都伙伴确认直接使用群主 部门群群主在创建时是集合中第一人
         ->setCreated($current) //创建时间
         ->setCreatorCard($department->getCreatorCard()); //所有者身份卡ID
-        $members   = [];
+        $members = [];
         foreach ($openIDs as $openID) {
             $members[] = (new Member())->setOpenid($openID) // 个人标识
             ->setJoined($current); //加入时间
@@ -53,13 +56,15 @@ class GroupService implements GroupInterface {
         return $imGroup;
     }
 
-    public function delete(string $imGroup): bool {
+    public function delete(string $imGroup): bool
+    {
         $groupID = (new ID())->setId($imGroup);
         [, $status] = $this->groupSrvClient->DeleteGroup($groupID);
         return $status == StatusCode::OK;
     }
 
-    public function modifyGroupMember(MemberProperty $member, bool $isAdd = true): bool {
+    public function modifyGroupMember(MemberProperty $member, bool $isAdd = true): bool
+    {
         $imMember = (new Member())->setOpenid($member->getOpenId())
             ->setGroup($member->getImGroup());
         if ($isAdd) {
@@ -69,7 +74,8 @@ class GroupService implements GroupInterface {
         return $status == StatusCode::OK;
     }
 
-    public function deleteGroupMember(MemberProperty $member): bool {
+    public function deleteGroupMember(MemberProperty $member): bool
+    {
         $imMember = (new MemberID())->setOpenid($member->getOpenId())
             ->setGroup($member->getImGroup())
             ->setRid($member->getRid());
@@ -77,7 +83,8 @@ class GroupService implements GroupInterface {
         return $status == StatusCode::OK;
     }
 
-    public function updateGroup(GroupProperty $group): bool {
+    public function updateGroup(GroupProperty $group): bool
+    {
         $imGroup = (new Group())->setGroup($group->getImGroup());
         if (!empty($group->getGroupName())) {
             $imGroup->setName($group->getGroupName()); //群名称
@@ -96,7 +103,8 @@ class GroupService implements GroupInterface {
     /**
      * @throws Exception
      */
-    public function getGroupInfo(string $imGroup): array {
+    public function getGroupInfo(string $imGroup): array
+    {
         $groupID = (new ID())->setId($imGroup);
         /**
          * @var Group $reply
@@ -111,9 +119,10 @@ class GroupService implements GroupInterface {
     /**
      * @throws Exception
      */
-    public function getGroupMembers(string $imGroup, int $index = 0, int $size = 10000): array {
+    public function getGroupMembers(string $imGroup, int $index = 0, int $size = 10000): array
+    {
         $memberQuery = (new MemberQuery())->setGroup($imGroup);
-        $pagination  = (new Pagination())
+        $pagination = (new Pagination())
             ->setIndex($index)
             ->setSize($size)
             ->setMember($memberQuery);
@@ -129,5 +138,31 @@ class GroupService implements GroupInterface {
             throw new Exception('调用memberSrv ListMember返回数据不合法，返回结果：' . $reply->serializeToJsonString());
         }
         return $result['members']['arr'];
+    }
+
+    /**
+     * 获取群列表
+     * @param $teamId
+     * @param array $cardIds
+     * @param int $page
+     * @param int $pageSize
+     * @return array
+     * @throws Exception
+     */
+    public function getList($teamId, array $cardIds, int $page = 1, int $pageSize = 20): array
+    {
+        /**
+         * @var RespArr|string $reply
+         */
+        [$reply, $status] = $this->groupSrvClient->ListGroup(
+            (new Pagination())
+                ->setIndex($page - 1)
+                ->setSize($pageSize)
+                ->setGroup((new GroupQuery())->setTeam($teamId)->setCardIds($cardIds))
+        );
+        if ($status != StatusCode::OK) {
+            throw new Exception((string)$reply);
+        }
+        return $reply->hasGroups() ? repeated_field_to_array($reply->getGroups()->getArr()) : [];
     }
 }
