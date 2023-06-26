@@ -163,6 +163,7 @@ class GroupService implements GroupInterface
         if ($status != StatusCode::OK) {
             throw new Exception((string)$reply);
         }
-        return $reply->hasGroups() ? repeated_field_to_array($reply->getGroups()->getArr()) : [];
+
+        return $reply->hasGroups() ? json_decode($reply->getGroups()->serializeToJsonString(), true)['arr'] : [];
     }
 }
