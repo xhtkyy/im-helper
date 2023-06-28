@@ -17,6 +17,7 @@ use Im\V1\MemberQuery;
 use Im\V1\MemberSrvClient;
 use Im\V1\Pagination;
 use Im\V1\RespArr;
+use Xhtkyy\ImHelper\Exception\GroupNotFoundException;
 use Xhtkyy\ImHelper\IM\Interface\GroupInterface;
 use Xhtkyy\ImHelper\IM\properties\DepartmentProperty;
 use Xhtkyy\ImHelper\IM\properties\GroupProperty;
@@ -107,10 +108,13 @@ class GroupService implements GroupInterface
     {
         $groupID = (new ID())->setId($imGroup);
         /**
-         * @var Group $reply
+         * @var Group|string $reply
          */
         [$reply, $status] = $this->groupSrvClient->GetGroup($groupID);
         if ($status != StatusCode::OK) {
+            if ($reply == 'record not found') {
+                throw new GroupNotFoundException();
+            }
             throw new Exception('调用groupSrv GetGroup失败.');
         }
         return json_decode($reply->serializeToJsonString(), true);
