@@ -158,4 +158,19 @@ class GroupSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
         $metadata, $options);
     }
 
+    /**
+     * ExitTeamGroups 用户退出内部群
+     * @param \Im\V1\ExitTeamGroupsReq $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function ExitTeamGroups(\Im\V1\ExitTeamGroupsReq $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.GroupSrv/ExitTeamGroups',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
 }

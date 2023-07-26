@@ -22,13 +22,13 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $lid = 0;
     /**
-     * 群组标识服
+     * &#64;gotags: json:"group"
      *
      * Generated from protobuf field <code>string group = 2;</code>
      */
     protected $group = '';
     /**
-     * 个人标识，含归属地,身份卡
+     * &#64;gotags: json:"openid"
      *
      * Generated from protobuf field <code>string openid = 4;</code>
      */
@@ -52,25 +52,25 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $banned = 0;
     /**
-     * 禁止，只读
+     * &#64;gotags: json:"disabled"
      *
      * Generated from protobuf field <code>int64 disabled = 8;</code>
      */
     protected $disabled = 0;
     /**
-     * 加入时间戳
+     * &#64;gotags: json:"joined"
      *
      * Generated from protobuf field <code>int64 joined = 9;</code>
      */
     protected $joined = 0;
     /**
-     * 退出，移除时间戳
+     * &#64;gotags: json:"removed"
      *
      * Generated from protobuf field <code>int64 removed = 10;</code>
      */
     protected $removed = 0;
     /**
-     * 最后活跃时间
+     * &#64;gotags: json:"latest"
      *
      * Generated from protobuf field <code>int64 latest = 11;</code>
      */
@@ -81,6 +81,12 @@ class Member extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Struct attachments = 12;</code>
      */
     protected $attachments = null;
+    /**
+     * &#64;gotags: json:"addr"
+     *
+     * Generated from protobuf field <code>bool addr = 13;</code>
+     */
+    protected $addr = false;
 
     /**
      * Constructor.
@@ -91,9 +97,9 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type int|string $lid
      *           &#64;gotags: gorm:"primaryKey" json:"-"
      *     @type string $group
-     *           群组标识服
+     *           &#64;gotags: json:"group"
      *     @type string $openid
-     *           个人标识，含归属地,身份卡
+     *           &#64;gotags: json:"openid"
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $roles
      *           &#64;gotags: gorm:"serializer:json" json:"roles"
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $badges
@@ -101,15 +107,17 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type int|string $banned
      *           禁闭时间戳，禁闭期间禁止任何操作
      *     @type int|string $disabled
-     *           禁止，只读
+     *           &#64;gotags: json:"disabled"
      *     @type int|string $joined
-     *           加入时间戳
+     *           &#64;gotags: json:"joined"
      *     @type int|string $removed
-     *           退出，移除时间戳
+     *           &#64;gotags: json:"removed"
      *     @type int|string $latest
-     *           最后活跃时间
+     *           &#64;gotags: json:"latest"
      *     @type \Google\Protobuf\Struct $attachments
      *           &#64;gotags: gorm:"serializer:json" json:"attachments"
+     *     @type bool $addr
+     *           &#64;gotags: json:"addr"
      * }
      */
     public function __construct($data = NULL) {
@@ -144,7 +152,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 群组标识服
+     * &#64;gotags: json:"group"
      *
      * Generated from protobuf field <code>string group = 2;</code>
      * @return string
@@ -155,7 +163,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 群组标识服
+     * &#64;gotags: json:"group"
      *
      * Generated from protobuf field <code>string group = 2;</code>
      * @param string $var
@@ -170,7 +178,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 个人标识，含归属地,身份卡
+     * &#64;gotags: json:"openid"
      *
      * Generated from protobuf field <code>string openid = 4;</code>
      * @return string
@@ -181,7 +189,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 个人标识，含归属地,身份卡
+     * &#64;gotags: json:"openid"
      *
      * Generated from protobuf field <code>string openid = 4;</code>
      * @param string $var
@@ -274,7 +282,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 禁止，只读
+     * &#64;gotags: json:"disabled"
      *
      * Generated from protobuf field <code>int64 disabled = 8;</code>
      * @return int|string
@@ -285,7 +293,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 禁止，只读
+     * &#64;gotags: json:"disabled"
      *
      * Generated from protobuf field <code>int64 disabled = 8;</code>
      * @param int|string $var
@@ -300,7 +308,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 加入时间戳
+     * &#64;gotags: json:"joined"
      *
      * Generated from protobuf field <code>int64 joined = 9;</code>
      * @return int|string
@@ -311,7 +319,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 加入时间戳
+     * &#64;gotags: json:"joined"
      *
      * Generated from protobuf field <code>int64 joined = 9;</code>
      * @param int|string $var
@@ -326,7 +334,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 退出，移除时间戳
+     * &#64;gotags: json:"removed"
      *
      * Generated from protobuf field <code>int64 removed = 10;</code>
      * @return int|string
@@ -337,7 +345,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 退出，移除时间戳
+     * &#64;gotags: json:"removed"
      *
      * Generated from protobuf field <code>int64 removed = 10;</code>
      * @param int|string $var
@@ -352,7 +360,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 最后活跃时间
+     * &#64;gotags: json:"latest"
      *
      * Generated from protobuf field <code>int64 latest = 11;</code>
      * @return int|string
@@ -363,7 +371,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 最后活跃时间
+     * &#64;gotags: json:"latest"
      *
      * Generated from protobuf field <code>int64 latest = 11;</code>
      * @param int|string $var
@@ -409,6 +417,32 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->attachments = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"addr"
+     *
+     * Generated from protobuf field <code>bool addr = 13;</code>
+     * @return bool
+     */
+    public function getAddr()
+    {
+        return $this->addr;
+    }
+
+    /**
+     * &#64;gotags: json:"addr"
+     *
+     * Generated from protobuf field <code>bool addr = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAddr($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->addr = $var;
 
         return $this;
     }

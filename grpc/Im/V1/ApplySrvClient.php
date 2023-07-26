@@ -55,12 +55,12 @@ class ApplySrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
 
     /**
      * UpdateApplyStatus 编辑申请
-     * @param \Im\V1\ApplyStatusReq $argument input argument
+     * @param \Im\V1\StatusReq $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function UpdateApplyStatus(\Im\V1\ApplyStatusReq $argument,
+    public function UpdateApplyStatus(\Im\V1\StatusReq $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.ApplySrv/UpdateApplyStatus',
         $argument,

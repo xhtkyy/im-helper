@@ -35,12 +35,75 @@ class GroupTypCode
      * Generated from protobuf enum <code>INNER = 3;</code>
      */
     const INNER = 3;
+    /**
+     * 知行助手
+     *
+     * Generated from protobuf enum <code>KNOW = 4;</code>
+     */
+    const KNOW = 4;
+    /**
+     * 云盘助手
+     *
+     * Generated from protobuf enum <code>CLOUD_DISK = 5;</code>
+     */
+    const CLOUD_DISK = 5;
+    /**
+     * 审批助手
+     *
+     * Generated from protobuf enum <code>APPROVAL = 6;</code>
+     */
+    const APPROVAL = 6;
+    /**
+     * 广场助手
+     *
+     * Generated from protobuf enum <code>SQUARE = 7;</code>
+     */
+    const SQUARE = 7;
+    /**
+     * 单聊申请
+     *
+     * Generated from protobuf enum <code>APPLY_PAIR = 8;</code>
+     */
+    const APPLY_PAIR = 8;
+    /**
+     * 小秘书
+     *
+     * Generated from protobuf enum <code>SECRETARY = 9;</code>
+     */
+    const SECRETARY = 9;
+    /**
+     * 外部群
+     *
+     * Generated from protobuf enum <code>OUT = 10;</code>
+     */
+    const OUT = 10;
+    /**
+     * 商务关系解除申请
+     *
+     * Generated from protobuf enum <code>APPLY_BUSINESS_CANCEL = 11;</code>
+     */
+    const APPLY_BUSINESS_CANCEL = 11;
+    /**
+     * 新成员申请
+     *
+     * Generated from protobuf enum <code>APPLY_TEAM = 12;</code>
+     */
+    const APPLY_TEAM = 12;
 
     private static $valueToName = [
         self::NORMAL => 'NORMAL',
         self::DEPARTMENT => 'DEPARTMENT',
         self::COMPANY => 'COMPANY',
         self::INNER => 'INNER',
+        self::KNOW => 'KNOW',
+        self::CLOUD_DISK => 'CLOUD_DISK',
+        self::APPROVAL => 'APPROVAL',
+        self::SQUARE => 'SQUARE',
+        self::APPLY_PAIR => 'APPLY_PAIR',
+        self::SECRETARY => 'SECRETARY',
+        self::OUT => 'OUT',
+        self::APPLY_BUSINESS_CANCEL => 'APPLY_BUSINESS_CANCEL',
+        self::APPLY_TEAM => 'APPLY_TEAM',
     ];
 
     public static function name($value)

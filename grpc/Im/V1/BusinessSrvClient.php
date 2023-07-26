@@ -82,4 +82,19 @@ class BusinessSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
         $metadata, $options);
     }
 
+    /**
+     * GlobalMergSearch 全局聚合搜索
+     * @param \Im\V1\MergQuery $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function GlobalMergSearch(\Im\V1\MergQuery $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.BusinessSrv/GlobalMergSearch',
+        $argument,
+        ['\Im\V1\MergQueryResp', 'decode'],
+        $metadata, $options);
+    }
+
 }

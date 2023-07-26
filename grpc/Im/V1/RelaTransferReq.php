@@ -43,6 +43,12 @@ class RelaTransferReq extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string r_openid = 5;</code>
      */
     protected $r_openid = '';
+    /**
+     * 企业名称
+     *
+     * Generated from protobuf field <code>string company_name = 6;</code>
+     */
+    protected $company_name = '';
 
     /**
      * Constructor.
@@ -60,6 +66,8 @@ class RelaTransferReq extends \Google\Protobuf\Internal\Message
      *           替换身份卡
      *     @type string $r_openid
      *           替换身份卡人的openID
+     *     @type string $company_name
+     *           企业名称
      * }
      */
     public function __construct($data = NULL) {
@@ -193,6 +201,32 @@ class RelaTransferReq extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->r_openid = $var;
+
+        return $this;
+    }
+
+    /**
+     * 企业名称
+     *
+     * Generated from protobuf field <code>string company_name = 6;</code>
+     * @return string
+     */
+    public function getCompanyName()
+    {
+        return $this->company_name;
+    }
+
+    /**
+     * 企业名称
+     *
+     * Generated from protobuf field <code>string company_name = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCompanyName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->company_name = $var;
 
         return $this;
     }

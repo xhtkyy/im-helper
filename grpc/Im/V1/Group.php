@@ -106,11 +106,47 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     protected $creator_card = '';
     /**
-     * &#64;gotags: gorm:"-"
+     * &#64;gotags: gorm:"-" // 本人的成员身份
      *
      * Generated from protobuf field <code>repeated .im.v1.Member members = 16;</code>
      */
     private $members;
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>int64 total = 17;</code>
+     */
+    protected $total = 0;
+    /**
+     * 是否同步云盘
+     *
+     * Generated from protobuf field <code>bool sync_disk = 18;</code>
+     */
+    protected $sync_disk = false;
+    /**
+     * 云盘文件夹
+     *
+     * Generated from protobuf field <code>int64 disk_folder = 19;</code>
+     */
+    protected $disk_folder = 0;
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>string match_title = 20;</code>
+     */
+    protected $match_title = '';
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>int64 match_type = 21;</code>
+     */
+    protected $match_type = 0;
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>string card_id = 22;</code>
+     */
+    protected $card_id = '';
 
     /**
      * Constructor.
@@ -149,6 +185,18 @@ class Group extends \Google\Protobuf\Internal\Message
      *     @type string $creator_card
      *           所有者身份卡ID
      *     @type \Im\V1\Member[]|\Google\Protobuf\Internal\RepeatedField $members
+     *           &#64;gotags: gorm:"-" // 本人的成员身份
+     *     @type int|string $total
+     *           &#64;gotags: gorm:"-"
+     *     @type bool $sync_disk
+     *           是否同步云盘
+     *     @type int|string $disk_folder
+     *           云盘文件夹
+     *     @type string $match_title
+     *           &#64;gotags: gorm:"-"
+     *     @type int|string $match_type
+     *           &#64;gotags: gorm:"-"
+     *     @type string $card_id
      *           &#64;gotags: gorm:"-"
      * }
      */
@@ -558,7 +606,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;gotags: gorm:"-"
+     * &#64;gotags: gorm:"-" // 本人的成员身份
      *
      * Generated from protobuf field <code>repeated .im.v1.Member members = 16;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -569,7 +617,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;gotags: gorm:"-"
+     * &#64;gotags: gorm:"-" // 本人的成员身份
      *
      * Generated from protobuf field <code>repeated .im.v1.Member members = 16;</code>
      * @param \Im\V1\Member[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -579,6 +627,162 @@ class Group extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Im\V1\Member::class);
         $this->members = $arr;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>int64 total = 17;</code>
+     * @return int|string
+     */
+    public function getTotal()
+    {
+        return $this->total;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>int64 total = 17;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setTotal($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->total = $var;
+
+        return $this;
+    }
+
+    /**
+     * 是否同步云盘
+     *
+     * Generated from protobuf field <code>bool sync_disk = 18;</code>
+     * @return bool
+     */
+    public function getSyncDisk()
+    {
+        return $this->sync_disk;
+    }
+
+    /**
+     * 是否同步云盘
+     *
+     * Generated from protobuf field <code>bool sync_disk = 18;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSyncDisk($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->sync_disk = $var;
+
+        return $this;
+    }
+
+    /**
+     * 云盘文件夹
+     *
+     * Generated from protobuf field <code>int64 disk_folder = 19;</code>
+     * @return int|string
+     */
+    public function getDiskFolder()
+    {
+        return $this->disk_folder;
+    }
+
+    /**
+     * 云盘文件夹
+     *
+     * Generated from protobuf field <code>int64 disk_folder = 19;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setDiskFolder($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->disk_folder = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>string match_title = 20;</code>
+     * @return string
+     */
+    public function getMatchTitle()
+    {
+        return $this->match_title;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>string match_title = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMatchTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->match_title = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>int64 match_type = 21;</code>
+     * @return int|string
+     */
+    public function getMatchType()
+    {
+        return $this->match_type;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>int64 match_type = 21;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setMatchType($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->match_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>string card_id = 22;</code>
+     * @return string
+     */
+    public function getCardId()
+    {
+        return $this->card_id;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>string card_id = 22;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCardId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->card_id = $var;
 
         return $this;
     }
