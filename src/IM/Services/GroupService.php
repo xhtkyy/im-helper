@@ -68,7 +68,7 @@ class GroupService implements GroupInterface {
     public function modifyGroupMember(MemberProperty $member, bool $isAdd = true): bool {
         $imMember = (new Member())
 //            ->setOpenid($member->getOpenId())
-            ->setOpenid($member->getAttachment()['CardId']) //2023.07.27 秋廷要求将openID的值换成cardId
+            ->setOpenid($member->getAttachment()['cardId']) //2023.07.27 秋廷要求将openID的值换成cardId
             ->setAttachments(array_to_struct($member->getAttachment())) //附加值
             ->setGroup($member->getImGroup());
         if ($isAdd) {
