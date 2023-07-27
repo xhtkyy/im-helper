@@ -41,9 +41,11 @@ class GroupService implements GroupInterface {
         ->setCreatorCard($department->getCreatorCard()); //所有者身份卡ID
         $groupMembers = [];
         foreach ($members as $member) {
-            $groupMembers[] = (new Member())->setOpenid($member['openId']) // 个人标识
-            ->setAttachments(array_to_struct($member)) //附加值
-            ->setJoined($current); //加入时间
+            $groupMembers[] = (new Member())
+//                ->setOpenid($member['openId']) // 个人标识
+                ->setOpenid($member['CardId']) //2023.07.27 秋廷要求将openID的值换成cardId
+                ->setAttachments(array_to_struct($member)) //附加值
+                ->setJoined($current); //加入时间
         }
         $creat = (new GroupCreat())->setGroup($group)->setRids($rids)->setMembers($groupMembers);
         /**
@@ -64,7 +66,10 @@ class GroupService implements GroupInterface {
     }
 
     public function modifyGroupMember(MemberProperty $member, bool $isAdd = true): bool {
-        $imMember = (new Member())->setOpenid($member->getOpenId())
+        $imMember = (new Member())
+//            ->setOpenid($member->getOpenId())
+            ->setOpenid($member->getAttachment()['CardId']) //2023.07.27 秋廷要求将openID的值换成cardId
+            ->setAttachments(array_to_struct($member->getAttachment())) //附加值
             ->setGroup($member->getImGroup());
         if ($isAdd) {
             $imMember = $imMember->setJoined(time());
