@@ -23,29 +23,29 @@ use Xhtkyy\ImHelper\IM\properties\DepartmentProperty;
 use Xhtkyy\ImHelper\IM\properties\GroupProperty;
 use Xhtkyy\ImHelper\IM\properties\MemberProperty;
 
-class GroupService implements GroupInterface
-{
+class GroupService implements GroupInterface {
     #[Inject]
     protected GroupSrvClient $groupSrvClient;
     #[Inject]
     protected MemberSrvClient $memberSrvClient;
 
-    public function create(DepartmentProperty $department, array $rids, array $openIDs, bool $isAllStaff = false): string
-    {
-        $current = time();
-        $groupType = $isAllStaff ? GroupTypCode::COMPANY : GroupTypCode::DEPARTMENT;
-        $group = (new Group())->setTeam($department->getTeamId()) //所属组织
+    public function create(DepartmentProperty $department, array $rids, array $members, bool $isAllStaff = false): string {
+        $current      = time();
+        $groupType    = $isAllStaff ? GroupTypCode::COMPANY : GroupTypCode::DEPARTMENT;
+        $group        = (new Group())->setTeam($department->getTeamId()) //所属组织
         ->setType($groupType) //类型
         ->setName($department->getDepartmentName()) //群名称
         ->setCreator($department->getGroupLeader()) //创建人 系统创建的根据成都伙伴确认直接使用群主 部门群群主在创建时是集合中第一人
         ->setCreated($current) //创建时间
+        ->setAttachment(array_to_struct($department->getAttachment())) //附加值
         ->setCreatorCard($department->getCreatorCard()); //所有者身份卡ID
-        $members = [];
-        foreach ($openIDs as $openID) {
-            $members[] = (new Member())->setOpenid($openID) // 个人标识
+        $groupMembers = [];
+        foreach ($members as $member) {
+            $groupMembers[] = (new Member())->setOpenid($member['openId']) // 个人标识
+            ->setAttachments(array_to_struct($member)) //附加值
             ->setJoined($current); //加入时间
         }
-        $creat = (new GroupCreat())->setGroup($group)->setRids($rids)->setMembers($members);
+        $creat = (new GroupCreat())->setGroup($group)->setRids($rids)->setMembers($groupMembers);
         /**
          * @var Group $reply
          */
@@ -57,15 +57,13 @@ class GroupService implements GroupInterface
         return $imGroup;
     }
 
-    public function delete(string $imGroup): bool
-    {
+    public function delete(string $imGroup): bool {
         $groupID = (new ID())->setId($imGroup);
         [, $status] = $this->groupSrvClient->DeleteGroup($groupID);
         return $status == StatusCode::OK;
     }
 
-    public function modifyGroupMember(MemberProperty $member, bool $isAdd = true): bool
-    {
+    public function modifyGroupMember(MemberProperty $member, bool $isAdd = true): bool {
         $imMember = (new Member())->setOpenid($member->getOpenId())
             ->setGroup($member->getImGroup());
         if ($isAdd) {
@@ -75,8 +73,7 @@ class GroupService implements GroupInterface
         return $status == StatusCode::OK;
     }
 
-    public function deleteGroupMember(MemberProperty $member): bool
-    {
+    public function deleteGroupMember(MemberProperty $member): bool {
         $imMember = (new MemberID())->setOpenid($member->getOpenId())
             ->setGroup($member->getImGroup())
             ->setRid($member->getRid());
@@ -84,8 +81,7 @@ class GroupService implements GroupInterface
         return $status == StatusCode::OK;
     }
 
-    public function updateGroup(GroupProperty $group): bool
-    {
+    public function updateGroup(GroupProperty $group): bool {
         $imGroup = (new Group())->setGroup($group->getImGroup());
         if (!empty($group->getGroupName())) {
             $imGroup->setName($group->getGroupName()); //群名称
@@ -104,8 +100,7 @@ class GroupService implements GroupInterface
     /**
      * @throws Exception
      */
-    public function getGroupInfo(string $imGroup): array
-    {
+    public function getGroupInfo(string $imGroup): array {
         $groupID = (new ID())->setId($imGroup);
         /**
          * @var Group|string $reply
@@ -123,10 +118,9 @@ class GroupService implements GroupInterface
     /**
      * @throws Exception
      */
-    public function getGroupMembers(string $imGroup, int $index = 0, int $size = 10000): array
-    {
+    public function getGroupMembers(string $imGroup, int $index = 0, int $size = 10000): array {
         $memberQuery = (new MemberQuery())->setGroup($imGroup);
-        $pagination = (new Pagination())
+        $pagination  = (new Pagination())
             ->setIndex($index)
             ->setSize($size)
             ->setMember($memberQuery);
@@ -153,8 +147,7 @@ class GroupService implements GroupInterface
      * @return array
      * @throws Exception
      */
-    public function getList($teamId, array $cardIds, int $page = 1, int $pageSize = 20): array
-    {
+    public function getList($teamId, array $cardIds, int $page = 1, int $pageSize = 20): array {
         /**
          * @var RespArr|string $reply
          */
@@ -171,8 +164,7 @@ class GroupService implements GroupInterface
         return $reply->hasGroups() ? json_decode($reply->getGroups()->serializeToJsonString(), true)['arr'] : [];
     }
 
-    public function closeSyncDisk(string $groupId): bool
-    {
+    public function closeSyncDisk(string $groupId): bool {
         [, $status] = $this->groupSrvClient->CloseGroupFileSync((new ID())->setId($groupId));
         return $status == StatusCode::OK;
     }

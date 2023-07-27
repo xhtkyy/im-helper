@@ -2,19 +2,21 @@
 
 namespace Xhtkyy\ImHelper\IM\properties;
 
-class MemberProperty {
+class MemberProperty extends Property {
     /**
      * @var string
      */
-    private string $openId = '';
+    public string $openId = '';
     /**
      * @var string
      */
-    private string $imGroup = '';
+    public string $imGroup = '';
     /**
      * @var string
      */
-    private string $rid = '';
+    public string $rid = '';
+
+    public array $attachment = [];
 
     /**
      * @return string
@@ -61,6 +63,22 @@ class MemberProperty {
      */
     public function setRid(string $rid): static {
         $this->rid = $rid;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getAttachment(): array {
+        return $this->attachment;
+    }
+
+    /**
+     * @param array $attachment
+     * @return MemberProperty
+     */
+    public function setAttachment(array $attachment): static {
+        $this->attachment = $attachment;
         return $this;
     }
 }

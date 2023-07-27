@@ -2,20 +2,20 @@
 
 namespace Xhtkyy\ImHelper\IM\properties;
 
-class GroupProperty {
+class GroupProperty extends Property {
 
     /**
      * @var string
      */
-    private string $imGroup;
+    public string $imGroup;
     /**
      * @var string
      */
-    private string $groupName = '';
+    public string $groupName = '';
     /**
      * @var string
      */
-    private string $groupLeader = '';
+    public string $groupLeader = '';
 
     /**
      * @return string
@@ -64,7 +64,6 @@ class GroupProperty {
         $this->imGroup = $imGroup;
         return $this;
     }
-
 
 
 }

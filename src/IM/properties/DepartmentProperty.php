@@ -2,28 +2,30 @@
 
 namespace Xhtkyy\ImHelper\IM\properties;
 
-class DepartmentProperty {
+class DepartmentProperty extends Property {
     /**
      * @var int
      */
-    private int $idDepartment = 0;
+    public int $idDepartment = 0;
     /**
      * @var string
      */
-    private string $departmentName = '';
+    public string $departmentName = '';
     /**
      * @var string
      */
-    private string $teamId = '';
+    public string $teamId = '';
     /**
      * @var string
      */
-    private string $groupLeader = '';
+    public string $groupLeader = '';
 
     /**
      * @var string
      */
-    private string $creatorCard = '';
+    public string $creatorCard = '';
+
+    public array $attachment = [];
 
     /**
      * @return int
@@ -105,5 +107,20 @@ class DepartmentProperty {
         return $this;
     }
 
+    /**
+     * @return array
+     */
+    public function getAttachment(): array {
+        return $this->attachment;
+    }
+
+    /**
+     * @param array $attachment
+     * @return DepartmentProperty
+     */
+    public function setAttachment(array $attachment): static {
+        $this->attachment = $attachment;
+        return $this;
+    }
 
 }

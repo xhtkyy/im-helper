@@ -15,11 +15,11 @@ interface GroupInterface {
      * 调用建群服务创建部门群会话
      * @param DepartmentProperty $department 部门信息
      * @param array $rids 融云ID集合
-     * @param array $openIDs 部门下员工数据集合
+     * @param array $members 部门下员工数据集合
      * @param bool $isAllStaff 是否是全员群 默认是false
      * @return string
      */
-    public function create(DepartmentProperty $department, array $rids, array $openIDs, bool $isAllStaff = false): string;
+    public function create(DepartmentProperty $department, array $rids, array $members, bool $isAllStaff = false): string;
 
     /**
      * 删除部门群 当部门不存在群
