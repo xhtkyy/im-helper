@@ -43,7 +43,7 @@ class GroupService implements GroupInterface {
         foreach ($members as $member) {
             $groupMembers[] = (new Member())
 //                ->setOpenid($member['openId']) // 个人标识
-                ->setOpenid($member['CardId']) //2023.07.27 秋廷要求将openID的值换成cardId
+                ->setOpenid($member['cardId']) //2023.07.27 秋廷要求将openID的值换成cardId
                 ->setAttachments(array_to_struct($member)) //附加值
                 ->setJoined($current); //加入时间
         }
