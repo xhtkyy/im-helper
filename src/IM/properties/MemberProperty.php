@@ -16,7 +16,15 @@ class MemberProperty extends Property {
      */
     public string $rid = '';
 
+    /**
+     * @var array
+     */
     public array $attachment = [];
+
+    /**
+     * @var string
+     */
+    public string $cardID = '';
 
     /**
      * @return string
@@ -81,4 +89,22 @@ class MemberProperty extends Property {
         $this->attachment = $attachment;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getCardID(): string {
+        return $this->cardID;
+    }
+
+    /**
+     * @param string $cardID
+     * @return MemberProperty
+     */
+    public function setCardID(string $cardID): static {
+        $this->cardID = $cardID;
+        return $this;
+    }
+
+
 }

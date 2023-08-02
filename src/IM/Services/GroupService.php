@@ -12,6 +12,7 @@ use Im\V1\GroupSrvClient;
 use Im\V1\GroupTypCode;
 use Im\V1\ID;
 use Im\V1\Member;
+use Im\V1\MemberCreat;
 use Im\V1\MemberID;
 use Im\V1\MemberQuery;
 use Im\V1\MemberSrvClient;
@@ -68,18 +69,21 @@ class GroupService implements GroupInterface {
     public function modifyGroupMember(MemberProperty $member, bool $isAdd = true): bool {
         $imMember = (new Member())
 //            ->setOpenid($member->getOpenId())
-            ->setOpenid($member->getAttachment()['cardId']) //2023.07.27 秋廷要求将openID的值换成cardId
+            ->setOpenid($member->getCardID()) //2023.07.27 秋廷要求将openID的值换成cardId
             ->setAttachments(array_to_struct($member->getAttachment())) //附加值
             ->setGroup($member->getImGroup());
         if ($isAdd) {
-            $imMember = $imMember->setJoined(time());
+            $imMember    = $imMember->setJoined(time());
+            $memberCreat = (new MemberCreat())->setRid($member->getRid())->setMember($imMember);
+            [, $status] = $this->memberSrvClient->CreateMember($memberCreat);
+        } else {
+            [, $status] = $this->memberSrvClient->UpdateMember($imMember);
         }
-        [, $status] = $this->memberSrvClient->UpdateMember($imMember);
         return $status == StatusCode::OK;
     }
 
     public function deleteGroupMember(MemberProperty $member): bool {
-        $imMember = (new MemberID())->setOpenid($member->getOpenId())
+        $imMember = (new MemberID())->setOpenid($member->getCardID()) //这里经过验证也要传cardID
             ->setGroup($member->getImGroup())
             ->setRid($member->getRid());
         [, $status] = $this->memberSrvClient->DeleteMember($imMember);
