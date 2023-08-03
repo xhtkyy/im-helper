@@ -34,9 +34,10 @@ class GroupService implements GroupInterface {
         $current      = time();
         $groupType    = $isAllStaff ? GroupTypCode::COMPANY : GroupTypCode::DEPARTMENT;
         $group        = (new Group())->setTeam($department->getTeamId()) //所属组织
+        ->setOwner($department->getGroupLeader()) //群主 系统创建的根据成都伙伴确认直接使用群主 部门群群主在创建时是集合中第一人
         ->setType($groupType) //类型
         ->setName($department->getDepartmentName()) //群名称
-        ->setCreator($department->getGroupLeader()) //创建人 系统创建的根据成都伙伴确认直接使用群主 部门群群主在创建时是集合中第一人
+        ->setCreator($department->getCreator()) //创建人
         ->setCreated($current) //创建时间
         ->setAttachment(array_to_struct($department->getAttachment())) //附加值
         ->setCreatorCard($department->getCreatorCard()); //所有者身份卡ID
@@ -84,7 +85,7 @@ class GroupService implements GroupInterface {
 
     public function deleteGroupMember(MemberProperty $member): bool {
         $imMember = (new MemberID())->setOpenid($member->getCardID()) //这里经过验证也要传cardID
-            ->setGroup($member->getImGroup())
+        ->setGroup($member->getImGroup())
             ->setRid($member->getRid());
         [, $status] = $this->memberSrvClient->DeleteMember($imMember);
         return $status == StatusCode::OK;

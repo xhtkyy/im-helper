@@ -25,6 +25,14 @@ class DepartmentProperty extends Property {
      */
     public string $creatorCard = '';
 
+    /**
+     * @var string
+     */
+    public string $creator = '';
+
+    /**
+     * @var array
+     */
     public array $attachment = [];
 
     /**
@@ -122,5 +130,23 @@ class DepartmentProperty extends Property {
         $this->attachment = $attachment;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getCreator(): string {
+        return $this->creator;
+    }
+
+    /**
+     * @param string $creator
+     * @return DepartmentProperty
+     */
+    public function setCreator(string $creator): static {
+        $this->creator = $creator;
+        return $this;
+    }
+
+
 
 }
