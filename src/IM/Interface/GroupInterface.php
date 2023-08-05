@@ -66,4 +66,13 @@ interface GroupInterface {
      * @return array
      */
     public function getGroupMembers(string $imGroup, int $index = 0, int $size = 10000): array;
+
+    /**
+     * 修改群主 （新增服务，按IM调整增加）
+     * @param string $imGroup
+     * @param string $oldOwner
+     * @param string $newOwner
+     * @return bool
+     */
+    public function transferGroup(string $imGroup,string $oldOwner,string $newOwner) : bool;
 }

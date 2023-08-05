@@ -78,6 +78,21 @@ class BusinessSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/im.v1.BusinessSrv/GroupFileSync',
         $argument,
+        ['\Im\V1\FileSyncFileRes', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * GroupFileSyncCancel 群文件同步撤回
+     * @param \Im\V1\FileSyncFileRes $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function GroupFileSyncCancel(\Im\V1\FileSyncFileRes $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.BusinessSrv/GroupFileSyncCancel',
+        $argument,
         ['\Google\Protobuf\GPBEmpty', 'decode'],
         $metadata, $options);
     }

@@ -25,6 +25,12 @@ class StatusReq extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string status = 2;</code>
      */
     protected $status = '';
+    /**
+     * 操作人身份卡ID
+     *
+     * Generated from protobuf field <code>string op_card_id = 3;</code>
+     */
+    protected $op_card_id = '';
 
     /**
      * Constructor.
@@ -36,6 +42,8 @@ class StatusReq extends \Google\Protobuf\Internal\Message
      *           申请ID
      *     @type string $status
      *           申请状态
+     *     @type string $op_card_id
+     *           操作人身份卡ID
      * }
      */
     public function __construct($data = NULL) {
@@ -91,6 +99,32 @@ class StatusReq extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * 操作人身份卡ID
+     *
+     * Generated from protobuf field <code>string op_card_id = 3;</code>
+     * @return string
+     */
+    public function getOpCardId()
+    {
+        return $this->op_card_id;
+    }
+
+    /**
+     * 操作人身份卡ID
+     *
+     * Generated from protobuf field <code>string op_card_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOpCardId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->op_card_id = $var;
 
         return $this;
     }

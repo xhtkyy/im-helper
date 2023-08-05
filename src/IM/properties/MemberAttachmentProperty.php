@@ -22,21 +22,21 @@ namespace Xhtkyy\ImHelper\IM\properties;
  * }
  */
 class MemberAttachmentProperty extends Property {
-    public string $avatar = '';
-    public string $cardId = '';
-    public ?string $comment = null;
-    public string $departmentId = '';
-    public ?string $departmentName = null;
-    public ?string $jobId = null;
-    public ?string $jobName = null;
-    public ?string $nickname = null;
-    public ?string $noDisturb = null;
-    public string $openId = '';
-    public string $staffName = '';
-    public ?string $stayOn = null;
-    public string $teamId = '';
-    public string $teamName = '';
-    public bool $viewHistory = true;
+    public string $avatar = ''; //头像
+    public string $cardId = ''; //身份卡id
+    public ?string $comment = null; //备注
+    public string $departmentId = ''; //部门Id
+    public ?string $departmentName = null; //部门名
+    public ?string $jobId = null; //岗位id
+    public ?string $jobName = null; //岗位名
+    public ?string $nickname = null; //昵称
+    public ?string $noDisturb = null; //免打扰
+    public string $openId = ''; //openid
+    public string $staffName = ''; //  员工名称/个人名称
+    public ?string $stayOn = null; //置顶
+    public string $teamId = ''; //组织Id
+    public string $teamName = ''; //组织名
+    public bool $viewHistory = true; //是否允许查看历史记录
 
     /**
      * @return string

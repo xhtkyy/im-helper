@@ -9,6 +9,7 @@ use Im\V1\Group;
 use Im\V1\GroupCreat;
 use Im\V1\GroupQuery;
 use Im\V1\GroupSrvClient;
+use Im\V1\GroupTransfer;
 use Im\V1\GroupTypCode;
 use Im\V1\ID;
 use Im\V1\Member;
@@ -75,7 +76,7 @@ class GroupService implements GroupInterface {
             ->setGroup($member->getImGroup());
         if ($isAdd) {
             $imMember    = $imMember->setJoined(time());
-            $memberCreat = (new MemberCreat())->setRid($member->getRid())->setMember($imMember);
+            $memberCreat = (new MemberCreat())->setFromServer(true)->setRid($member->getRid())->setMember($imMember);
             [, $status] = $this->memberSrvClient->CreateMember($memberCreat);
         } else {
             [, $status] = $this->memberSrvClient->UpdateMember($imMember);
@@ -84,22 +85,22 @@ class GroupService implements GroupInterface {
     }
 
     public function deleteGroupMember(MemberProperty $member): bool {
-        $imMember = (new MemberID())->setOpenid($member->getCardID()) //这里经过验证也要传cardID
-        ->setGroup($member->getImGroup())
+        $imMember = (new MemberID())
+            ->setOpenid($member->getCardID()) //这里经过验证也要传cardID
+            ->setGroup($member->getImGroup())
+            ->setFromServer(true) //代表服务端调用
             ->setRid($member->getRid());
         [, $status] = $this->memberSrvClient->DeleteMember($imMember);
         return $status == StatusCode::OK;
     }
 
     public function updateGroup(GroupProperty $group): bool {
-        $imGroup = (new Group())->setGroup($group->getImGroup());
+        $imGroup = (new Group())->setGroup($group->getImGroup())->setUpdated(time());
         if (!empty($group->getGroupName())) {
             $imGroup->setName($group->getGroupName()); //群名称
         }
-        if (!empty($group->getGroupLeader())) {
-            $imGroup->setCreator($group->getGroupLeader()); //群主
-        }
-        if ($imGroup->getName() || $imGroup->getCreator()) {
+        //部门对接群相关修改 目前仅支持部门名称的修改 修改和业务关联的 其他的交回IM处理 先过滤
+        if ($imGroup->getName()) {
             //有修改就进来，没修改直接返回成功
             [, $status] = $this->groupSrvClient->UpdateGroup($imGroup);
             return $status == StatusCode::OK;
@@ -176,6 +177,15 @@ class GroupService implements GroupInterface {
 
     public function closeSyncDisk(string $groupId): bool {
         [, $status] = $this->groupSrvClient->CloseGroupFileSync((new ID())->setId($groupId));
+        return $status == StatusCode::OK;
+    }
+
+    public function transferGroup(string $imGroup, string $oldOwner, string $newOwner): bool {
+        [, $status] = $this->groupSrvClient->TransferGroup((new GroupTransfer())
+            ->setGroup($imGroup)
+            ->setOldOwner($oldOwner)
+            ->setNewOwner($newOwner)
+        );
         return $status == StatusCode::OK;
     }
 }

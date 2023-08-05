@@ -25,6 +25,16 @@ class MemberAddBatch extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .im.v1.Member members = 3;</code>
      */
     private $members;
+    /**
+     * Generated from protobuf field <code>string op_card_id = 4;</code>
+     */
+    protected $op_card_id = '';
+    /**
+     * 是否服务端调用
+     *
+     * Generated from protobuf field <code>bool from_server = 5;</code>
+     */
+    protected $from_server = false;
 
     /**
      * Constructor.
@@ -35,6 +45,9 @@ class MemberAddBatch extends \Google\Protobuf\Internal\Message
      *     @type string $group
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $rids
      *     @type \Im\V1\Member[]|\Google\Protobuf\Internal\RepeatedField $members
+     *     @type string $op_card_id
+     *     @type bool $from_server
+     *           是否服务端调用
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +117,54 @@ class MemberAddBatch extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Im\V1\Member::class);
         $this->members = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string op_card_id = 4;</code>
+     * @return string
+     */
+    public function getOpCardId()
+    {
+        return $this->op_card_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string op_card_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOpCardId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->op_card_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * 是否服务端调用
+     *
+     * Generated from protobuf field <code>bool from_server = 5;</code>
+     * @return bool
+     */
+    public function getFromServer()
+    {
+        return $this->from_server;
+    }
+
+    /**
+     * 是否服务端调用
+     *
+     * Generated from protobuf field <code>bool from_server = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFromServer($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->from_server = $var;
 
         return $this;
     }

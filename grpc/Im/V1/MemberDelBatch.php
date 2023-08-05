@@ -14,17 +14,35 @@ use Google\Protobuf\Internal\GPBUtil;
 class MemberDelBatch extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 群ID
+     *
      * Generated from protobuf field <code>string group = 1;</code>
      */
     protected $group = '';
     /**
+     * 群成员身份卡ID
+     *
      * Generated from protobuf field <code>repeated string ids = 2;</code>
      */
     private $ids;
     /**
+     * 融云ID列表
+     *
      * Generated from protobuf field <code>repeated string rids = 3;</code>
      */
     private $rids;
+    /**
+     * 操作人身份卡
+     *
+     * Generated from protobuf field <code>string op_card_id = 4;</code>
+     */
+    protected $op_card_id = '';
+    /**
+     * 是否服务端调用
+     *
+     * Generated from protobuf field <code>bool from_server = 5;</code>
+     */
+    protected $from_server = false;
 
     /**
      * Constructor.
@@ -33,8 +51,15 @@ class MemberDelBatch extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $group
+     *           群ID
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
+     *           群成员身份卡ID
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $rids
+     *           融云ID列表
+     *     @type string $op_card_id
+     *           操作人身份卡
+     *     @type bool $from_server
+     *           是否服务端调用
      * }
      */
     public function __construct($data = NULL) {
@@ -43,6 +68,8 @@ class MemberDelBatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 群ID
+     *
      * Generated from protobuf field <code>string group = 1;</code>
      * @return string
      */
@@ -52,6 +79,8 @@ class MemberDelBatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 群ID
+     *
      * Generated from protobuf field <code>string group = 1;</code>
      * @param string $var
      * @return $this
@@ -65,6 +94,8 @@ class MemberDelBatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 群成员身份卡ID
+     *
      * Generated from protobuf field <code>repeated string ids = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -74,6 +105,8 @@ class MemberDelBatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 群成员身份卡ID
+     *
      * Generated from protobuf field <code>repeated string ids = 2;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -87,6 +120,8 @@ class MemberDelBatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 融云ID列表
+     *
      * Generated from protobuf field <code>repeated string rids = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -96,6 +131,8 @@ class MemberDelBatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 融云ID列表
+     *
      * Generated from protobuf field <code>repeated string rids = 3;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -104,6 +141,58 @@ class MemberDelBatch extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->rids = $arr;
+
+        return $this;
+    }
+
+    /**
+     * 操作人身份卡
+     *
+     * Generated from protobuf field <code>string op_card_id = 4;</code>
+     * @return string
+     */
+    public function getOpCardId()
+    {
+        return $this->op_card_id;
+    }
+
+    /**
+     * 操作人身份卡
+     *
+     * Generated from protobuf field <code>string op_card_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOpCardId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->op_card_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * 是否服务端调用
+     *
+     * Generated from protobuf field <code>bool from_server = 5;</code>
+     * @return bool
+     */
+    public function getFromServer()
+    {
+        return $this->from_server;
+    }
+
+    /**
+     * 是否服务端调用
+     *
+     * Generated from protobuf field <code>bool from_server = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFromServer($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->from_server = $var;
 
         return $this;
     }

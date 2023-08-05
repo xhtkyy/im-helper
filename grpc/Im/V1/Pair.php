@@ -75,6 +75,12 @@ class Pair extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Struct attachment = 10;</code>
      */
     protected $attachment = null;
+    /**
+     * 单向解除标记
+     *
+     * Generated from protobuf field <code>bool has_del = 11;</code>
+     */
+    protected $has_del = false;
 
     /**
      * Constructor.
@@ -102,6 +108,8 @@ class Pair extends \Google\Protobuf\Internal\Message
      *           删除时间，时间戳
      *     @type \Google\Protobuf\Struct $attachment
      *           &#64;gotags: gorm:"serializer:json" json:"attachment"
+     *     @type bool $has_del
+     *           单向解除标记
      * }
      */
     public function __construct($data = NULL) {
@@ -375,6 +383,32 @@ class Pair extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->attachment = $var;
+
+        return $this;
+    }
+
+    /**
+     * 单向解除标记
+     *
+     * Generated from protobuf field <code>bool has_del = 11;</code>
+     * @return bool
+     */
+    public function getHasDel()
+    {
+        return $this->has_del;
+    }
+
+    /**
+     * 单向解除标记
+     *
+     * Generated from protobuf field <code>bool has_del = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHasDel($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->has_del = $var;
 
         return $this;
     }

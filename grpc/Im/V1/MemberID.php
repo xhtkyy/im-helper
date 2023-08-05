@@ -27,6 +27,16 @@ class MemberID extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string rid = 3;</code>
      */
     protected $rid = '';
+    /**
+     * Generated from protobuf field <code>bool history = 4;</code>
+     */
+    protected $history = false;
+    /**
+     * 是否服务端调用
+     *
+     * Generated from protobuf field <code>bool from_server = 5;</code>
+     */
+    protected $from_server = false;
 
     /**
      * Constructor.
@@ -38,6 +48,9 @@ class MemberID extends \Google\Protobuf\Internal\Message
      *     @type string $openid
      *     @type string $rid
      *           Delete请求，退出后没有其他身份在群里时需转入融云注册ID
+     *     @type bool $history
+     *     @type bool $from_server
+     *           是否服务端调用
      * }
      */
     public function __construct($data = NULL) {
@@ -111,6 +124,54 @@ class MemberID extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->rid = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool history = 4;</code>
+     * @return bool
+     */
+    public function getHistory()
+    {
+        return $this->history;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool history = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHistory($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->history = $var;
+
+        return $this;
+    }
+
+    /**
+     * 是否服务端调用
+     *
+     * Generated from protobuf field <code>bool from_server = 5;</code>
+     * @return bool
+     */
+    public function getFromServer()
+    {
+        return $this->from_server;
+    }
+
+    /**
+     * 是否服务端调用
+     *
+     * Generated from protobuf field <code>bool from_server = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFromServer($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->from_server = $var;
 
         return $this;
     }

@@ -53,6 +53,12 @@ class NotifyScene
      * Generated from protobuf enum <code>GROUP_APPLY = 6;</code>
      */
     const GROUP_APPLY = 6;
+    /**
+     * 自己退群
+     *
+     * Generated from protobuf enum <code>GROUP_SELF_DEL = 7;</code>
+     */
+    const GROUP_SELF_DEL = 7;
 
     private static $valueToName = [
         self::CREATE => 'CREATE',
@@ -62,6 +68,7 @@ class NotifyScene
         self::BATCH_ADD => 'BATCH_ADD',
         self::OWNER_TRANSFER => 'OWNER_TRANSFER',
         self::GROUP_APPLY => 'GROUP_APPLY',
+        self::GROUP_SELF_DEL => 'GROUP_SELF_DEL',
     ];
 
     public static function name($value)

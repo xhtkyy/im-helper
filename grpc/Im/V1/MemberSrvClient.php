@@ -54,7 +54,7 @@ class MemberSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
     }
 
     /**
-     * DeleteMember 删除成员
+     * DeleteMember 删除成员,(自己退群)
      * @param \Im\V1\MemberID $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

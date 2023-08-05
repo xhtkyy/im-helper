@@ -23,6 +23,18 @@ class MemberCreat extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.im.v1.Member member = 2;</code>
      */
     protected $member = null;
+    /**
+     * 操作人员身份卡ID
+     *
+     * Generated from protobuf field <code>string op_card_id = 3;</code>
+     */
+    protected $op_card_id = '';
+    /**
+     * 是否服务端调用
+     *
+     * Generated from protobuf field <code>bool from_server = 4;</code>
+     */
+    protected $from_server = false;
 
     /**
      * Constructor.
@@ -33,6 +45,10 @@ class MemberCreat extends \Google\Protobuf\Internal\Message
      *     @type string $rid
      *           在融云注册的ID，再次加群不用传
      *     @type \Im\V1\Member $member
+     *     @type string $op_card_id
+     *           操作人员身份卡ID
+     *     @type bool $from_server
+     *           是否服务端调用
      * }
      */
     public function __construct($data = NULL) {
@@ -94,6 +110,58 @@ class MemberCreat extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Im\V1\Member::class);
         $this->member = $var;
+
+        return $this;
+    }
+
+    /**
+     * 操作人员身份卡ID
+     *
+     * Generated from protobuf field <code>string op_card_id = 3;</code>
+     * @return string
+     */
+    public function getOpCardId()
+    {
+        return $this->op_card_id;
+    }
+
+    /**
+     * 操作人员身份卡ID
+     *
+     * Generated from protobuf field <code>string op_card_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOpCardId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->op_card_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * 是否服务端调用
+     *
+     * Generated from protobuf field <code>bool from_server = 4;</code>
+     * @return bool
+     */
+    public function getFromServer()
+    {
+        return $this->from_server;
+    }
+
+    /**
+     * 是否服务端调用
+     *
+     * Generated from protobuf field <code>bool from_server = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFromServer($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->from_server = $var;
 
         return $this;
     }

@@ -14,17 +14,17 @@ namespace Xhtkyy\ImHelper\IM\properties;
  */
 class GroupAttachmentProperty extends Property {
 
-    public string $avatar = '';
+    public string $avatar = ''; //群头像
 
-    public bool $hasInviteMember = false;
+    public bool $hasInviteMember = false; //是否能邀请群成员
 
-    public bool $hasLookForHistory = false;
+    public bool $hasLookForHistory = false; //新成员是否能查看历史记录
 
-    public bool $openCloudFile = true;
+    public bool $openCloudFile = false; //群文件同步到云盘 部门群默认不开启
 
-    public bool $openPictureFile = true;
+    public bool $openPictureFile = false;//群图片同步到云盘 部门群默认不开启
 
-    public string $teamName = '';
+    public string $teamName = '';//团队名
 
     /**
      * @return string
