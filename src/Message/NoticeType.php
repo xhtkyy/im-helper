@@ -25,4 +25,5 @@ class NoticeType {
     const APP_TEAMS = "APP_TEAMS"; //组织
     const APP_BUSINESS = "APP_BUSINESS"; //商务（业务）关系
     const APP_SECRETARY = "APP_SECRETARY";//小秘书
+    const APP_WORKS = "APP_WORKS"; //工作通知
 }
