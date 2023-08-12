@@ -20,19 +20,19 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
      */
     protected $ID = 0;
     /**
-     * Generated from protobuf field <code>string openid = 2 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string openid = 2;</code>
      */
     protected $openid = '';
     /**
      * 称呼
      *
-     * Generated from protobuf field <code>string title = 3 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string title = 3;</code>
      */
     protected $title = '';
     /**
      * 头像
      *
-     * Generated from protobuf field <code>string avatar = 4 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string avatar = 4;</code>
      */
     protected $avatar = '';
     /**
@@ -44,7 +44,7 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     /**
      * 公开信息：电子邮箱
      *
-     * Generated from protobuf field <code>string email = 6 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string email = 6;</code>
      */
     protected $email = '';
     /**
@@ -56,7 +56,7 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     /**
      * 公开信息：固定电话
      *
-     * Generated from protobuf field <code>string telephone = 8 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string telephone = 8;</code>
      */
     protected $telephone = '';
     /**
@@ -66,11 +66,11 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
      */
     protected $birthday = 0;
     /**
-     * 公开信息：所在地区，地区信息数据标识符
+     * 国家区号
      *
-     * Generated from protobuf field <code>int64 region = 10;</code>
+     * Generated from protobuf field <code>string region = 10;</code>
      */
-    protected $region = 0;
+    protected $region = '';
     /**
      * &#64;gotags: gorm:"serializer:json"
      *
@@ -90,11 +90,35 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
      */
     protected $attachments = null;
     /**
+     * 地址
+     *
+     * Generated from protobuf field <code>string area = 14;</code>
+     */
+    protected $area = '';
+    /**
      * &#64;gotags: gorm:"-"
      *
-     * Generated from protobuf field <code>string link_id = 14;</code>
+     * Generated from protobuf field <code>string link_id = 15;</code>
      */
     protected $link_id = '';
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>string account_email = 16;</code>
+     */
+    protected $account_email = '';
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>string account_mobile = 17;</code>
+     */
+    protected $account_mobile = '';
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>string account_mobile_region = 18;</code>
+     */
+    protected $account_mobile_region = '';
 
     /**
      * Constructor.
@@ -119,15 +143,23 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
      *           公开信息：固定电话
      *     @type int|string $birthday
      *           公开信息：生日
-     *     @type int|string $region
-     *           公开信息：所在地区，地区信息数据标识符
+     *     @type string $region
+     *           国家区号
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $hidden
      *           &#64;gotags: gorm:"serializer:json"
      *     @type string $slogan
      *           口号/座佑铭
      *     @type \Google\Protobuf\Struct $attachments
      *           &#64;gotags: gorm:"serializer:json"
+     *     @type string $area
+     *           地址
      *     @type string $link_id
+     *           &#64;gotags: gorm:"-"
+     *     @type string $account_email
+     *           &#64;gotags: gorm:"-"
+     *     @type string $account_mobile
+     *           &#64;gotags: gorm:"-"
+     *     @type string $account_mobile_region
      *           &#64;gotags: gorm:"-"
      * }
      */
@@ -163,7 +195,7 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string openid = 2 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string openid = 2;</code>
      * @return string
      */
     public function getOpenid()
@@ -172,7 +204,7 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string openid = 2 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string openid = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -187,7 +219,7 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     /**
      * 称呼
      *
-     * Generated from protobuf field <code>string title = 3 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string title = 3;</code>
      * @return string
      */
     public function getTitle()
@@ -198,7 +230,7 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     /**
      * 称呼
      *
-     * Generated from protobuf field <code>string title = 3 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string title = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -213,7 +245,7 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     /**
      * 头像
      *
-     * Generated from protobuf field <code>string avatar = 4 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string avatar = 4;</code>
      * @return string
      */
     public function getAvatar()
@@ -224,7 +256,7 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     /**
      * 头像
      *
-     * Generated from protobuf field <code>string avatar = 4 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string avatar = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -265,7 +297,7 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     /**
      * 公开信息：电子邮箱
      *
-     * Generated from protobuf field <code>string email = 6 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string email = 6;</code>
      * @return string
      */
     public function getEmail()
@@ -276,7 +308,7 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     /**
      * 公开信息：电子邮箱
      *
-     * Generated from protobuf field <code>string email = 6 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string email = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -317,7 +349,7 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     /**
      * 公开信息：固定电话
      *
-     * Generated from protobuf field <code>string telephone = 8 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string telephone = 8;</code>
      * @return string
      */
     public function getTelephone()
@@ -328,7 +360,7 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     /**
      * 公开信息：固定电话
      *
-     * Generated from protobuf field <code>string telephone = 8 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string telephone = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -367,10 +399,10 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 公开信息：所在地区，地区信息数据标识符
+     * 国家区号
      *
-     * Generated from protobuf field <code>int64 region = 10;</code>
-     * @return int|string
+     * Generated from protobuf field <code>string region = 10;</code>
+     * @return string
      */
     public function getRegion()
     {
@@ -378,15 +410,15 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 公开信息：所在地区，地区信息数据标识符
+     * 国家区号
      *
-     * Generated from protobuf field <code>int64 region = 10;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>string region = 10;</code>
+     * @param string $var
      * @return $this
      */
     public function setRegion($var)
     {
-        GPBUtil::checkInt64($var);
+        GPBUtil::checkString($var, True);
         $this->region = $var;
 
         return $this;
@@ -481,9 +513,35 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 地址
+     *
+     * Generated from protobuf field <code>string area = 14;</code>
+     * @return string
+     */
+    public function getArea()
+    {
+        return $this->area;
+    }
+
+    /**
+     * 地址
+     *
+     * Generated from protobuf field <code>string area = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setArea($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->area = $var;
+
+        return $this;
+    }
+
+    /**
      * &#64;gotags: gorm:"-"
      *
-     * Generated from protobuf field <code>string link_id = 14;</code>
+     * Generated from protobuf field <code>string link_id = 15;</code>
      * @return string
      */
     public function getLinkId()
@@ -494,7 +552,7 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: gorm:"-"
      *
-     * Generated from protobuf field <code>string link_id = 14;</code>
+     * Generated from protobuf field <code>string link_id = 15;</code>
      * @param string $var
      * @return $this
      */
@@ -502,6 +560,84 @@ class ProfileSchema extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->link_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>string account_email = 16;</code>
+     * @return string
+     */
+    public function getAccountEmail()
+    {
+        return $this->account_email;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>string account_email = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAccountEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->account_email = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>string account_mobile = 17;</code>
+     * @return string
+     */
+    public function getAccountMobile()
+    {
+        return $this->account_mobile;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>string account_mobile = 17;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAccountMobile($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->account_mobile = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>string account_mobile_region = 18;</code>
+     * @return string
+     */
+    public function getAccountMobileRegion()
+    {
+        return $this->account_mobile_region;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-"
+     *
+     * Generated from protobuf field <code>string account_mobile_region = 18;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAccountMobileRegion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->account_mobile_region = $var;
 
         return $this;
     }

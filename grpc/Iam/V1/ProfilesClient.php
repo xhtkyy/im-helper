@@ -53,4 +53,34 @@ class ProfilesClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
         $metadata, $options);
     }
 
+    /**
+     * 手机号/另可ID查询个人详情
+     * @param \Iam\V1\QueryProfile $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function QueryProfileByMobile(\Iam\V1\QueryProfile $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/iam.v1.Profiles/QueryProfileByMobile',
+        $argument,
+        ['\Iam\V1\ProfileSchema', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * QueryProfiles 批量身份卡查询
+     * @param \Iam\V1\BatchQueryProfile $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function QueryProfiles(\Iam\V1\BatchQueryProfile $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/iam.v1.Profiles/QueryProfiles',
+        $argument,
+        ['\Iam\V1\BatchQueryProfileResp', 'decode'],
+        $metadata, $options);
+    }
+
 }

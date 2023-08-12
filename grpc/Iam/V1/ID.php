@@ -18,10 +18,6 @@ class ID extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string host = 2 [(.validate.rules) = {</code>
-     */
-    protected $host = '';
-    /**
      * Generated from protobuf field <code>.iam.v1.ID.Type type = 3;</code>
      */
     protected $type = 0;
@@ -33,7 +29,6 @@ class ID extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $host
      *     @type int $type
      * }
      */
@@ -60,28 +55,6 @@ class ID extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string host = 2 [(.validate.rules) = {</code>
-     * @return string
-     */
-    public function getHost()
-    {
-        return $this->host;
-    }
-
-    /**
-     * Generated from protobuf field <code>string host = 2 [(.validate.rules) = {</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setHost($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->host = $var;
 
         return $this;
     }

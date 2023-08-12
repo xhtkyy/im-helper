@@ -37,12 +37,19 @@ class PairTypCode
      * Generated from protobuf enum <code>TEMPORARY = 3;</code>
      */
     const TEMPORARY = 3;
+    /**
+     * 咨询
+     *
+     * Generated from protobuf enum <code>CONSULT = 4;</code>
+     */
+    const CONSULT = 4;
 
     private static $valueToName = [
         self::FRIEND => 'FRIEND',
         self::BUSINESS => 'BUSINESS',
         self::CO_WORKER => 'CO_WORKER',
         self::TEMPORARY => 'TEMPORARY',
+        self::CONSULT => 'CONSULT',
     ];
 
     public static function name($value)

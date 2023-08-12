@@ -95,6 +95,12 @@ class NotifyTyp
      * Generated from protobuf enum <code>APP_CONFIGS = 13;</code>
      */
     const APP_CONFIGS = 13;
+    /**
+     * 工作通知
+     *
+     * Generated from protobuf enum <code>APP_WORKS = 14;</code>
+     */
+    const APP_WORKS = 14;
 
     private static $valueToName = [
         self::APP_KNOW => 'APP_KNOW',
@@ -111,6 +117,7 @@ class NotifyTyp
         self::APP_SECRETARY => 'APP_SECRETARY',
         self::APP_BUSINESS => 'APP_BUSINESS',
         self::APP_CONFIGS => 'APP_CONFIGS',
+        self::APP_WORKS => 'APP_WORKS',
     ];
 
     public static function name($value)

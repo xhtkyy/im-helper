@@ -22,49 +22,49 @@ class Pair extends \Google\Protobuf\Internal\Message
      */
     protected $lid = 0;
     /**
-     * 分区键，所有者个人标识符
+     * &#64;gotags: json:"main"
      *
      * Generated from protobuf field <code>string main = 2;</code>
      */
     protected $main = '';
     /**
-     * 接受者个人标识符
+     * &#64;gotags: json:"peer"
      *
      * Generated from protobuf field <code>string peer = 3;</code>
      */
     protected $peer = '';
     /**
-     * 来源描述
+     * &#64;gotags: json:"origin"
      *
      * Generated from protobuf field <code>string origin = 4;</code>
      */
     protected $origin = '';
     /**
-     * 机构ID，为空表示非机构单聊
+     * &#64;gotags: json:"team"
      *
      * Generated from protobuf field <code>string team = 5;</code>
      */
     protected $team = '';
     /**
-     * 接受者认可的时间戳，>0 表示已通过
+     * &#64;gotags: json:"approved"
      *
      * Generated from protobuf field <code>int64 approved = 6;</code>
      */
     protected $approved = 0;
     /**
-     * 创建时间，时间戳
+     * &#64;gotags: json:"created"
      *
      * Generated from protobuf field <code>int64 created = 7;</code>
      */
     protected $created = 0;
     /**
-     * 更新时间，时间戳
+     * &#64;gotags: json:"updated"
      *
      * Generated from protobuf field <code>int64 updated = 8;</code>
      */
     protected $updated = 0;
     /**
-     * 删除时间，时间戳
+     * &#64;gotags: json:"deleted"
      *
      * Generated from protobuf field <code>int64 deleted = 9;</code>
      */
@@ -76,7 +76,7 @@ class Pair extends \Google\Protobuf\Internal\Message
      */
     protected $attachment = null;
     /**
-     * 单向解除标记
+     * &#64;gotags: json:"has_del"
      *
      * Generated from protobuf field <code>bool has_del = 11;</code>
      */
@@ -91,25 +91,25 @@ class Pair extends \Google\Protobuf\Internal\Message
      *     @type int|string $lid
      *           &#64;gotags: gorm:"primaryKey" json:"-"
      *     @type string $main
-     *           分区键，所有者个人标识符
+     *           &#64;gotags: json:"main"
      *     @type string $peer
-     *           接受者个人标识符
+     *           &#64;gotags: json:"peer"
      *     @type string $origin
-     *           来源描述
+     *           &#64;gotags: json:"origin"
      *     @type string $team
-     *           机构ID，为空表示非机构单聊
+     *           &#64;gotags: json:"team"
      *     @type int|string $approved
-     *           接受者认可的时间戳，>0 表示已通过
+     *           &#64;gotags: json:"approved"
      *     @type int|string $created
-     *           创建时间，时间戳
+     *           &#64;gotags: json:"created"
      *     @type int|string $updated
-     *           更新时间，时间戳
+     *           &#64;gotags: json:"updated"
      *     @type int|string $deleted
-     *           删除时间，时间戳
+     *           &#64;gotags: json:"deleted"
      *     @type \Google\Protobuf\Struct $attachment
      *           &#64;gotags: gorm:"serializer:json" json:"attachment"
      *     @type bool $has_del
-     *           单向解除标记
+     *           &#64;gotags: json:"has_del"
      * }
      */
     public function __construct($data = NULL) {
@@ -144,7 +144,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 分区键，所有者个人标识符
+     * &#64;gotags: json:"main"
      *
      * Generated from protobuf field <code>string main = 2;</code>
      * @return string
@@ -155,7 +155,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 分区键，所有者个人标识符
+     * &#64;gotags: json:"main"
      *
      * Generated from protobuf field <code>string main = 2;</code>
      * @param string $var
@@ -170,7 +170,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 接受者个人标识符
+     * &#64;gotags: json:"peer"
      *
      * Generated from protobuf field <code>string peer = 3;</code>
      * @return string
@@ -181,7 +181,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 接受者个人标识符
+     * &#64;gotags: json:"peer"
      *
      * Generated from protobuf field <code>string peer = 3;</code>
      * @param string $var
@@ -196,7 +196,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 来源描述
+     * &#64;gotags: json:"origin"
      *
      * Generated from protobuf field <code>string origin = 4;</code>
      * @return string
@@ -207,7 +207,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 来源描述
+     * &#64;gotags: json:"origin"
      *
      * Generated from protobuf field <code>string origin = 4;</code>
      * @param string $var
@@ -222,7 +222,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 机构ID，为空表示非机构单聊
+     * &#64;gotags: json:"team"
      *
      * Generated from protobuf field <code>string team = 5;</code>
      * @return string
@@ -233,7 +233,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 机构ID，为空表示非机构单聊
+     * &#64;gotags: json:"team"
      *
      * Generated from protobuf field <code>string team = 5;</code>
      * @param string $var
@@ -248,7 +248,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 接受者认可的时间戳，>0 表示已通过
+     * &#64;gotags: json:"approved"
      *
      * Generated from protobuf field <code>int64 approved = 6;</code>
      * @return int|string
@@ -259,7 +259,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 接受者认可的时间戳，>0 表示已通过
+     * &#64;gotags: json:"approved"
      *
      * Generated from protobuf field <code>int64 approved = 6;</code>
      * @param int|string $var
@@ -274,7 +274,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 创建时间，时间戳
+     * &#64;gotags: json:"created"
      *
      * Generated from protobuf field <code>int64 created = 7;</code>
      * @return int|string
@@ -285,7 +285,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 创建时间，时间戳
+     * &#64;gotags: json:"created"
      *
      * Generated from protobuf field <code>int64 created = 7;</code>
      * @param int|string $var
@@ -300,7 +300,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 更新时间，时间戳
+     * &#64;gotags: json:"updated"
      *
      * Generated from protobuf field <code>int64 updated = 8;</code>
      * @return int|string
@@ -311,7 +311,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 更新时间，时间戳
+     * &#64;gotags: json:"updated"
      *
      * Generated from protobuf field <code>int64 updated = 8;</code>
      * @param int|string $var
@@ -326,7 +326,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 删除时间，时间戳
+     * &#64;gotags: json:"deleted"
      *
      * Generated from protobuf field <code>int64 deleted = 9;</code>
      * @return int|string
@@ -337,7 +337,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 删除时间，时间戳
+     * &#64;gotags: json:"deleted"
      *
      * Generated from protobuf field <code>int64 deleted = 9;</code>
      * @param int|string $var
@@ -388,7 +388,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 单向解除标记
+     * &#64;gotags: json:"has_del"
      *
      * Generated from protobuf field <code>bool has_del = 11;</code>
      * @return bool
@@ -399,7 +399,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 单向解除标记
+     * &#64;gotags: json:"has_del"
      *
      * Generated from protobuf field <code>bool has_del = 11;</code>
      * @param bool $var

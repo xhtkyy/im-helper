@@ -46,7 +46,7 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     private $badges;
     /**
-     * 禁闭时间戳，禁闭期间禁止任何操作
+     * &#64;gotags: json:"banned"
      *
      * Generated from protobuf field <code>int64 banned = 7;</code>
      */
@@ -105,7 +105,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $badges
      *           &#64;gotags: gorm:"serializer:json" json:"badges"
      *     @type int|string $banned
-     *           禁闭时间戳，禁闭期间禁止任何操作
+     *           &#64;gotags: json:"banned"
      *     @type int|string $disabled
      *           &#64;gotags: json:"disabled"
      *     @type int|string $joined
@@ -256,7 +256,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 禁闭时间戳，禁闭期间禁止任何操作
+     * &#64;gotags: json:"banned"
      *
      * Generated from protobuf field <code>int64 banned = 7;</code>
      * @return int|string
@@ -267,7 +267,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 禁闭时间戳，禁闭期间禁止任何操作
+     * &#64;gotags: json:"banned"
      *
      * Generated from protobuf field <code>int64 banned = 7;</code>
      * @param int|string $var

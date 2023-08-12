@@ -22,25 +22,25 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     protected $lid = 0;
     /**
-     * 开放标识
+     * &#64;gotags: json:"group"
      *
      * Generated from protobuf field <code>string group = 2;</code>
      */
     protected $group = '';
     /**
-     * 所有者标识
+     * &#64;gotags: json:"owner"
      *
      * Generated from protobuf field <code>string owner = 3;</code>
      */
     protected $owner = '';
     /**
-     * 所属组织，为空表示跨组织
+     * &#64;gotags: json:"team"
      *
      * Generated from protobuf field <code>string team = 4;</code>
      */
     protected $team = '';
     /**
-     * 组织归属地
+     * &#64;gotags: json:"host"
      *
      * Generated from protobuf field <code>string host = 5;</code>
      */
@@ -52,37 +52,37 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     private $path;
     /**
-     * 0:非限定 1:会话级 2:关系链
+     * &#64;gotags: json:"scene"
      *
      * Generated from protobuf field <code>int32 scene = 7;</code>
      */
     protected $scene = 0;
     /**
-     * 类型，根据业务来
+     * &#64;gotags: json:"type"
      *
      * Generated from protobuf field <code>int32 type = 8;</code>
      */
     protected $type = 0;
     /**
-     * 创建人
+     * &#64;gotags: json:"creator"
      *
      * Generated from protobuf field <code>string creator = 9;</code>
      */
     protected $creator = '';
     /**
-     * 创建时间
+     * &#64;gotags: json:"created"
      *
      * Generated from protobuf field <code>int64 created = 10;</code>
      */
     protected $created = 0;
     /**
-     * 删除时间
+     * &#64;gotags: json:"removed"
      *
      * Generated from protobuf field <code>int64 removed = 11;</code>
      */
     protected $removed = 0;
     /**
-     * 更新时间
+     * &#64;gotags: json:"updated"
      *
      * Generated from protobuf field <code>int64 updated = 12;</code>
      */
@@ -94,13 +94,13 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     protected $attachment = null;
     /**
-     * 群名称
+     * &#64;gotags: json:"name"
      *
      * Generated from protobuf field <code>string name = 14;</code>
      */
     protected $name = '';
     /**
-     * 所有者身份卡ID
+     * &#64;gotags: json:"creator_card"
      *
      * Generated from protobuf field <code>string creator_card = 15;</code>
      */
@@ -157,33 +157,33 @@ class Group extends \Google\Protobuf\Internal\Message
      *     @type int|string $lid
      *           &#64;gotags: gorm:"primaryKey" json:"-"
      *     @type string $group
-     *           开放标识
+     *           &#64;gotags: json:"group"
      *     @type string $owner
-     *           所有者标识
+     *           &#64;gotags: json:"owner"
      *     @type string $team
-     *           所属组织，为空表示跨组织
+     *           &#64;gotags: json:"team"
      *     @type string $host
-     *           组织归属地
+     *           &#64;gotags: json:"host"
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $path
      *           &#64;gotags: gorm:"serializer:json" json:"path"
      *     @type int $scene
-     *           0:非限定 1:会话级 2:关系链
+     *           &#64;gotags: json:"scene"
      *     @type int $type
-     *           类型，根据业务来
+     *           &#64;gotags: json:"type"
      *     @type string $creator
-     *           创建人
+     *           &#64;gotags: json:"creator"
      *     @type int|string $created
-     *           创建时间
+     *           &#64;gotags: json:"created"
      *     @type int|string $removed
-     *           删除时间
+     *           &#64;gotags: json:"removed"
      *     @type int|string $updated
-     *           更新时间
+     *           &#64;gotags: json:"updated"
      *     @type \Google\Protobuf\Struct $attachment
      *           &#64;gotags: gorm:"serializer:json" json:"attachment"
      *     @type string $name
-     *           群名称
+     *           &#64;gotags: json:"name"
      *     @type string $creator_card
-     *           所有者身份卡ID
+     *           &#64;gotags: json:"creator_card"
      *     @type \Im\V1\Member[]|\Google\Protobuf\Internal\RepeatedField $members
      *           &#64;gotags: gorm:"-" // 本人的成员身份
      *     @type int|string $total
@@ -232,7 +232,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 开放标识
+     * &#64;gotags: json:"group"
      *
      * Generated from protobuf field <code>string group = 2;</code>
      * @return string
@@ -243,7 +243,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 开放标识
+     * &#64;gotags: json:"group"
      *
      * Generated from protobuf field <code>string group = 2;</code>
      * @param string $var
@@ -258,7 +258,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 所有者标识
+     * &#64;gotags: json:"owner"
      *
      * Generated from protobuf field <code>string owner = 3;</code>
      * @return string
@@ -269,7 +269,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 所有者标识
+     * &#64;gotags: json:"owner"
      *
      * Generated from protobuf field <code>string owner = 3;</code>
      * @param string $var
@@ -284,7 +284,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 所属组织，为空表示跨组织
+     * &#64;gotags: json:"team"
      *
      * Generated from protobuf field <code>string team = 4;</code>
      * @return string
@@ -295,7 +295,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 所属组织，为空表示跨组织
+     * &#64;gotags: json:"team"
      *
      * Generated from protobuf field <code>string team = 4;</code>
      * @param string $var
@@ -310,7 +310,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 组织归属地
+     * &#64;gotags: json:"host"
      *
      * Generated from protobuf field <code>string host = 5;</code>
      * @return string
@@ -321,7 +321,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 组织归属地
+     * &#64;gotags: json:"host"
      *
      * Generated from protobuf field <code>string host = 5;</code>
      * @param string $var
@@ -362,7 +362,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 0:非限定 1:会话级 2:关系链
+     * &#64;gotags: json:"scene"
      *
      * Generated from protobuf field <code>int32 scene = 7;</code>
      * @return int
@@ -373,7 +373,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 0:非限定 1:会话级 2:关系链
+     * &#64;gotags: json:"scene"
      *
      * Generated from protobuf field <code>int32 scene = 7;</code>
      * @param int $var
@@ -388,7 +388,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 类型，根据业务来
+     * &#64;gotags: json:"type"
      *
      * Generated from protobuf field <code>int32 type = 8;</code>
      * @return int
@@ -399,7 +399,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 类型，根据业务来
+     * &#64;gotags: json:"type"
      *
      * Generated from protobuf field <code>int32 type = 8;</code>
      * @param int $var
@@ -414,7 +414,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 创建人
+     * &#64;gotags: json:"creator"
      *
      * Generated from protobuf field <code>string creator = 9;</code>
      * @return string
@@ -425,7 +425,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 创建人
+     * &#64;gotags: json:"creator"
      *
      * Generated from protobuf field <code>string creator = 9;</code>
      * @param string $var
@@ -440,7 +440,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 创建时间
+     * &#64;gotags: json:"created"
      *
      * Generated from protobuf field <code>int64 created = 10;</code>
      * @return int|string
@@ -451,7 +451,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 创建时间
+     * &#64;gotags: json:"created"
      *
      * Generated from protobuf field <code>int64 created = 10;</code>
      * @param int|string $var
@@ -466,7 +466,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 删除时间
+     * &#64;gotags: json:"removed"
      *
      * Generated from protobuf field <code>int64 removed = 11;</code>
      * @return int|string
@@ -477,7 +477,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 删除时间
+     * &#64;gotags: json:"removed"
      *
      * Generated from protobuf field <code>int64 removed = 11;</code>
      * @param int|string $var
@@ -492,7 +492,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 更新时间
+     * &#64;gotags: json:"updated"
      *
      * Generated from protobuf field <code>int64 updated = 12;</code>
      * @return int|string
@@ -503,7 +503,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 更新时间
+     * &#64;gotags: json:"updated"
      *
      * Generated from protobuf field <code>int64 updated = 12;</code>
      * @param int|string $var
@@ -554,7 +554,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 群名称
+     * &#64;gotags: json:"name"
      *
      * Generated from protobuf field <code>string name = 14;</code>
      * @return string
@@ -565,7 +565,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 群名称
+     * &#64;gotags: json:"name"
      *
      * Generated from protobuf field <code>string name = 14;</code>
      * @param string $var
@@ -580,7 +580,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 所有者身份卡ID
+     * &#64;gotags: json:"creator_card"
      *
      * Generated from protobuf field <code>string creator_card = 15;</code>
      * @return string
@@ -591,7 +591,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 所有者身份卡ID
+     * &#64;gotags: json:"creator_card"
      *
      * Generated from protobuf field <code>string creator_card = 15;</code>
      * @param string $var

@@ -7,6 +7,8 @@ namespace Im\V1;
 use UnexpectedValueException;
 
 /**
+ * GroupTypCode 群类型
+ *
  * Protobuf type <code>im.v1.GroupTypCode</code>
  */
 class GroupTypCode
@@ -89,6 +91,12 @@ class GroupTypCode
      * Generated from protobuf enum <code>APPLY_TEAM = 12;</code>
      */
     const APPLY_TEAM = 12;
+    /**
+     * 工作通知
+     *
+     * Generated from protobuf enum <code>WORK_NOTIFY = 13;</code>
+     */
+    const WORK_NOTIFY = 13;
 
     private static $valueToName = [
         self::NORMAL => 'NORMAL',
@@ -104,6 +112,7 @@ class GroupTypCode
         self::OUT => 'OUT',
         self::APPLY_BUSINESS_CANCEL => 'APPLY_BUSINESS_CANCEL',
         self::APPLY_TEAM => 'APPLY_TEAM',
+        self::WORK_NOTIFY => 'WORK_NOTIFY',
     ];
 
     public static function name($value)
