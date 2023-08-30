@@ -75,4 +75,12 @@ interface GroupInterface {
      * @return bool
      */
     public function transferGroup(string $imGroup,string $oldOwner,string $newOwner) : bool;
+
+
+    /**
+     * 修改群头像
+     * @param string $imGroup im群标识
+     * @return bool
+     */
+    public function updateGroupAvaTar(string $imGroup): bool;
 }

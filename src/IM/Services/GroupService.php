@@ -22,6 +22,7 @@ use Im\V1\RespArr;
 use Xhtkyy\ImHelper\Exception\GroupNotFoundException;
 use Xhtkyy\ImHelper\IM\Interface\GroupInterface;
 use Xhtkyy\ImHelper\IM\properties\DepartmentProperty;
+use Xhtkyy\ImHelper\IM\properties\GroupAttachmentProperty;
 use Xhtkyy\ImHelper\IM\properties\GroupProperty;
 use Xhtkyy\ImHelper\IM\properties\MemberProperty;
 
@@ -186,6 +187,42 @@ class GroupService implements GroupInterface {
             ->setOldOwner($oldOwner)
             ->setNewOwner($newOwner)
         );
+        return $status == StatusCode::OK;
+    }
+
+    /**
+     * @param string $imGroup
+     * @return bool
+     * @throws Exception
+     */
+    public function updateGroupAvaTar(string $imGroup): bool {
+        //获取群成员
+        $members   = $this->getGroupMembers($imGroup);
+        $allAvatar = [];
+        $teamName  = '';
+        foreach ($members as $member) {
+            $attachments = $member['attachments'] ?? [];
+            if (empty($attachments)) {
+                continue;
+            }
+            if (empty($teamName)) {
+                $teamName = $attachments['teamName'];
+            }
+            if ($attachments['avatar']) {
+                //有头像用头像
+                $allAvatar[] = $attachments['avatar'];
+            } else {
+                $allAvatar[] = $attachments['staffName'];
+            }
+        }
+        if (empty($allAvatar)) {
+            return false;
+        }
+        $groupAttachment = (new GroupAttachmentProperty())->setTeamName($teamName)
+            ->setAvatar(implode('|', $allAvatar))->toArray();
+
+        $group = (new Group())->setGroup($imGroup)->setAttachment(array_to_struct($groupAttachment))->setUpdated(time());
+        [, $status] = $this->groupSrvClient->UpdateGroup($group);
         return $status == StatusCode::OK;
     }
 }
