@@ -145,7 +145,7 @@ class GroupService implements GroupInterface {
         }
         $result = json_decode($reply->serializeToJsonString(), true);
         if (empty($result['members']['arr'])) {
-            throw new Exception('调用memberSrv ListMember返回数据不合法，返回结果：' . $reply->serializeToJsonString());
+            throw new Exception(sprintf('调用memberSrv ListMember返回数据不合法，返回结果：%s,请求参数：%s', $reply->serializeToJsonString(), $pagination->serializeToJsonString()));
         }
         return $result['members']['arr'];
     }
