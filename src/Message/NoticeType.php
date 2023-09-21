@@ -27,4 +27,5 @@ class NoticeType {
     const APP_SECRETARY = "APP_SECRETARY";//小秘书
     const APP_WORKS = "APP_WORKS"; //工作通知
     const APP_NICHE = "APP_NICHE"; //商机管理
+    const APP_PARTNER = "APP_PARTNER"; //另可联盟
 }
