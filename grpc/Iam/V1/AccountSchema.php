@@ -20,113 +20,137 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
      */
     protected $ID = 0;
     /**
-     *所属主账号，此字段大于 0 表示此账号为子账号
+     * &#64;gotags: json:"id_owner"
      *
      * Generated from protobuf field <code>int64 id_owner = 2;</code>
      */
     protected $id_owner = 0;
     /**
-     *主开放标识符
+     * &#64;gotags: json:"openid"
      *
-     * Generated from protobuf field <code>string openid = 3 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string openid = 3;</code>
      */
     protected $openid = '';
     /**
-     *安全等级，普通级为 0~4，特权级为 5~9
+     * &#64;gotags: json:"security"
      *
      * Generated from protobuf field <code>uint32 security = 4 [(.validate.rules) = {</code>
      */
     protected $security = 0;
     /**
-     *自定义唯一标识符
+     * &#64;gotags: json:"account"
      *
-     * Generated from protobuf field <code>string account = 5 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string account = 5;</code>
      */
     protected $account = '';
     /**
-     * 最近一次更新 id 的时间戳
+     * &#64;gotags: json:"account_updated"
      *
      * Generated from protobuf field <code>int64 account_updated = 6;</code>
      */
     protected $account_updated = 0;
     /**
-     * 账号是否有效，有效才可以使用
+     * &#64;gotags: json:"enabled"
      *
      * Generated from protobuf field <code>int64 enabled = 7;</code>
      */
     protected $enabled = 0;
     /**
-     * 账号阻止时间戳，>0 表示阻止中，仍可访问个人资产
+     * &#64;gotags: json:"banned"
      *
      * Generated from protobuf field <code>int64 banned = 8;</code>
      */
     protected $banned = 0;
     /**
-     * 强制注销时间，仅在用户申请强制注销时使用
+     * &#64;gotags: json:"removed"
      *
      * Generated from protobuf field <code>int64 removed = 9;</code>
      */
     protected $removed = 0;
     /**
-     * &#64;gotags: gorm:"autoCreateTime"
+     * &#64;gotags: gorm:"autoCreateTime" json:"created"
      *
      * Generated from protobuf field <code>int64 created = 10;</code>
      */
     protected $created = 0;
     /**
-     * 最近活跃时间
+     * &#64;gotags: json:"latest"
      *
      * Generated from protobuf field <code>int64 latest = 11;</code>
      */
     protected $latest = 0;
     /**
-     *账号安全码
+     * &#64;gotags: json:"secret"
      *
-     * Generated from protobuf field <code>string secret = 12 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string secret = 12;</code>
      */
     protected $secret = '';
     /**
-     * 注册来源
+     * &#64;gotags: json:"source"
      *
-     * Generated from protobuf field <code>string source = 13 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string source = 13;</code>
      */
     protected $source = '';
     /**
-     *主设备标识号
+     * &#64;gotags: json:"main_device_sn"
      *
-     * Generated from protobuf field <code>string main_device_sn = 14 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string main_device_sn = 14;</code>
      */
     protected $main_device_sn = '';
     /**
-     * &#64;gotags: gorm:"serializer:json"
+     * &#64;gotags: gorm:"serializer:json" json:"frozen"
      *
      * Generated from protobuf field <code>bytes badges = 15;</code>
      */
     protected $badges = '';
     /**
-     * 账号冻结的到期时间，一般由用户自主发起，用于安全原因下临时限制访问
+     * &#64;gotags: json:"frozen"
      *
      * Generated from protobuf field <code>int64 frozen = 16;</code>
      */
     protected $frozen = 0;
     /**
-     * 账号冻结原因
+     * &#64;gotags: json:"reason"
      *
      * Generated from protobuf field <code>string reason = 17;</code>
      */
     protected $reason = '';
     /**
-     * 账号邮箱
+     * &#64;gotags: json:"email"
      *
      * Generated from protobuf field <code>string email = 18;</code>
      */
     protected $email = '';
     /**
-     * 发起注销时间
+     * &#64;gotags: json:"removed_at"
      *
-     * Generated from protobuf field <code>string removed_at = 19;</code>
+     * Generated from protobuf field <code>int64 removed_at = 19;</code>
      */
-    protected $removed_at = '';
+    protected $removed_at = 0;
+    /**
+     * &#64;gotags: json:"region"
+     *
+     * Generated from protobuf field <code>string region = 20;</code>
+     */
+    protected $region = '';
+    /**
+     * &#64;gotags: gorm:"-" json:"title"
+     *
+     * Generated from protobuf field <code>string title = 21;</code>
+     */
+    protected $title = '';
+    /**
+     * &#64;gotags: gorm:"-" json:"avatar"
+     *
+     * Generated from protobuf field <code>string avatar = 22;</code>
+     */
+    protected $avatar = '';
+    /**
+     * &#64;gotags: gorm:"-" json:"cellphone"
+     *
+     * Generated from protobuf field <code>string cellphone = 23;</code>
+     */
+    protected $cellphone = '';
 
     /**
      * Constructor.
@@ -137,41 +161,49 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
      *     @type int|string $ID
      *           &#64;gotags: gorm:"primaryKey" json:"-"
      *     @type int|string $id_owner
-     *          所属主账号，此字段大于 0 表示此账号为子账号
+     *           &#64;gotags: json:"id_owner"
      *     @type string $openid
-     *          主开放标识符
+     *           &#64;gotags: json:"openid"
      *     @type int $security
-     *          安全等级，普通级为 0~4，特权级为 5~9
+     *           &#64;gotags: json:"security"
      *     @type string $account
-     *          自定义唯一标识符
+     *           &#64;gotags: json:"account"
      *     @type int|string $account_updated
-     *           最近一次更新 id 的时间戳
+     *           &#64;gotags: json:"account_updated"
      *     @type int|string $enabled
-     *           账号是否有效，有效才可以使用
+     *           &#64;gotags: json:"enabled"
      *     @type int|string $banned
-     *           账号阻止时间戳，>0 表示阻止中，仍可访问个人资产
+     *           &#64;gotags: json:"banned"
      *     @type int|string $removed
-     *           强制注销时间，仅在用户申请强制注销时使用
+     *           &#64;gotags: json:"removed"
      *     @type int|string $created
-     *           &#64;gotags: gorm:"autoCreateTime"
+     *           &#64;gotags: gorm:"autoCreateTime" json:"created"
      *     @type int|string $latest
-     *           最近活跃时间
+     *           &#64;gotags: json:"latest"
      *     @type string $secret
-     *          账号安全码
+     *           &#64;gotags: json:"secret"
      *     @type string $source
-     *           注册来源
+     *           &#64;gotags: json:"source"
      *     @type string $main_device_sn
-     *          主设备标识号
+     *           &#64;gotags: json:"main_device_sn"
      *     @type string $badges
-     *           &#64;gotags: gorm:"serializer:json"
+     *           &#64;gotags: gorm:"serializer:json" json:"frozen"
      *     @type int|string $frozen
-     *           账号冻结的到期时间，一般由用户自主发起，用于安全原因下临时限制访问
+     *           &#64;gotags: json:"frozen"
      *     @type string $reason
-     *           账号冻结原因
+     *           &#64;gotags: json:"reason"
      *     @type string $email
-     *           账号邮箱
-     *     @type string $removed_at
-     *           发起注销时间
+     *           &#64;gotags: json:"email"
+     *     @type int|string $removed_at
+     *           &#64;gotags: json:"removed_at"
+     *     @type string $region
+     *           &#64;gotags: json:"region"
+     *     @type string $title
+     *           &#64;gotags: gorm:"-" json:"title"
+     *     @type string $avatar
+     *           &#64;gotags: gorm:"-" json:"avatar"
+     *     @type string $cellphone
+     *           &#64;gotags: gorm:"-" json:"cellphone"
      * }
      */
     public function __construct($data = NULL) {
@@ -206,7 +238,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *所属主账号，此字段大于 0 表示此账号为子账号
+     * &#64;gotags: json:"id_owner"
      *
      * Generated from protobuf field <code>int64 id_owner = 2;</code>
      * @return int|string
@@ -217,7 +249,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *所属主账号，此字段大于 0 表示此账号为子账号
+     * &#64;gotags: json:"id_owner"
      *
      * Generated from protobuf field <code>int64 id_owner = 2;</code>
      * @param int|string $var
@@ -232,9 +264,9 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *主开放标识符
+     * &#64;gotags: json:"openid"
      *
-     * Generated from protobuf field <code>string openid = 3 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string openid = 3;</code>
      * @return string
      */
     public function getOpenid()
@@ -243,9 +275,9 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *主开放标识符
+     * &#64;gotags: json:"openid"
      *
-     * Generated from protobuf field <code>string openid = 3 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string openid = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -258,7 +290,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *安全等级，普通级为 0~4，特权级为 5~9
+     * &#64;gotags: json:"security"
      *
      * Generated from protobuf field <code>uint32 security = 4 [(.validate.rules) = {</code>
      * @return int
@@ -269,7 +301,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *安全等级，普通级为 0~4，特权级为 5~9
+     * &#64;gotags: json:"security"
      *
      * Generated from protobuf field <code>uint32 security = 4 [(.validate.rules) = {</code>
      * @param int $var
@@ -284,9 +316,9 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *自定义唯一标识符
+     * &#64;gotags: json:"account"
      *
-     * Generated from protobuf field <code>string account = 5 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string account = 5;</code>
      * @return string
      */
     public function getAccount()
@@ -295,9 +327,9 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *自定义唯一标识符
+     * &#64;gotags: json:"account"
      *
-     * Generated from protobuf field <code>string account = 5 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string account = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -310,7 +342,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 最近一次更新 id 的时间戳
+     * &#64;gotags: json:"account_updated"
      *
      * Generated from protobuf field <code>int64 account_updated = 6;</code>
      * @return int|string
@@ -321,7 +353,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 最近一次更新 id 的时间戳
+     * &#64;gotags: json:"account_updated"
      *
      * Generated from protobuf field <code>int64 account_updated = 6;</code>
      * @param int|string $var
@@ -336,7 +368,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 账号是否有效，有效才可以使用
+     * &#64;gotags: json:"enabled"
      *
      * Generated from protobuf field <code>int64 enabled = 7;</code>
      * @return int|string
@@ -347,7 +379,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 账号是否有效，有效才可以使用
+     * &#64;gotags: json:"enabled"
      *
      * Generated from protobuf field <code>int64 enabled = 7;</code>
      * @param int|string $var
@@ -362,7 +394,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 账号阻止时间戳，>0 表示阻止中，仍可访问个人资产
+     * &#64;gotags: json:"banned"
      *
      * Generated from protobuf field <code>int64 banned = 8;</code>
      * @return int|string
@@ -373,7 +405,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 账号阻止时间戳，>0 表示阻止中，仍可访问个人资产
+     * &#64;gotags: json:"banned"
      *
      * Generated from protobuf field <code>int64 banned = 8;</code>
      * @param int|string $var
@@ -388,7 +420,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 强制注销时间，仅在用户申请强制注销时使用
+     * &#64;gotags: json:"removed"
      *
      * Generated from protobuf field <code>int64 removed = 9;</code>
      * @return int|string
@@ -399,7 +431,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 强制注销时间，仅在用户申请强制注销时使用
+     * &#64;gotags: json:"removed"
      *
      * Generated from protobuf field <code>int64 removed = 9;</code>
      * @param int|string $var
@@ -414,7 +446,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;gotags: gorm:"autoCreateTime"
+     * &#64;gotags: gorm:"autoCreateTime" json:"created"
      *
      * Generated from protobuf field <code>int64 created = 10;</code>
      * @return int|string
@@ -425,7 +457,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;gotags: gorm:"autoCreateTime"
+     * &#64;gotags: gorm:"autoCreateTime" json:"created"
      *
      * Generated from protobuf field <code>int64 created = 10;</code>
      * @param int|string $var
@@ -440,7 +472,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 最近活跃时间
+     * &#64;gotags: json:"latest"
      *
      * Generated from protobuf field <code>int64 latest = 11;</code>
      * @return int|string
@@ -451,7 +483,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 最近活跃时间
+     * &#64;gotags: json:"latest"
      *
      * Generated from protobuf field <code>int64 latest = 11;</code>
      * @param int|string $var
@@ -466,9 +498,9 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *账号安全码
+     * &#64;gotags: json:"secret"
      *
-     * Generated from protobuf field <code>string secret = 12 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string secret = 12;</code>
      * @return string
      */
     public function getSecret()
@@ -477,9 +509,9 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *账号安全码
+     * &#64;gotags: json:"secret"
      *
-     * Generated from protobuf field <code>string secret = 12 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string secret = 12;</code>
      * @param string $var
      * @return $this
      */
@@ -492,9 +524,9 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 注册来源
+     * &#64;gotags: json:"source"
      *
-     * Generated from protobuf field <code>string source = 13 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string source = 13;</code>
      * @return string
      */
     public function getSource()
@@ -503,9 +535,9 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 注册来源
+     * &#64;gotags: json:"source"
      *
-     * Generated from protobuf field <code>string source = 13 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string source = 13;</code>
      * @param string $var
      * @return $this
      */
@@ -518,9 +550,9 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *主设备标识号
+     * &#64;gotags: json:"main_device_sn"
      *
-     * Generated from protobuf field <code>string main_device_sn = 14 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string main_device_sn = 14;</code>
      * @return string
      */
     public function getMainDeviceSn()
@@ -529,9 +561,9 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *主设备标识号
+     * &#64;gotags: json:"main_device_sn"
      *
-     * Generated from protobuf field <code>string main_device_sn = 14 [(.validate.rules) = {</code>
+     * Generated from protobuf field <code>string main_device_sn = 14;</code>
      * @param string $var
      * @return $this
      */
@@ -544,7 +576,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;gotags: gorm:"serializer:json"
+     * &#64;gotags: gorm:"serializer:json" json:"frozen"
      *
      * Generated from protobuf field <code>bytes badges = 15;</code>
      * @return string
@@ -555,7 +587,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;gotags: gorm:"serializer:json"
+     * &#64;gotags: gorm:"serializer:json" json:"frozen"
      *
      * Generated from protobuf field <code>bytes badges = 15;</code>
      * @param string $var
@@ -570,7 +602,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 账号冻结的到期时间，一般由用户自主发起，用于安全原因下临时限制访问
+     * &#64;gotags: json:"frozen"
      *
      * Generated from protobuf field <code>int64 frozen = 16;</code>
      * @return int|string
@@ -581,7 +613,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 账号冻结的到期时间，一般由用户自主发起，用于安全原因下临时限制访问
+     * &#64;gotags: json:"frozen"
      *
      * Generated from protobuf field <code>int64 frozen = 16;</code>
      * @param int|string $var
@@ -596,7 +628,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 账号冻结原因
+     * &#64;gotags: json:"reason"
      *
      * Generated from protobuf field <code>string reason = 17;</code>
      * @return string
@@ -607,7 +639,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 账号冻结原因
+     * &#64;gotags: json:"reason"
      *
      * Generated from protobuf field <code>string reason = 17;</code>
      * @param string $var
@@ -622,7 +654,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 账号邮箱
+     * &#64;gotags: json:"email"
      *
      * Generated from protobuf field <code>string email = 18;</code>
      * @return string
@@ -633,7 +665,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 账号邮箱
+     * &#64;gotags: json:"email"
      *
      * Generated from protobuf field <code>string email = 18;</code>
      * @param string $var
@@ -648,10 +680,10 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 发起注销时间
+     * &#64;gotags: json:"removed_at"
      *
-     * Generated from protobuf field <code>string removed_at = 19;</code>
-     * @return string
+     * Generated from protobuf field <code>int64 removed_at = 19;</code>
+     * @return int|string
      */
     public function getRemovedAt()
     {
@@ -659,16 +691,120 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 发起注销时间
+     * &#64;gotags: json:"removed_at"
      *
-     * Generated from protobuf field <code>string removed_at = 19;</code>
-     * @param string $var
+     * Generated from protobuf field <code>int64 removed_at = 19;</code>
+     * @param int|string $var
      * @return $this
      */
     public function setRemovedAt($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkInt64($var);
         $this->removed_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"region"
+     *
+     * Generated from protobuf field <code>string region = 20;</code>
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    /**
+     * &#64;gotags: json:"region"
+     *
+     * Generated from protobuf field <code>string region = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->region = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"title"
+     *
+     * Generated from protobuf field <code>string title = 21;</code>
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"title"
+     *
+     * Generated from protobuf field <code>string title = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->title = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"avatar"
+     *
+     * Generated from protobuf field <code>string avatar = 22;</code>
+     * @return string
+     */
+    public function getAvatar()
+    {
+        return $this->avatar;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"avatar"
+     *
+     * Generated from protobuf field <code>string avatar = 22;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAvatar($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->avatar = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"cellphone"
+     *
+     * Generated from protobuf field <code>string cellphone = 23;</code>
+     * @return string
+     */
+    public function getCellphone()
+    {
+        return $this->cellphone;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"cellphone"
+     *
+     * Generated from protobuf field <code>string cellphone = 23;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCellphone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->cellphone = $var;
 
         return $this;
     }

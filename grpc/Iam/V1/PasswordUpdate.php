@@ -31,6 +31,12 @@ class PasswordUpdate extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string code = 3;</code>
      */
     protected $code = '';
+    /**
+     * 忘记密码场景
+     *
+     * Generated from protobuf field <code>bool forgot = 4;</code>
+     */
+    protected $forgot = false;
 
     /**
      * Constructor.
@@ -44,6 +50,8 @@ class PasswordUpdate extends \Google\Protobuf\Internal\Message
      *           新密码
      *     @type string $code
      *           验证码
+     *     @type bool $forgot
+     *           忘记密码场景
      * }
      */
     public function __construct($data = NULL) {
@@ -125,6 +133,32 @@ class PasswordUpdate extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->code = $var;
+
+        return $this;
+    }
+
+    /**
+     * 忘记密码场景
+     *
+     * Generated from protobuf field <code>bool forgot = 4;</code>
+     * @return bool
+     */
+    public function getForgot()
+    {
+        return $this->forgot;
+    }
+
+    /**
+     * 忘记密码场景
+     *
+     * Generated from protobuf field <code>bool forgot = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setForgot($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->forgot = $var;
 
         return $this;
     }

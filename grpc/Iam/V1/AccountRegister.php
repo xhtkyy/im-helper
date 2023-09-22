@@ -25,6 +25,18 @@ class AccountRegister extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string avatar = 4 [(.validate.rules) = {</code>
      */
     protected $avatar = '';
+    /**
+     * 注册所属区域
+     *
+     * Generated from protobuf field <code>string region = 6 [(.validate.rules) = {</code>
+     */
+    protected $region = '';
+    /**
+     * 注册来源
+     *
+     * Generated from protobuf field <code>string from = 7;</code>
+     */
+    protected $from = '';
     protected $auth;
 
     /**
@@ -43,6 +55,10 @@ class AccountRegister extends \Google\Protobuf\Internal\Message
      *           称呼
      *     @type string $avatar
      *           头像
+     *     @type string $region
+     *           注册所属区域
+     *     @type string $from
+     *           注册来源
      * }
      */
     public function __construct($data = NULL) {
@@ -191,6 +207,58 @@ class AccountRegister extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->avatar = $var;
+
+        return $this;
+    }
+
+    /**
+     * 注册所属区域
+     *
+     * Generated from protobuf field <code>string region = 6 [(.validate.rules) = {</code>
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    /**
+     * 注册所属区域
+     *
+     * Generated from protobuf field <code>string region = 6 [(.validate.rules) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->region = $var;
+
+        return $this;
+    }
+
+    /**
+     * 注册来源
+     *
+     * Generated from protobuf field <code>string from = 7;</code>
+     * @return string
+     */
+    public function getFrom()
+    {
+        return $this->from;
+    }
+
+    /**
+     * 注册来源
+     *
+     * Generated from protobuf field <code>string from = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFrom($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->from = $var;
 
         return $this;
     }

@@ -74,7 +74,7 @@ class AccessToken extends \Google\Protobuf\Internal\Message
      *           过期时间
      *     @type \Iam\V1\RefreshToken $refresh_token
      *           刷新凭证
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $scope
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scope
      *           适用的范围
      *     @type string $rong_cloud_token
      *           融云令牌
@@ -240,7 +240,7 @@ class AccessToken extends \Google\Protobuf\Internal\Message
      * 适用的范围
      *
      * Generated from protobuf field <code>repeated string scope = 6;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setScope($var)

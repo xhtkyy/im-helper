@@ -19,6 +19,12 @@ class QueryConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string typ = 1;</code>
      */
     protected $typ = '';
+    /**
+     * 用户openid
+     *
+     * Generated from protobuf field <code>string user_id = 2;</code>
+     */
+    protected $user_id = '';
 
     /**
      * Constructor.
@@ -28,6 +34,8 @@ class QueryConfig extends \Google\Protobuf\Internal\Message
      *
      *     @type string $typ
      *           配置类型
+     *     @type string $user_id
+     *           用户openid
      * }
      */
     public function __construct($data = NULL) {
@@ -57,6 +65,32 @@ class QueryConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->typ = $var;
+
+        return $this;
+    }
+
+    /**
+     * 用户openid
+     *
+     * Generated from protobuf field <code>string user_id = 2;</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * 用户openid
+     *
+     * Generated from protobuf field <code>string user_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
 
         return $this;
     }

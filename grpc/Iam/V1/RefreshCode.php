@@ -29,6 +29,10 @@ class RefreshCode extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string step = 4;</code>
      */
     protected $step = '';
+    /**
+     * Generated from protobuf field <code>bool remove_cancel = 5;</code>
+     */
+    protected $remove_cancel = false;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class RefreshCode extends \Google\Protobuf\Internal\Message
      *     @type string $expire
      *     @type string $openid
      *     @type string $step
+     *     @type bool $remove_cancel
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class RefreshCode extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->step = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool remove_cancel = 5;</code>
+     * @return bool
+     */
+    public function getRemoveCancel()
+    {
+        return $this->remove_cancel;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool remove_cancel = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRemoveCancel($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->remove_cancel = $var;
 
         return $this;
     }

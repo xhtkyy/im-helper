@@ -13,6 +13,18 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class UserAuth extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * 登陆应用
+     *
+     * Generated from protobuf field <code>string app = 5;</code>
+     */
+    protected $app = '';
+    /**
+     * 登陆平台, PC、WEB、POCKET
+     *
+     * Generated from protobuf field <code>string platform = 6;</code>
+     */
+    protected $platform = '';
     protected $raw;
 
     /**
@@ -29,6 +41,10 @@ class UserAuth extends \Google\Protobuf\Internal\Message
      *           邮箱登陆
      *     @type \Iam\V1\QRCodeAuth $qrc
      *           二维码登陆
+     *     @type string $app
+     *           登陆应用
+     *     @type string $platform
+     *           登陆平台, PC、WEB、POCKET
      * }
      */
     public function __construct($data = NULL) {
@@ -156,6 +172,58 @@ class UserAuth extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Iam\V1\QRCodeAuth::class);
         $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * 登陆应用
+     *
+     * Generated from protobuf field <code>string app = 5;</code>
+     * @return string
+     */
+    public function getApp()
+    {
+        return $this->app;
+    }
+
+    /**
+     * 登陆应用
+     *
+     * Generated from protobuf field <code>string app = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setApp($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->app = $var;
+
+        return $this;
+    }
+
+    /**
+     * 登陆平台, PC、WEB、POCKET
+     *
+     * Generated from protobuf field <code>string platform = 6;</code>
+     * @return string
+     */
+    public function getPlatform()
+    {
+        return $this->platform;
+    }
+
+    /**
+     * 登陆平台, PC、WEB、POCKET
+     *
+     * Generated from protobuf field <code>string platform = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPlatform($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->platform = $var;
 
         return $this;
     }

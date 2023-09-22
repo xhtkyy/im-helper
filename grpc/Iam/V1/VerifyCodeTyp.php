@@ -23,11 +23,16 @@ class VerifyCodeTyp
      * Generated from protobuf enum <code>ACCOUNT_CHANGE = 2;</code>
      */
     const ACCOUNT_CHANGE = 2;
+    /**
+     * Generated from protobuf enum <code>ORG_JOIN = 3;</code>
+     */
+    const ORG_JOIN = 3;
 
     private static $valueToName = [
         self::REGISTER => 'REGISTER',
         self::LOGIN => 'LOGIN',
         self::ACCOUNT_CHANGE => 'ACCOUNT_CHANGE',
+        self::ORG_JOIN => 'ORG_JOIN',
     ];
 
     public static function name($value)

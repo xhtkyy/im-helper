@@ -17,6 +17,7 @@ class ResetBySQAs extends \Google\Protobuf\Internal\Message
 {
     /**
      *
+     *
      * Generated from protobuf field <code>string secret = 1 [(.validate.rules) = {</code>
      */
     protected $secret = '';
@@ -40,6 +41,7 @@ class ResetBySQAs extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $secret
+     *          
      *     @type string $userid
      *           用户名，用户未登录时可以使用，忽略当前登录账号
      *     @type \Iam\V1\SQAs $SQAs
@@ -53,6 +55,7 @@ class ResetBySQAs extends \Google\Protobuf\Internal\Message
 
     /**
      *
+     *
      * Generated from protobuf field <code>string secret = 1 [(.validate.rules) = {</code>
      * @return string
      */
@@ -62,6 +65,7 @@ class ResetBySQAs extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     *
      *
      * Generated from protobuf field <code>string secret = 1 [(.validate.rules) = {</code>
      * @param string $var

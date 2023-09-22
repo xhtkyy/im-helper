@@ -9,18 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>iam.v1.QRGenPlatform</code>
+ * Generated from protobuf message <code>iam.v1.AESECBEncode</code>
  */
-class QRGenPlatform extends \Google\Protobuf\Internal\Message
+class AESECBEncode extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string code = 1;</code>
      */
     protected $code = '';
-    /**
-     * Generated from protobuf field <code>string platform = 2;</code>
-     */
-    protected $platform = '';
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class QRGenPlatform extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $code
-     *     @type string $platform
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class QRGenPlatform extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->code = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string platform = 2;</code>
-     * @return string
-     */
-    public function getPlatform()
-    {
-        return $this->platform;
-    }
-
-    /**
-     * Generated from protobuf field <code>string platform = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPlatform($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->platform = $var;
 
         return $this;
     }

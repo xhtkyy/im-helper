@@ -7,40 +7,32 @@ namespace Iam\V1;
 use UnexpectedValueException;
 
 /**
- * Protobuf type <code>iam.v1.AreaCode</code>
+ * Protobuf type <code>iam.v1.AccountStatusCode</code>
  */
-class AreaCode
+class AccountStatusCode
 {
     /**
-     *
-     *
-     * Generated from protobuf enum <code>NONE = 0;</code>
+     * Generated from protobuf enum <code>ACCOUNT_STATUS_NONE = 0;</code>
      */
-    const NONE = 0;
+    const ACCOUNT_STATUS_NONE = 0;
     /**
-     * 中国大陆
-     *
-     * Generated from protobuf enum <code>CN = 86;</code>
+     * Generated from protobuf enum <code>NORMAL = 1;</code>
      */
-    const CN = 86;
+    const NORMAL = 1;
     /**
-     * 中国香港
-     *
-     * Generated from protobuf enum <code>HK = 852;</code>
+     * Generated from protobuf enum <code>REMOVE_WAIT = 2;</code>
      */
-    const HK = 852;
+    const REMOVE_WAIT = 2;
     /**
-     * 中国澳门
-     *
-     * Generated from protobuf enum <code>MO = 853;</code>
+     * Generated from protobuf enum <code>REMOVE_DONE = 3;</code>
      */
-    const MO = 853;
+    const REMOVE_DONE = 3;
 
     private static $valueToName = [
-        self::NONE => 'NONE',
-        self::CN => 'CN',
-        self::HK => 'HK',
-        self::MO => 'MO',
+        self::ACCOUNT_STATUS_NONE => 'ACCOUNT_STATUS_NONE',
+        self::NORMAL => 'NORMAL',
+        self::REMOVE_WAIT => 'REMOVE_WAIT',
+        self::REMOVE_DONE => 'REMOVE_DONE',
     ];
 
     public static function name($value)

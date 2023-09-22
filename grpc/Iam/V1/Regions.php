@@ -24,7 +24,7 @@ class Regions extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Iam\V1\RegionSchema[]|\Google\Protobuf\Internal\RepeatedField $regions
+     *     @type array<\Iam\V1\RegionSchema>|\Google\Protobuf\Internal\RepeatedField $regions
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +43,7 @@ class Regions extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .iam.v1.RegionSchema regions = 1;</code>
-     * @param \Iam\V1\RegionSchema[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Iam\V1\RegionSchema>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRegions($var)

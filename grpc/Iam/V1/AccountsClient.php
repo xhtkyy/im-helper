@@ -54,6 +54,51 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
     }
 
     /**
+     * 用户登陆加密密钥
+     * @param \Google\Protobuf\GPBEmpty $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function UserAuthAESECB(\Google\Protobuf\GPBEmpty $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/iam.v1.Accounts/UserAuthAESECB',
+        $argument,
+        ['\Iam\V1\AESECBEncode', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * 用户登陆 v2.0
+     * @param \Iam\V1\UserAuth $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function UserAuthV2(\Iam\V1\UserAuth $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/iam.v1.Accounts/UserAuthV2',
+        $argument,
+        ['\Iam\V1\UserAuthResp', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * 用户登陆刷新 v2.0
+     * @param \Google\Protobuf\GPBEmpty $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function UserAuthRefreshV2(\Google\Protobuf\GPBEmpty $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/iam.v1.Accounts/UserAuthRefreshV2',
+        $argument,
+        ['\Iam\V1\UserAuthResp', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * 在指定设备退出当前账号（移除刷新访问凭证）
      * @param \Iam\V1\RefreshToken\Target $argument input argument
      * @param array $metadata metadata
@@ -174,6 +219,21 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
     }
 
     /**
+     * AccountRemoveCancel 账号注销动作撤销
+     * @param \Google\Protobuf\GPBEmpty $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function AccountRemoveCancel(\Google\Protobuf\GPBEmpty $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/iam.v1.Accounts/AccountRemoveCancel',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * GenQRCode 生成二维码
      * @param \Iam\V1\QRGenPlatform $argument input argument
      * @param array $metadata metadata
@@ -220,12 +280,12 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
 
     /**
      * AccountDelete 注销用户的账号
-     * @param \Google\Protobuf\GPBEmpty $argument input argument
+     * @param \Iam\V1\AccountDeleteReq $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function AccountDelete(\Google\Protobuf\GPBEmpty $argument,
+    public function AccountDelete(\Iam\V1\AccountDeleteReq $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/AccountDelete',
         $argument,
@@ -245,6 +305,51 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
         return $this->_simpleRequest('/iam.v1.Accounts/UpdateAccount',
         $argument,
         ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * VerifyCodeCheck 用户验证码有效性检查
+     * @param \Iam\V1\VerifyCodeCheckReq $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function VerifyCodeCheck(\Iam\V1\VerifyCodeCheckReq $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/iam.v1.Accounts/VerifyCodeCheck',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * ForgotPassword 用户忘记密码
+     * @param \Iam\V1\AccountCheck $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function ForgotPassword(\Iam\V1\AccountCheck $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/iam.v1.Accounts/ForgotPassword',
+        $argument,
+        ['\Iam\V1\AccountCheckResp', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * ListAccounts 用户账号查询
+     * @param \Iam\V1\AccountsSearch $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function ListAccounts(\Iam\V1\AccountsSearch $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/iam.v1.Accounts/ListAccounts',
+        $argument,
+        ['\Iam\V1\AccountsResp', 'decode'],
         $metadata, $options);
     }
 

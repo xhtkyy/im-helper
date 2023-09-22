@@ -9,18 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>iam.v1.QRGenPlatform</code>
+ * Generated from protobuf message <code>iam.v1.VerifyCodeCheckReq</code>
  */
-class QRGenPlatform extends \Google\Protobuf\Internal\Message
+class VerifyCodeCheckReq extends \Google\Protobuf\Internal\Message
 {
     /**
+     * 验证码
+     *
      * Generated from protobuf field <code>string code = 1;</code>
      */
     protected $code = '';
     /**
-     * Generated from protobuf field <code>string platform = 2;</code>
+     * 账号：邮箱或手机号
+     *
+     * Generated from protobuf field <code>string account = 2;</code>
      */
-    protected $platform = '';
+    protected $account = '';
 
     /**
      * Constructor.
@@ -29,7 +33,9 @@ class QRGenPlatform extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $code
-     *     @type string $platform
+     *           验证码
+     *     @type string $account
+     *           账号：邮箱或手机号
      * }
      */
     public function __construct($data = NULL) {
@@ -38,6 +44,8 @@ class QRGenPlatform extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 验证码
+     *
      * Generated from protobuf field <code>string code = 1;</code>
      * @return string
      */
@@ -47,6 +55,8 @@ class QRGenPlatform extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 验证码
+     *
      * Generated from protobuf field <code>string code = 1;</code>
      * @param string $var
      * @return $this
@@ -60,23 +70,27 @@ class QRGenPlatform extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string platform = 2;</code>
+     * 账号：邮箱或手机号
+     *
+     * Generated from protobuf field <code>string account = 2;</code>
      * @return string
      */
-    public function getPlatform()
+    public function getAccount()
     {
-        return $this->platform;
+        return $this->account;
     }
 
     /**
-     * Generated from protobuf field <code>string platform = 2;</code>
+     * 账号：邮箱或手机号
+     *
+     * Generated from protobuf field <code>string account = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setPlatform($var)
+    public function setAccount($var)
     {
         GPBUtil::checkString($var, True);
-        $this->platform = $var;
+        $this->account = $var;
 
         return $this;
     }

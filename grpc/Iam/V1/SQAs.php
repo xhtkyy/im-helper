@@ -26,7 +26,7 @@ class SQAs extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Iam\V1\SQAs\Item[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Iam\V1\SQAs\Item>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -45,7 +45,7 @@ class SQAs extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .iam.v1.SQAs.Item items = 1 [(.validate.rules) = {</code>
-     * @param \Iam\V1\SQAs\Item[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Iam\V1\SQAs\Item>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

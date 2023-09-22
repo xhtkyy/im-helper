@@ -31,6 +31,30 @@ class EmailAuth extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string password = 3;</code>
      */
     protected $password = '';
+    /**
+     * 手机区号
+     *
+     * Generated from protobuf field <code>string region = 4;</code>
+     */
+    protected $region = '';
+    /**
+     * 手机号
+     *
+     * Generated from protobuf field <code>string mobile = 5;</code>
+     */
+    protected $mobile = '';
+    /**
+     * 验证码
+     *
+     * Generated from protobuf field <code>string mobile_code = 6;</code>
+     */
+    protected $mobile_code = '';
+    /**
+     * 组织名称
+     *
+     * Generated from protobuf field <code>string team_name = 7;</code>
+     */
+    protected $team_name = '';
 
     /**
      * Constructor.
@@ -44,6 +68,14 @@ class EmailAuth extends \Google\Protobuf\Internal\Message
      *           验证码
      *     @type string $password
      *           密码
+     *     @type string $region
+     *           手机区号
+     *     @type string $mobile
+     *           手机号
+     *     @type string $mobile_code
+     *           验证码
+     *     @type string $team_name
+     *           组织名称
      * }
      */
     public function __construct($data = NULL) {
@@ -125,6 +157,110 @@ class EmailAuth extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->password = $var;
+
+        return $this;
+    }
+
+    /**
+     * 手机区号
+     *
+     * Generated from protobuf field <code>string region = 4;</code>
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    /**
+     * 手机区号
+     *
+     * Generated from protobuf field <code>string region = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->region = $var;
+
+        return $this;
+    }
+
+    /**
+     * 手机号
+     *
+     * Generated from protobuf field <code>string mobile = 5;</code>
+     * @return string
+     */
+    public function getMobile()
+    {
+        return $this->mobile;
+    }
+
+    /**
+     * 手机号
+     *
+     * Generated from protobuf field <code>string mobile = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMobile($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->mobile = $var;
+
+        return $this;
+    }
+
+    /**
+     * 验证码
+     *
+     * Generated from protobuf field <code>string mobile_code = 6;</code>
+     * @return string
+     */
+    public function getMobileCode()
+    {
+        return $this->mobile_code;
+    }
+
+    /**
+     * 验证码
+     *
+     * Generated from protobuf field <code>string mobile_code = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMobileCode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->mobile_code = $var;
+
+        return $this;
+    }
+
+    /**
+     * 组织名称
+     *
+     * Generated from protobuf field <code>string team_name = 7;</code>
+     * @return string
+     */
+    public function getTeamName()
+    {
+        return $this->team_name;
+    }
+
+    /**
+     * 组织名称
+     *
+     * Generated from protobuf field <code>string team_name = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTeamName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->team_name = $var;
 
         return $this;
     }
