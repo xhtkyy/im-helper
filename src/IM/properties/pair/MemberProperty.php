@@ -9,7 +9,7 @@ class MemberProperty extends Property {
     public string $avatar = ''; //头像
     public string $cardId = ''; //身份卡标识
     public string $comment = ""; //备注
-    public int $departmentId = 0; //部门标识
+    public string $departmentId = ''; //部门标识
     public string $departmentName = ""; //部门名称
     public string $jobId = ""; //职位标识
     public string $jobName = ""; //职位名称
@@ -69,17 +69,17 @@ class MemberProperty extends Property {
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getDepartmentId(): int {
+    public function getDepartmentId(): string {
         return $this->departmentId;
     }
 
     /**
-     * @param int $departmentId
+     * @param string $departmentId
      * @return MemberProperty
      */
-    public function setDepartmentId(int $departmentId): static {
+    public function setDepartmentId(string $departmentId): static {
         $this->departmentId = $departmentId;
         return $this;
     }
