@@ -339,6 +339,21 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
     }
 
     /**
+     * AccountDetail 用户账号详情，含身份认证信息
+     * @param \Iam\V1\ID $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function AccountDetail(\Iam\V1\ID $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/iam.v1.Accounts/AccountDetail',
+        $argument,
+        ['\Iam\V1\AccountSchema', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * ListAccounts 用户账号查询
      * @param \Iam\V1\AccountsSearch $argument input argument
      * @param array $metadata metadata
@@ -350,6 +365,21 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
         return $this->_simpleRequest('/iam.v1.Accounts/ListAccounts',
         $argument,
         ['\Iam\V1\AccountsResp', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * AccountsRegisteredCheck 批量检查用户是否注册
+     * @param \Iam\V1\AccountsRegisteredCheckReq $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function AccountsRegisteredCheck(\Iam\V1\AccountsRegisteredCheckReq $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/iam.v1.Accounts/AccountsRegisteredCheck',
+        $argument,
+        ['\Iam\V1\AccountsRegisteredCheckResp', 'decode'],
         $metadata, $options);
     }
 

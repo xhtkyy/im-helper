@@ -16,9 +16,9 @@ class RedirectConfig extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: json:"redirectUrl"
      *
-     * Generated from protobuf field <code>repeated string redirect_url = 1;</code>
+     * Generated from protobuf field <code>string redirect_url = 1;</code>
      */
-    private $redirect_url;
+    protected $redirect_url = '';
 
     /**
      * Constructor.
@@ -26,7 +26,7 @@ class RedirectConfig extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $redirect_url
+     *     @type string $redirect_url
      *           &#64;gotags: json:"redirectUrl"
      * }
      */
@@ -38,8 +38,8 @@ class RedirectConfig extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: json:"redirectUrl"
      *
-     * Generated from protobuf field <code>repeated string redirect_url = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>string redirect_url = 1;</code>
+     * @return string
      */
     public function getRedirectUrl()
     {
@@ -49,14 +49,14 @@ class RedirectConfig extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: json:"redirectUrl"
      *
-     * Generated from protobuf field <code>repeated string redirect_url = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>string redirect_url = 1;</code>
+     * @param string $var
      * @return $this
      */
     public function setRedirectUrl($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->redirect_url = $arr;
+        GPBUtil::checkString($var, True);
+        $this->redirect_url = $var;
 
         return $this;
     }

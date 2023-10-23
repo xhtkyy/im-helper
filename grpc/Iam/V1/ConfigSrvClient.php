@@ -37,4 +37,19 @@ class ConfigSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
         $metadata, $options);
     }
 
+    /**
+     * GetPopularizeSMSTemplateConfig 获取短信推广模版配置
+     * @param \Google\Protobuf\GPBEmpty $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function GetPopularizeSMSTemplateConfig(\Google\Protobuf\GPBEmpty $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/iam.v1.ConfigSrv/GetPopularizeSMSTemplateConfig',
+        $argument,
+        ['\Iam\V1\TextResp', 'decode'],
+        $metadata, $options);
+    }
+
 }

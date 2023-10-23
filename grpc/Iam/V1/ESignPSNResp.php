@@ -16,14 +16,20 @@ use Google\Protobuf\Internal\GPBUtil;
 class ESignPSNResp extends \Google\Protobuf\Internal\Message
 {
     /**
+     * &#64;gotags: json:"code"
+     *
      * Generated from protobuf field <code>int32 code = 1;</code>
      */
     protected $code = 0;
     /**
+     * &#64;gotags: json:"message"
+     *
      * Generated from protobuf field <code>string message = 2;</code>
      */
     protected $message = '';
     /**
+     * &#64;gotags: json:"data"
+     *
      * Generated from protobuf field <code>.iam.v1.ESignPSNDetail data = 3;</code>
      */
     protected $data = null;
@@ -35,8 +41,11 @@ class ESignPSNResp extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $code
+     *           &#64;gotags: json:"code"
      *     @type string $message
+     *           &#64;gotags: json:"message"
      *     @type \Iam\V1\ESignPSNDetail $data
+     *           &#64;gotags: json:"data"
      * }
      */
     public function __construct($data = NULL) {
@@ -45,6 +54,8 @@ class ESignPSNResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"code"
+     *
      * Generated from protobuf field <code>int32 code = 1;</code>
      * @return int
      */
@@ -54,6 +65,8 @@ class ESignPSNResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"code"
+     *
      * Generated from protobuf field <code>int32 code = 1;</code>
      * @param int $var
      * @return $this
@@ -67,6 +80,8 @@ class ESignPSNResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"message"
+     *
      * Generated from protobuf field <code>string message = 2;</code>
      * @return string
      */
@@ -76,6 +91,8 @@ class ESignPSNResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"message"
+     *
      * Generated from protobuf field <code>string message = 2;</code>
      * @param string $var
      * @return $this
@@ -89,6 +106,8 @@ class ESignPSNResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"data"
+     *
      * Generated from protobuf field <code>.iam.v1.ESignPSNDetail data = 3;</code>
      * @return \Iam\V1\ESignPSNDetail|null
      */
@@ -108,6 +127,8 @@ class ESignPSNResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"data"
+     *
      * Generated from protobuf field <code>.iam.v1.ESignPSNDetail data = 3;</code>
      * @param \Iam\V1\ESignPSNDetail $var
      * @return $this

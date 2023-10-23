@@ -73,6 +73,10 @@ class AccountsSearch extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string cellphone = 15;</code>
      */
     protected $cellphone = '';
+    /**
+     * Generated from protobuf field <code>string reason = 16;</code>
+     */
+    protected $reason = '';
 
     /**
      * Constructor.
@@ -95,6 +99,7 @@ class AccountsSearch extends \Google\Protobuf\Internal\Message
      *     @type int|string $index
      *     @type int|string $size
      *     @type string $cellphone
+     *     @type string $reason
      * }
      */
     public function __construct($data = NULL) {
@@ -428,6 +433,28 @@ class AccountsSearch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->cellphone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string reason = 16;</code>
+     * @return string
+     */
+    public function getReason()
+    {
+        return $this->reason;
+    }
+
+    /**
+     * Generated from protobuf field <code>string reason = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setReason($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->reason = $var;
 
         return $this;
     }

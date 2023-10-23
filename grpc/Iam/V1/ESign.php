@@ -16,9 +16,9 @@ class ESign extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: gorm:"primaryKey" json:"-"
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>int64 id = 1;</code>
      */
-    protected $id = '';
+    protected $id = 0;
     /**
      * &#64;gotags: json:"name"
      *
@@ -97,6 +97,18 @@ class ESign extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string email = 14;</code>
      */
     protected $email = '';
+    /**
+     * &#64;gotags: json:"auth_url"
+     *
+     * Generated from protobuf field <code>string auth_url = 15;</code>
+     */
+    protected $auth_url = '';
+    /**
+     * &#64;gotags: json:"auth_short_url"
+     *
+     * Generated from protobuf field <code>string auth_short_url = 16;</code>
+     */
+    protected $auth_short_url = '';
 
     /**
      * Constructor.
@@ -104,7 +116,7 @@ class ESign extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $id
+     *     @type int|string $id
      *           &#64;gotags: gorm:"primaryKey" json:"-"
      *     @type string $name
      *           &#64;gotags: json:"name"
@@ -132,6 +144,10 @@ class ESign extends \Google\Protobuf\Internal\Message
      *           &#64;gotags: json:"psn_id"
      *     @type string $email
      *           &#64;gotags: json:"email"
+     *     @type string $auth_url
+     *           &#64;gotags: json:"auth_url"
+     *     @type string $auth_short_url
+     *           &#64;gotags: json:"auth_short_url"
      * }
      */
     public function __construct($data = NULL) {
@@ -142,8 +158,8 @@ class ESign extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: gorm:"primaryKey" json:"-"
      *
-     * Generated from protobuf field <code>string id = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>int64 id = 1;</code>
+     * @return int|string
      */
     public function getId()
     {
@@ -153,13 +169,13 @@ class ESign extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: gorm:"primaryKey" json:"-"
      *
-     * Generated from protobuf field <code>string id = 1;</code>
-     * @param string $var
+     * Generated from protobuf field <code>int64 id = 1;</code>
+     * @param int|string $var
      * @return $this
      */
     public function setId($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkInt64($var);
         $this->id = $var;
 
         return $this;
@@ -499,6 +515,58 @@ class ESign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->email = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"auth_url"
+     *
+     * Generated from protobuf field <code>string auth_url = 15;</code>
+     * @return string
+     */
+    public function getAuthUrl()
+    {
+        return $this->auth_url;
+    }
+
+    /**
+     * &#64;gotags: json:"auth_url"
+     *
+     * Generated from protobuf field <code>string auth_url = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAuthUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->auth_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"auth_short_url"
+     *
+     * Generated from protobuf field <code>string auth_short_url = 16;</code>
+     * @return string
+     */
+    public function getAuthShortUrl()
+    {
+        return $this->auth_short_url;
+    }
+
+    /**
+     * &#64;gotags: json:"auth_short_url"
+     *
+     * Generated from protobuf field <code>string auth_short_url = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAuthShortUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->auth_short_url = $var;
 
         return $this;
     }

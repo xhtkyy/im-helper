@@ -151,6 +151,36 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string cellphone = 23;</code>
      */
     protected $cellphone = '';
+    /**
+     * &#64;gotags: gorm:"-" json:"e_sign"
+     *
+     * Generated from protobuf field <code>.iam.v1.ESign e_sign = 24;</code>
+     */
+    protected $e_sign = null;
+    /**
+     * &#64;gotags: gorm:"-" json:"profile"
+     *
+     * Generated from protobuf field <code>.iam.v1.ProfileSchema profile = 25;</code>
+     */
+    protected $profile = null;
+    /**
+     * &#64;gotags: gorm:"-" json:"gender"
+     *
+     * Generated from protobuf field <code>.iam.v1.Gender gender = 26;</code>
+     */
+    protected $gender = 0;
+    /**
+     * &#64;gotags: gorm:"-" json:"region_code"
+     *
+     * Generated from protobuf field <code>string region_code = 27;</code>
+     */
+    protected $region_code = '';
+    /**
+     * &#64;gotags: gorm:"-" json:"org"
+     *
+     * Generated from protobuf field <code>repeated string orgs = 28;</code>
+     */
+    private $orgs;
 
     /**
      * Constructor.
@@ -204,6 +234,16 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
      *           &#64;gotags: gorm:"-" json:"avatar"
      *     @type string $cellphone
      *           &#64;gotags: gorm:"-" json:"cellphone"
+     *     @type \Iam\V1\ESign $e_sign
+     *           &#64;gotags: gorm:"-" json:"e_sign"
+     *     @type \Iam\V1\ProfileSchema $profile
+     *           &#64;gotags: gorm:"-" json:"profile"
+     *     @type int $gender
+     *           &#64;gotags: gorm:"-" json:"gender"
+     *     @type string $region_code
+     *           &#64;gotags: gorm:"-" json:"region_code"
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $orgs
+     *           &#64;gotags: gorm:"-" json:"org"
      * }
      */
     public function __construct($data = NULL) {
@@ -805,6 +845,156 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->cellphone = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"e_sign"
+     *
+     * Generated from protobuf field <code>.iam.v1.ESign e_sign = 24;</code>
+     * @return \Iam\V1\ESign|null
+     */
+    public function getESign()
+    {
+        return $this->e_sign;
+    }
+
+    public function hasESign()
+    {
+        return isset($this->e_sign);
+    }
+
+    public function clearESign()
+    {
+        unset($this->e_sign);
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"e_sign"
+     *
+     * Generated from protobuf field <code>.iam.v1.ESign e_sign = 24;</code>
+     * @param \Iam\V1\ESign $var
+     * @return $this
+     */
+    public function setESign($var)
+    {
+        GPBUtil::checkMessage($var, \Iam\V1\ESign::class);
+        $this->e_sign = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"profile"
+     *
+     * Generated from protobuf field <code>.iam.v1.ProfileSchema profile = 25;</code>
+     * @return \Iam\V1\ProfileSchema|null
+     */
+    public function getProfile()
+    {
+        return $this->profile;
+    }
+
+    public function hasProfile()
+    {
+        return isset($this->profile);
+    }
+
+    public function clearProfile()
+    {
+        unset($this->profile);
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"profile"
+     *
+     * Generated from protobuf field <code>.iam.v1.ProfileSchema profile = 25;</code>
+     * @param \Iam\V1\ProfileSchema $var
+     * @return $this
+     */
+    public function setProfile($var)
+    {
+        GPBUtil::checkMessage($var, \Iam\V1\ProfileSchema::class);
+        $this->profile = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"gender"
+     *
+     * Generated from protobuf field <code>.iam.v1.Gender gender = 26;</code>
+     * @return int
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"gender"
+     *
+     * Generated from protobuf field <code>.iam.v1.Gender gender = 26;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGender($var)
+    {
+        GPBUtil::checkEnum($var, \Iam\V1\Gender::class);
+        $this->gender = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"region_code"
+     *
+     * Generated from protobuf field <code>string region_code = 27;</code>
+     * @return string
+     */
+    public function getRegionCode()
+    {
+        return $this->region_code;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"region_code"
+     *
+     * Generated from protobuf field <code>string region_code = 27;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegionCode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->region_code = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"org"
+     *
+     * Generated from protobuf field <code>repeated string orgs = 28;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOrgs()
+    {
+        return $this->orgs;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"org"
+     *
+     * Generated from protobuf field <code>repeated string orgs = 28;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setOrgs($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->orgs = $arr;
 
         return $this;
     }

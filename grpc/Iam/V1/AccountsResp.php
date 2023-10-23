@@ -14,7 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class AccountsResp extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .iam.v1.AccountSchema accounts = 1;</code>
+     * Generated from protobuf field <code>int64 total = 1;</code>
+     */
+    protected $total = 0;
+    /**
+     * Generated from protobuf field <code>repeated .iam.v1.AccountSchema accounts = 2;</code>
      */
     private $accounts;
 
@@ -24,6 +28,7 @@ class AccountsResp extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int|string $total
      *     @type array<\Iam\V1\AccountSchema>|\Google\Protobuf\Internal\RepeatedField $accounts
      * }
      */
@@ -33,7 +38,29 @@ class AccountsResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .iam.v1.AccountSchema accounts = 1;</code>
+     * Generated from protobuf field <code>int64 total = 1;</code>
+     * @return int|string
+     */
+    public function getTotal()
+    {
+        return $this->total;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 total = 1;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setTotal($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->total = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .iam.v1.AccountSchema accounts = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAccounts()
@@ -42,7 +69,7 @@ class AccountsResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .iam.v1.AccountSchema accounts = 1;</code>
+     * Generated from protobuf field <code>repeated .iam.v1.AccountSchema accounts = 2;</code>
      * @param array<\Iam\V1\AccountSchema>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

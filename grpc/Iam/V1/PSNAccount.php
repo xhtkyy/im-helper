@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class PSNAccount extends \Google\Protobuf\Internal\Message
 {
     /**
+     * &#64;gotags: json:"accountMobile"
+     *
      * Generated from protobuf field <code>string accountMobile = 1;</code>
      */
     protected $accountMobile = '';
     /**
+     * &#64;gotags: json:"accountEmail"
+     *
      * Generated from protobuf field <code>string accountEmail = 2;</code>
      */
     protected $accountEmail = '';
@@ -29,7 +33,9 @@ class PSNAccount extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $accountMobile
+     *           &#64;gotags: json:"accountMobile"
      *     @type string $accountEmail
+     *           &#64;gotags: json:"accountEmail"
      * }
      */
     public function __construct($data = NULL) {
@@ -38,6 +44,8 @@ class PSNAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"accountMobile"
+     *
      * Generated from protobuf field <code>string accountMobile = 1;</code>
      * @return string
      */
@@ -47,6 +55,8 @@ class PSNAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"accountMobile"
+     *
      * Generated from protobuf field <code>string accountMobile = 1;</code>
      * @param string $var
      * @return $this
@@ -60,6 +70,8 @@ class PSNAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"accountEmail"
+     *
      * Generated from protobuf field <code>string accountEmail = 2;</code>
      * @return string
      */
@@ -69,6 +81,8 @@ class PSNAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"accountEmail"
+     *
      * Generated from protobuf field <code>string accountEmail = 2;</code>
      * @param string $var
      * @return $this
