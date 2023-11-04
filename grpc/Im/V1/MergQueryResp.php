@@ -14,21 +14,21 @@ use Google\Protobuf\Internal\GPBUtil;
 class MergQueryResp extends \Google\Protobuf\Internal\Message
 {
     /**
-     * 单聊列表
+     * &#64;gotags: json:"pairs"
      *
      * Generated from protobuf field <code>repeated .im.v1.Pair pairs = 1;</code>
      */
     private $pairs;
     /**
-     * 群聊列表
+     * &#64;gotags: json:"groups"
      *
      * Generated from protobuf field <code>repeated .im.v1.Group groups = 2;</code>
      */
     private $groups;
     /**
-     * 身份卡列表
+     * &#64;gotags: json:"cards"
      *
-     * Generated from protobuf field <code>.google.protobuf.Any cards = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Struct cards = 4;</code>
      */
     protected $cards = null;
 
@@ -39,11 +39,11 @@ class MergQueryResp extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Im\V1\Pair[]|\Google\Protobuf\Internal\RepeatedField $pairs
-     *           单聊列表
+     *           &#64;gotags: json:"pairs"
      *     @type \Im\V1\Group[]|\Google\Protobuf\Internal\RepeatedField $groups
-     *           群聊列表
-     *     @type \Google\Protobuf\Any $cards
-     *           身份卡列表
+     *           &#64;gotags: json:"groups"
+     *     @type \Google\Protobuf\Struct $cards
+     *           &#64;gotags: json:"cards"
      * }
      */
     public function __construct($data = NULL) {
@@ -52,7 +52,7 @@ class MergQueryResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 单聊列表
+     * &#64;gotags: json:"pairs"
      *
      * Generated from protobuf field <code>repeated .im.v1.Pair pairs = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -63,7 +63,7 @@ class MergQueryResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 单聊列表
+     * &#64;gotags: json:"pairs"
      *
      * Generated from protobuf field <code>repeated .im.v1.Pair pairs = 1;</code>
      * @param \Im\V1\Pair[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -78,7 +78,7 @@ class MergQueryResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 群聊列表
+     * &#64;gotags: json:"groups"
      *
      * Generated from protobuf field <code>repeated .im.v1.Group groups = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -89,7 +89,7 @@ class MergQueryResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 群聊列表
+     * &#64;gotags: json:"groups"
      *
      * Generated from protobuf field <code>repeated .im.v1.Group groups = 2;</code>
      * @param \Im\V1\Group[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -104,10 +104,10 @@ class MergQueryResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 身份卡列表
+     * &#64;gotags: json:"cards"
      *
-     * Generated from protobuf field <code>.google.protobuf.Any cards = 4;</code>
-     * @return \Google\Protobuf\Any|null
+     * Generated from protobuf field <code>.google.protobuf.Struct cards = 4;</code>
+     * @return \Google\Protobuf\Struct|null
      */
     public function getCards()
     {
@@ -125,15 +125,15 @@ class MergQueryResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 身份卡列表
+     * &#64;gotags: json:"cards"
      *
-     * Generated from protobuf field <code>.google.protobuf.Any cards = 4;</code>
-     * @param \Google\Protobuf\Any $var
+     * Generated from protobuf field <code>.google.protobuf.Struct cards = 4;</code>
+     * @param \Google\Protobuf\Struct $var
      * @return $this
      */
     public function setCards($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Any::class);
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->cards = $var;
 
         return $this;

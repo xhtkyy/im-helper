@@ -60,9 +60,9 @@ class ProfilesClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
      * @param array $options call options
      * @return array
      */
-    public function QueryProfileByMobile(\Iam\V1\QueryProfile $argument,
+    public function SearchProfile(\Iam\V1\QueryProfile $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/iam.v1.Profiles/QueryProfileByMobile',
+        return $this->_simpleRequest('/iam.v1.Profiles/SearchProfile',
         $argument,
         ['\Iam\V1\ProfileSchema', 'decode'],
         $metadata, $options);

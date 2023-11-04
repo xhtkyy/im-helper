@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Iam\V1;
+namespace Iam\v1;
 
 /**
  * 账号服务
@@ -10,46 +10,16 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
 
     /**
      * 注册账号
-     * @param \Iam\V1\AccountRegister $argument input argument
+     * @param \Iam\v1\AccountRegister $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function AccountCreate(\Iam\V1\AccountRegister $argument,
+    public function AccountCreate(\Iam\v1\AccountRegister $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/AccountCreate',
         $argument,
-        ['\Iam\V1\AccessToken', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * 登录：验证身份，发放临时凭证，获得的凭证仅可使用一次且有效时间极短，仅用于换取访问凭证
-     * @param \Iam\V1\UserAuth $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return array
-     */
-    public function SignUp(\Iam\V1\UserAuth $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/iam.v1.Accounts/SignUp',
-        $argument,
-        ['\Iam\V1\RefreshCode', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * 登录：获得主体应用的访问凭证
-     * @param \Iam\V1\TokenShort $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return array
-     */
-    public function SignIn(\Iam\V1\TokenShort $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/iam.v1.Accounts/SignIn',
-        $argument,
-        ['\Iam\V1\AccessToken', 'decode'],
+        ['\Iam\v1\UserAuthResp', 'decode'],
         $metadata, $options);
     }
 
@@ -64,48 +34,33 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/UserAuthAESECB',
         $argument,
-        ['\Iam\V1\AESECBEncode', 'decode'],
+        ['\Iam\v1\AESECBEncode', 'decode'],
         $metadata, $options);
     }
 
     /**
      * 用户登陆 v2.0
-     * @param \Iam\V1\UserAuth $argument input argument
+     * @param \Iam\v1\UserAuth $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function UserAuthV2(\Iam\V1\UserAuth $argument,
+    public function UserAuthV2(\Iam\v1\UserAuth $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/UserAuthV2',
         $argument,
-        ['\Iam\V1\UserAuthResp', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * 用户登陆刷新 v2.0
-     * @param \Google\Protobuf\GPBEmpty $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return array
-     */
-    public function UserAuthRefreshV2(\Google\Protobuf\GPBEmpty $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/iam.v1.Accounts/UserAuthRefreshV2',
-        $argument,
-        ['\Iam\V1\UserAuthResp', 'decode'],
+        ['\Iam\v1\UserAuthResp', 'decode'],
         $metadata, $options);
     }
 
     /**
      * 在指定设备退出当前账号（移除刷新访问凭证）
-     * @param \Iam\V1\RefreshToken\Target $argument input argument
+     * @param \Iam\v1\RefreshToken\Target $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function SignOut(\Iam\V1\RefreshToken\Target $argument,
+    public function SignOut(\Iam\v1\RefreshToken\Target $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/SignOut',
         $argument,
@@ -115,12 +70,12 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
 
     /**
      * 发起请求验证外部标识符，例如手机短信，发送验证码
-     * @param \Iam\V1\SendVerifyCode $argument input argument
+     * @param \Iam\v1\SendVerifyCode $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function VerifyCodeSend(\Iam\V1\SendVerifyCode $argument,
+    public function VerifyCodeSend(\Iam\v1\SendVerifyCode $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/VerifyCodeSend',
         $argument,
@@ -130,12 +85,12 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
 
     /**
      * 设置或修改密码
-     * @param \Iam\V1\PasswordUpdate $argument input argument
+     * @param \Iam\v1\PasswordUpdate $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function SetPassword(\Iam\V1\PasswordUpdate $argument,
+    public function SetPassword(\Iam\v1\PasswordUpdate $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/SetPassword',
         $argument,
@@ -169,7 +124,7 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/PasswordExited',
         $argument,
-        ['\Iam\V1\DoneResp', 'decode'],
+        ['\Iam\v1\DoneResp', 'decode'],
         $metadata, $options);
     }
 
@@ -199,22 +154,22 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/LinkIDModifyTime',
         $argument,
-        ['\Iam\V1\TimeResp', 'decode'],
+        ['\Iam\v1\TimeResp', 'decode'],
         $metadata, $options);
     }
 
     /**
      * AccountExited 检测账号是否存在
-     * @param \Iam\V1\AccountCheck $argument input argument
+     * @param \Iam\v1\AccountCheck $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function AccountExited(\Iam\V1\AccountCheck $argument,
+    public function AccountExited(\Iam\v1\AccountCheck $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/AccountExited',
         $argument,
-        ['\Iam\V1\DoneResp', 'decode'],
+        ['\Iam\v1\DoneResp', 'decode'],
         $metadata, $options);
     }
 
@@ -235,27 +190,27 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
 
     /**
      * GenQRCode 生成二维码
-     * @param \Iam\V1\QRGenPlatform $argument input argument
+     * @param \Iam\v1\QRGenPlatform $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function GenQRCode(\Iam\V1\QRGenPlatform $argument,
+    public function GenQRCode(\Iam\v1\QRGenPlatform $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/GenQRCode',
         $argument,
-        ['\Iam\V1\RespQRCode', 'decode'],
+        ['\Iam\v1\RespQRCode', 'decode'],
         $metadata, $options);
     }
 
     /**
      * FillQRCodeUserOpenID 回写生成的二维码用户ID
-     * @param \Iam\V1\RespQRCodeStep $argument input argument
+     * @param \Iam\v1\RespQRCodeStep $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function FillQRCodeUserOpenID(\Iam\V1\RespQRCodeStep $argument,
+    public function FillQRCodeUserOpenID(\Iam\v1\RespQRCodeStep $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/FillQRCodeUserOpenID',
         $argument,
@@ -274,33 +229,33 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/GetAccounts',
         $argument,
-        ['\Iam\V1\RespUserAccounts', 'decode'],
+        ['\Iam\v1\RespUserAccounts', 'decode'],
         $metadata, $options);
     }
 
     /**
      * AccountDelete 注销用户的账号
-     * @param \Iam\V1\AccountDeleteReq $argument input argument
+     * @param \Iam\v1\AccountDeleteReq $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function AccountDelete(\Iam\V1\AccountDeleteReq $argument,
+    public function AccountDelete(\Iam\v1\AccountDeleteReq $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/AccountDelete',
         $argument,
-        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        ['\Iam\v1\AccountDeleteResp', 'decode'],
         $metadata, $options);
     }
 
     /**
      * UpdateAccount 用户的账号更新
-     * @param \Iam\V1\AccountChange $argument input argument
+     * @param \Iam\v1\AccountChange $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function UpdateAccount(\Iam\V1\AccountChange $argument,
+    public function UpdateAccount(\Iam\v1\AccountChange $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/UpdateAccount',
         $argument,
@@ -310,12 +265,12 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
 
     /**
      * VerifyCodeCheck 用户验证码有效性检查
-     * @param \Iam\V1\VerifyCodeCheckReq $argument input argument
+     * @param \Iam\v1\VerifyCodeCheckReq $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function VerifyCodeCheck(\Iam\V1\VerifyCodeCheckReq $argument,
+    public function VerifyCodeCheck(\Iam\v1\VerifyCodeCheckReq $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/VerifyCodeCheck',
         $argument,
@@ -325,16 +280,16 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
 
     /**
      * ForgotPassword 用户忘记密码
-     * @param \Iam\V1\AccountCheck $argument input argument
+     * @param \Iam\v1\AccountCheck $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function ForgotPassword(\Iam\V1\AccountCheck $argument,
+    public function ForgotPassword(\Iam\v1\AccountCheck $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/ForgotPassword',
         $argument,
-        ['\Iam\V1\AccountCheckResp', 'decode'],
+        ['\Iam\v1\AccountCheckResp', 'decode'],
         $metadata, $options);
     }
 
@@ -349,37 +304,37 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/AccountDetail',
         $argument,
-        ['\Iam\V1\AccountSchema', 'decode'],
+        ['\Iam\v1\AccountSchema', 'decode'],
         $metadata, $options);
     }
 
     /**
      * ListAccounts 用户账号查询
-     * @param \Iam\V1\AccountsSearch $argument input argument
+     * @param \Iam\v1\AccountsSearch $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function ListAccounts(\Iam\V1\AccountsSearch $argument,
+    public function ListAccounts(\Iam\v1\AccountsSearch $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/ListAccounts',
         $argument,
-        ['\Iam\V1\AccountsResp', 'decode'],
+        ['\Iam\v1\AccountsResp', 'decode'],
         $metadata, $options);
     }
 
     /**
      * AccountsRegisteredCheck 批量检查用户是否注册
-     * @param \Iam\V1\AccountsRegisteredCheckReq $argument input argument
+     * @param \Iam\v1\AccountsRegisteredCheckReq $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function AccountsRegisteredCheck(\Iam\V1\AccountsRegisteredCheckReq $argument,
+    public function AccountsRegisteredCheck(\Iam\v1\AccountsRegisteredCheckReq $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/AccountsRegisteredCheck',
         $argument,
-        ['\Iam\V1\AccountsRegisteredCheckResp', 'decode'],
+        ['\Iam\v1\AccountsRegisteredCheckResp', 'decode'],
         $metadata, $options);
     }
 

@@ -81,6 +81,36 @@ class Pair extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool has_del = 11;</code>
      */
     protected $has_del = false;
+    /**
+     * &#64;gotags: json:"unregistered"
+     *
+     * Generated from protobuf field <code>bool unregistered = 12;</code>
+     */
+    protected $unregistered = false;
+    /**
+     * &#64;gotags: gorm:"-" json:"card"
+     *
+     * Generated from protobuf field <code>.im.v1.Card card = 13;</code>
+     */
+    protected $card = null;
+    /**
+     * &#64;gotags: json:"top"
+     *
+     * Generated from protobuf field <code>bool top = 14;</code>
+     */
+    protected $top = false;
+    /**
+     * &#64;gotags: json:"view_history"
+     *
+     * Generated from protobuf field <code>bool view_history = 15;</code>
+     */
+    protected $view_history = false;
+    /**
+     * &#64;gotags: json:"no_disturb"
+     *
+     * Generated from protobuf field <code>bool no_disturb = 16;</code>
+     */
+    protected $no_disturb = false;
 
     /**
      * Constructor.
@@ -110,6 +140,16 @@ class Pair extends \Google\Protobuf\Internal\Message
      *           &#64;gotags: gorm:"serializer:json" json:"attachment"
      *     @type bool $has_del
      *           &#64;gotags: json:"has_del"
+     *     @type bool $unregistered
+     *           &#64;gotags: json:"unregistered"
+     *     @type \Im\V1\Card $card
+     *           &#64;gotags: gorm:"-" json:"card"
+     *     @type bool $top
+     *           &#64;gotags: json:"top"
+     *     @type bool $view_history
+     *           &#64;gotags: json:"view_history"
+     *     @type bool $no_disturb
+     *           &#64;gotags: json:"no_disturb"
      * }
      */
     public function __construct($data = NULL) {
@@ -409,6 +449,146 @@ class Pair extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->has_del = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"unregistered"
+     *
+     * Generated from protobuf field <code>bool unregistered = 12;</code>
+     * @return bool
+     */
+    public function getUnregistered()
+    {
+        return $this->unregistered;
+    }
+
+    /**
+     * &#64;gotags: json:"unregistered"
+     *
+     * Generated from protobuf field <code>bool unregistered = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnregistered($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unregistered = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"card"
+     *
+     * Generated from protobuf field <code>.im.v1.Card card = 13;</code>
+     * @return \Im\V1\Card|null
+     */
+    public function getCard()
+    {
+        return $this->card;
+    }
+
+    public function hasCard()
+    {
+        return isset($this->card);
+    }
+
+    public function clearCard()
+    {
+        unset($this->card);
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"card"
+     *
+     * Generated from protobuf field <code>.im.v1.Card card = 13;</code>
+     * @param \Im\V1\Card $var
+     * @return $this
+     */
+    public function setCard($var)
+    {
+        GPBUtil::checkMessage($var, \Im\V1\Card::class);
+        $this->card = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"top"
+     *
+     * Generated from protobuf field <code>bool top = 14;</code>
+     * @return bool
+     */
+    public function getTop()
+    {
+        return $this->top;
+    }
+
+    /**
+     * &#64;gotags: json:"top"
+     *
+     * Generated from protobuf field <code>bool top = 14;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setTop($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->top = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"view_history"
+     *
+     * Generated from protobuf field <code>bool view_history = 15;</code>
+     * @return bool
+     */
+    public function getViewHistory()
+    {
+        return $this->view_history;
+    }
+
+    /**
+     * &#64;gotags: json:"view_history"
+     *
+     * Generated from protobuf field <code>bool view_history = 15;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setViewHistory($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->view_history = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"no_disturb"
+     *
+     * Generated from protobuf field <code>bool no_disturb = 16;</code>
+     * @return bool
+     */
+    public function getNoDisturb()
+    {
+        return $this->no_disturb;
+    }
+
+    /**
+     * &#64;gotags: json:"no_disturb"
+     *
+     * Generated from protobuf field <code>bool no_disturb = 16;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setNoDisturb($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->no_disturb = $var;
 
         return $this;
     }

@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class NotifyCountResp extends \Google\Protobuf\Internal\Message
 {
     /**
+     * &#64;gotags: json:"address_book"
+     *
      * Generated from protobuf field <code>int64 address_book = 1;</code>
      */
     protected $address_book = 0;
@@ -25,6 +27,7 @@ class NotifyCountResp extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $address_book
+     *           &#64;gotags: json:"address_book"
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +36,8 @@ class NotifyCountResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"address_book"
+     *
      * Generated from protobuf field <code>int64 address_book = 1;</code>
      * @return int|string
      */
@@ -42,6 +47,8 @@ class NotifyCountResp extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * &#64;gotags: json:"address_book"
+     *
      * Generated from protobuf field <code>int64 address_book = 1;</code>
      * @param int|string $var
      * @return $this

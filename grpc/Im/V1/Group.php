@@ -112,19 +112,19 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     private $members;
     /**
-     * &#64;gotags: gorm:"-"
+     * &#64;gotags: gorm:"-" json:"total"
      *
      * Generated from protobuf field <code>int64 total = 17;</code>
      */
     protected $total = 0;
     /**
-     * 是否同步云盘
+     * &#64;gotags: gorm:"-" json:"sync_disk"
      *
      * Generated from protobuf field <code>bool sync_disk = 18;</code>
      */
     protected $sync_disk = false;
     /**
-     * 云盘文件夹
+     * &#64;gotags: gorm:"-" json:"disk_folder"
      *
      * Generated from protobuf field <code>int64 disk_folder = 19;</code>
      */
@@ -147,6 +147,54 @@ class Group extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string card_id = 22;</code>
      */
     protected $card_id = '';
+    /**
+     * &#64;gotags: json:"birthday_style"
+     *
+     * Generated from protobuf field <code>string birthday_style = 23;</code>
+     */
+    protected $birthday_style = '';
+    /**
+     * &#64;gotags: json:"birthday_notify"
+     *
+     * Generated from protobuf field <code>bool birthday_notify = 24;</code>
+     */
+    protected $birthday_notify = false;
+    /**
+     * &#64;gotags: json:"avatar"
+     *
+     * Generated from protobuf field <code>string avatar = 25;</code>
+     */
+    protected $avatar = '';
+    /**
+     * &#64;gotags: json:"has_invite_member"
+     *
+     * Generated from protobuf field <code>bool has_invite_member = 26;</code>
+     */
+    protected $has_invite_member = false;
+    /**
+     * &#64;gotags: json:"has_look_for_history"
+     *
+     * Generated from protobuf field <code>bool has_look_for_history = 27;</code>
+     */
+    protected $has_look_for_history = false;
+    /**
+     * &#64;gotags: json:"open_cloud_file"
+     *
+     * Generated from protobuf field <code>bool open_cloud_file = 28;</code>
+     */
+    protected $open_cloud_file = false;
+    /**
+     * &#64;gotags: json:"open_picture_file"
+     *
+     * Generated from protobuf field <code>bool open_picture_file = 29;</code>
+     */
+    protected $open_picture_file = false;
+    /**
+     * &#64;gotags: json:"team_name"
+     *
+     * Generated from protobuf field <code>string team_name = 30;</code>
+     */
+    protected $team_name = '';
 
     /**
      * Constructor.
@@ -187,17 +235,33 @@ class Group extends \Google\Protobuf\Internal\Message
      *     @type \Im\V1\Member[]|\Google\Protobuf\Internal\RepeatedField $members
      *           &#64;gotags: gorm:"-" // 本人的成员身份
      *     @type int|string $total
-     *           &#64;gotags: gorm:"-"
+     *           &#64;gotags: gorm:"-" json:"total"
      *     @type bool $sync_disk
-     *           是否同步云盘
+     *           &#64;gotags: gorm:"-" json:"sync_disk"
      *     @type int|string $disk_folder
-     *           云盘文件夹
+     *           &#64;gotags: gorm:"-" json:"disk_folder"
      *     @type string $match_title
      *           &#64;gotags: gorm:"-"
      *     @type int|string $match_type
      *           &#64;gotags: gorm:"-"
      *     @type string $card_id
      *           &#64;gotags: gorm:"-"
+     *     @type string $birthday_style
+     *           &#64;gotags: json:"birthday_style"
+     *     @type bool $birthday_notify
+     *           &#64;gotags: json:"birthday_notify"
+     *     @type string $avatar
+     *           &#64;gotags: json:"avatar"
+     *     @type bool $has_invite_member
+     *           &#64;gotags: json:"has_invite_member"
+     *     @type bool $has_look_for_history
+     *           &#64;gotags: json:"has_look_for_history"
+     *     @type bool $open_cloud_file
+     *           &#64;gotags: json:"open_cloud_file"
+     *     @type bool $open_picture_file
+     *           &#64;gotags: json:"open_picture_file"
+     *     @type string $team_name
+     *           &#64;gotags: json:"team_name"
      * }
      */
     public function __construct($data = NULL) {
@@ -632,7 +696,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;gotags: gorm:"-"
+     * &#64;gotags: gorm:"-" json:"total"
      *
      * Generated from protobuf field <code>int64 total = 17;</code>
      * @return int|string
@@ -643,7 +707,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;gotags: gorm:"-"
+     * &#64;gotags: gorm:"-" json:"total"
      *
      * Generated from protobuf field <code>int64 total = 17;</code>
      * @param int|string $var
@@ -658,7 +722,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 是否同步云盘
+     * &#64;gotags: gorm:"-" json:"sync_disk"
      *
      * Generated from protobuf field <code>bool sync_disk = 18;</code>
      * @return bool
@@ -669,7 +733,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 是否同步云盘
+     * &#64;gotags: gorm:"-" json:"sync_disk"
      *
      * Generated from protobuf field <code>bool sync_disk = 18;</code>
      * @param bool $var
@@ -684,7 +748,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 云盘文件夹
+     * &#64;gotags: gorm:"-" json:"disk_folder"
      *
      * Generated from protobuf field <code>int64 disk_folder = 19;</code>
      * @return int|string
@@ -695,7 +759,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 云盘文件夹
+     * &#64;gotags: gorm:"-" json:"disk_folder"
      *
      * Generated from protobuf field <code>int64 disk_folder = 19;</code>
      * @param int|string $var
@@ -783,6 +847,214 @@ class Group extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->card_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"birthday_style"
+     *
+     * Generated from protobuf field <code>string birthday_style = 23;</code>
+     * @return string
+     */
+    public function getBirthdayStyle()
+    {
+        return $this->birthday_style;
+    }
+
+    /**
+     * &#64;gotags: json:"birthday_style"
+     *
+     * Generated from protobuf field <code>string birthday_style = 23;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBirthdayStyle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->birthday_style = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"birthday_notify"
+     *
+     * Generated from protobuf field <code>bool birthday_notify = 24;</code>
+     * @return bool
+     */
+    public function getBirthdayNotify()
+    {
+        return $this->birthday_notify;
+    }
+
+    /**
+     * &#64;gotags: json:"birthday_notify"
+     *
+     * Generated from protobuf field <code>bool birthday_notify = 24;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setBirthdayNotify($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->birthday_notify = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"avatar"
+     *
+     * Generated from protobuf field <code>string avatar = 25;</code>
+     * @return string
+     */
+    public function getAvatar()
+    {
+        return $this->avatar;
+    }
+
+    /**
+     * &#64;gotags: json:"avatar"
+     *
+     * Generated from protobuf field <code>string avatar = 25;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAvatar($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->avatar = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"has_invite_member"
+     *
+     * Generated from protobuf field <code>bool has_invite_member = 26;</code>
+     * @return bool
+     */
+    public function getHasInviteMember()
+    {
+        return $this->has_invite_member;
+    }
+
+    /**
+     * &#64;gotags: json:"has_invite_member"
+     *
+     * Generated from protobuf field <code>bool has_invite_member = 26;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHasInviteMember($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->has_invite_member = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"has_look_for_history"
+     *
+     * Generated from protobuf field <code>bool has_look_for_history = 27;</code>
+     * @return bool
+     */
+    public function getHasLookForHistory()
+    {
+        return $this->has_look_for_history;
+    }
+
+    /**
+     * &#64;gotags: json:"has_look_for_history"
+     *
+     * Generated from protobuf field <code>bool has_look_for_history = 27;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHasLookForHistory($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->has_look_for_history = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"open_cloud_file"
+     *
+     * Generated from protobuf field <code>bool open_cloud_file = 28;</code>
+     * @return bool
+     */
+    public function getOpenCloudFile()
+    {
+        return $this->open_cloud_file;
+    }
+
+    /**
+     * &#64;gotags: json:"open_cloud_file"
+     *
+     * Generated from protobuf field <code>bool open_cloud_file = 28;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOpenCloudFile($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->open_cloud_file = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"open_picture_file"
+     *
+     * Generated from protobuf field <code>bool open_picture_file = 29;</code>
+     * @return bool
+     */
+    public function getOpenPictureFile()
+    {
+        return $this->open_picture_file;
+    }
+
+    /**
+     * &#64;gotags: json:"open_picture_file"
+     *
+     * Generated from protobuf field <code>bool open_picture_file = 29;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOpenPictureFile($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->open_picture_file = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"team_name"
+     *
+     * Generated from protobuf field <code>string team_name = 30;</code>
+     * @return string
+     */
+    public function getTeamName()
+    {
+        return $this->team_name;
+    }
+
+    /**
+     * &#64;gotags: json:"team_name"
+     *
+     * Generated from protobuf field <code>string team_name = 30;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTeamName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->team_name = $var;
 
         return $this;
     }

@@ -128,4 +128,49 @@ class MemberSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
         $metadata, $options);
     }
 
+    /**
+     * MemberBirthdayUpdate 群成员生日设置
+     * @param \Im\V1\UpdateMemberBirthday $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function MemberBirthdayUpdate(\Im\V1\UpdateMemberBirthday $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.MemberSrv/MemberBirthdayUpdate',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * MemberWeatherUpdate 群成员天气设置
+     * @param \Im\V1\UpdateMemberWeather $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function MemberWeatherUpdate(\Im\V1\UpdateMemberWeather $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.MemberSrv/MemberWeatherUpdate',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * MemberToolUpdate 群成员工具设置
+     * @param \Im\V1\UpdateMemberTool $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function MemberToolUpdate(\Im\V1\UpdateMemberTool $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.MemberSrv/MemberToolUpdate',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
 }

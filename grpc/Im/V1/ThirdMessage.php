@@ -45,6 +45,12 @@ class ThirdMessage extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 seq = 5;</code>
      */
     protected $seq = 0;
+    /**
+     * 通知栏提醒内容
+     *
+     * Generated from protobuf field <code>string notify_content = 6;</code>
+     */
+    protected $notify_content = '';
 
     /**
      * Constructor.
@@ -62,6 +68,8 @@ class ThirdMessage extends \Google\Protobuf\Internal\Message
      *           消息接收者
      *     @type int|string $seq
      *           通知序号，红点
+     *     @type string $notify_content
+     *           通知栏提醒内容
      * }
      */
     public function __construct($data = NULL) {
@@ -205,6 +213,32 @@ class ThirdMessage extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->seq = $var;
+
+        return $this;
+    }
+
+    /**
+     * 通知栏提醒内容
+     *
+     * Generated from protobuf field <code>string notify_content = 6;</code>
+     * @return string
+     */
+    public function getNotifyContent()
+    {
+        return $this->notify_content;
+    }
+
+    /**
+     * 通知栏提醒内容
+     *
+     * Generated from protobuf field <code>string notify_content = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNotifyContent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->notify_content = $var;
 
         return $this;
     }

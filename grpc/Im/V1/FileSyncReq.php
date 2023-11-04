@@ -55,6 +55,12 @@ class FileSyncReq extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 pid = 7;</code>
      */
     protected $pid = 0;
+    /**
+     *文件ID
+     *
+     * Generated from protobuf field <code>string file_id = 8;</code>
+     */
+    protected $file_id = '';
 
     /**
      * Constructor.
@@ -76,6 +82,8 @@ class FileSyncReq extends \Google\Protobuf\Internal\Message
      *          文件大小
      *     @type int $pid
      *          上级文件夹id
+     *     @type string $file_id
+     *          文件ID
      * }
      */
     public function __construct($data = NULL) {
@@ -261,6 +269,32 @@ class FileSyncReq extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->pid = $var;
+
+        return $this;
+    }
+
+    /**
+     *文件ID
+     *
+     * Generated from protobuf field <code>string file_id = 8;</code>
+     * @return string
+     */
+    public function getFileId()
+    {
+        return $this->file_id;
+    }
+
+    /**
+     *文件ID
+     *
+     * Generated from protobuf field <code>string file_id = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFileId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->file_id = $var;
 
         return $this;
     }

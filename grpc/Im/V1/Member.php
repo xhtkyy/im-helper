@@ -87,6 +87,126 @@ class Member extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool addr = 13;</code>
      */
     protected $addr = false;
+    /**
+     * &#64;gotags: json:"history"
+     *
+     * Generated from protobuf field <code>bool history = 14;</code>
+     */
+    protected $history = false;
+    /**
+     * &#64;gotags: json:"self_delete"
+     *
+     * Generated from protobuf field <code>bool self_delete = 15;</code>
+     */
+    protected $self_delete = false;
+    /**
+     * &#64;gotags: json:"lunar"
+     *
+     * Generated from protobuf field <code>bool lunar = 16;</code>
+     */
+    protected $lunar = false;
+    /**
+     * &#64;gotags: json:"born_at"
+     *
+     * Generated from protobuf field <code>int64 born_at = 17;</code>
+     */
+    protected $born_at = 0;
+    /**
+     * &#64;gotags: json:"birthday"
+     *
+     * Generated from protobuf field <code>string birthday = 18;</code>
+     */
+    protected $birthday = '';
+    /**
+     * &#64;gotags: json:"weather"
+     *
+     * Generated from protobuf field <code>bool weather = 19;</code>
+     */
+    protected $weather = false;
+    /**
+     * &#64;gotags: json:"lat"
+     *
+     * Generated from protobuf field <code>string lat = 20;</code>
+     */
+    protected $lat = '';
+    /**
+     * &#64;gotags: json:"lon"
+     *
+     * Generated from protobuf field <code>string lon = 21;</code>
+     */
+    protected $lon = '';
+    /**
+     * &#64;gotags: json:"address"
+     *
+     * Generated from protobuf field <code>string address = 22;</code>
+     */
+    protected $address = '';
+    /**
+     * &#64;gotags: json:"notice_at"
+     *
+     * Generated from protobuf field <code>int64 notice_at = 23;</code>
+     */
+    protected $notice_at = 0;
+    /**
+     * &#64;gotags: json:"notice"
+     *
+     * Generated from protobuf field <code>bool notice = 24;</code>
+     */
+    protected $notice = false;
+    /**
+     * &#64;gotags: json:"pending"
+     *
+     * Generated from protobuf field <code>bool pending = 25;</code>
+     */
+    protected $pending = false;
+    /**
+     * &#64;gotags: json:"note"
+     *
+     * Generated from protobuf field <code>bool note = 26;</code>
+     */
+    protected $note = false;
+    /**
+     * &#64;gotags: json:"matter"
+     *
+     * Generated from protobuf field <code>bool matter = 27;</code>
+     */
+    protected $matter = false;
+    /**
+     * &#64;gotags: json:"photo"
+     *
+     * Generated from protobuf field <code>bool photo = 28;</code>
+     */
+    protected $photo = false;
+    /**
+     * &#64;gotags: json:"birth"
+     *
+     * Generated from protobuf field <code>bool birth = 29;</code>
+     */
+    protected $birth = false;
+    /**
+     * &#64;gotags: gorm:"-" json:"card"
+     *
+     * Generated from protobuf field <code>.im.v1.Card card = 30;</code>
+     */
+    protected $card = null;
+    /**
+     * &#64;gotags: json:"top"
+     *
+     * Generated from protobuf field <code>bool top = 31;</code>
+     */
+    protected $top = false;
+    /**
+     * &#64;gotags: json:"view_history"
+     *
+     * Generated from protobuf field <code>bool view_history = 32;</code>
+     */
+    protected $view_history = false;
+    /**
+     * &#64;gotags: json:"no_disturb"
+     *
+     * Generated from protobuf field <code>bool no_disturb = 33;</code>
+     */
+    protected $no_disturb = false;
 
     /**
      * Constructor.
@@ -118,6 +238,46 @@ class Member extends \Google\Protobuf\Internal\Message
      *           &#64;gotags: gorm:"serializer:json" json:"attachments"
      *     @type bool $addr
      *           &#64;gotags: json:"addr"
+     *     @type bool $history
+     *           &#64;gotags: json:"history"
+     *     @type bool $self_delete
+     *           &#64;gotags: json:"self_delete"
+     *     @type bool $lunar
+     *           &#64;gotags: json:"lunar"
+     *     @type int|string $born_at
+     *           &#64;gotags: json:"born_at"
+     *     @type string $birthday
+     *           &#64;gotags: json:"birthday"
+     *     @type bool $weather
+     *           &#64;gotags: json:"weather"
+     *     @type string $lat
+     *           &#64;gotags: json:"lat"
+     *     @type string $lon
+     *           &#64;gotags: json:"lon"
+     *     @type string $address
+     *           &#64;gotags: json:"address"
+     *     @type int|string $notice_at
+     *           &#64;gotags: json:"notice_at"
+     *     @type bool $notice
+     *           &#64;gotags: json:"notice"
+     *     @type bool $pending
+     *           &#64;gotags: json:"pending"
+     *     @type bool $note
+     *           &#64;gotags: json:"note"
+     *     @type bool $matter
+     *           &#64;gotags: json:"matter"
+     *     @type bool $photo
+     *           &#64;gotags: json:"photo"
+     *     @type bool $birth
+     *           &#64;gotags: json:"birth"
+     *     @type \Im\V1\Card $card
+     *           &#64;gotags: gorm:"-" json:"card"
+     *     @type bool $top
+     *           &#64;gotags: json:"top"
+     *     @type bool $view_history
+     *           &#64;gotags: json:"view_history"
+     *     @type bool $no_disturb
+     *           &#64;gotags: json:"no_disturb"
      * }
      */
     public function __construct($data = NULL) {
@@ -443,6 +603,536 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->addr = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"history"
+     *
+     * Generated from protobuf field <code>bool history = 14;</code>
+     * @return bool
+     */
+    public function getHistory()
+    {
+        return $this->history;
+    }
+
+    /**
+     * &#64;gotags: json:"history"
+     *
+     * Generated from protobuf field <code>bool history = 14;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHistory($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->history = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"self_delete"
+     *
+     * Generated from protobuf field <code>bool self_delete = 15;</code>
+     * @return bool
+     */
+    public function getSelfDelete()
+    {
+        return $this->self_delete;
+    }
+
+    /**
+     * &#64;gotags: json:"self_delete"
+     *
+     * Generated from protobuf field <code>bool self_delete = 15;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSelfDelete($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->self_delete = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"lunar"
+     *
+     * Generated from protobuf field <code>bool lunar = 16;</code>
+     * @return bool
+     */
+    public function getLunar()
+    {
+        return $this->lunar;
+    }
+
+    /**
+     * &#64;gotags: json:"lunar"
+     *
+     * Generated from protobuf field <code>bool lunar = 16;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setLunar($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->lunar = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"born_at"
+     *
+     * Generated from protobuf field <code>int64 born_at = 17;</code>
+     * @return int|string
+     */
+    public function getBornAt()
+    {
+        return $this->born_at;
+    }
+
+    /**
+     * &#64;gotags: json:"born_at"
+     *
+     * Generated from protobuf field <code>int64 born_at = 17;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setBornAt($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->born_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"birthday"
+     *
+     * Generated from protobuf field <code>string birthday = 18;</code>
+     * @return string
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * &#64;gotags: json:"birthday"
+     *
+     * Generated from protobuf field <code>string birthday = 18;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBirthday($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->birthday = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"weather"
+     *
+     * Generated from protobuf field <code>bool weather = 19;</code>
+     * @return bool
+     */
+    public function getWeather()
+    {
+        return $this->weather;
+    }
+
+    /**
+     * &#64;gotags: json:"weather"
+     *
+     * Generated from protobuf field <code>bool weather = 19;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setWeather($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->weather = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"lat"
+     *
+     * Generated from protobuf field <code>string lat = 20;</code>
+     * @return string
+     */
+    public function getLat()
+    {
+        return $this->lat;
+    }
+
+    /**
+     * &#64;gotags: json:"lat"
+     *
+     * Generated from protobuf field <code>string lat = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLat($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->lat = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"lon"
+     *
+     * Generated from protobuf field <code>string lon = 21;</code>
+     * @return string
+     */
+    public function getLon()
+    {
+        return $this->lon;
+    }
+
+    /**
+     * &#64;gotags: json:"lon"
+     *
+     * Generated from protobuf field <code>string lon = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLon($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->lon = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"address"
+     *
+     * Generated from protobuf field <code>string address = 22;</code>
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * &#64;gotags: json:"address"
+     *
+     * Generated from protobuf field <code>string address = 22;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAddress($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->address = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"notice_at"
+     *
+     * Generated from protobuf field <code>int64 notice_at = 23;</code>
+     * @return int|string
+     */
+    public function getNoticeAt()
+    {
+        return $this->notice_at;
+    }
+
+    /**
+     * &#64;gotags: json:"notice_at"
+     *
+     * Generated from protobuf field <code>int64 notice_at = 23;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setNoticeAt($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->notice_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"notice"
+     *
+     * Generated from protobuf field <code>bool notice = 24;</code>
+     * @return bool
+     */
+    public function getNotice()
+    {
+        return $this->notice;
+    }
+
+    /**
+     * &#64;gotags: json:"notice"
+     *
+     * Generated from protobuf field <code>bool notice = 24;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setNotice($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->notice = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"pending"
+     *
+     * Generated from protobuf field <code>bool pending = 25;</code>
+     * @return bool
+     */
+    public function getPending()
+    {
+        return $this->pending;
+    }
+
+    /**
+     * &#64;gotags: json:"pending"
+     *
+     * Generated from protobuf field <code>bool pending = 25;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setPending($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->pending = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"note"
+     *
+     * Generated from protobuf field <code>bool note = 26;</code>
+     * @return bool
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * &#64;gotags: json:"note"
+     *
+     * Generated from protobuf field <code>bool note = 26;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setNote($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->note = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"matter"
+     *
+     * Generated from protobuf field <code>bool matter = 27;</code>
+     * @return bool
+     */
+    public function getMatter()
+    {
+        return $this->matter;
+    }
+
+    /**
+     * &#64;gotags: json:"matter"
+     *
+     * Generated from protobuf field <code>bool matter = 27;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setMatter($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->matter = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"photo"
+     *
+     * Generated from protobuf field <code>bool photo = 28;</code>
+     * @return bool
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * &#64;gotags: json:"photo"
+     *
+     * Generated from protobuf field <code>bool photo = 28;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setPhoto($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->photo = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"birth"
+     *
+     * Generated from protobuf field <code>bool birth = 29;</code>
+     * @return bool
+     */
+    public function getBirth()
+    {
+        return $this->birth;
+    }
+
+    /**
+     * &#64;gotags: json:"birth"
+     *
+     * Generated from protobuf field <code>bool birth = 29;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setBirth($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->birth = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"card"
+     *
+     * Generated from protobuf field <code>.im.v1.Card card = 30;</code>
+     * @return \Im\V1\Card|null
+     */
+    public function getCard()
+    {
+        return $this->card;
+    }
+
+    public function hasCard()
+    {
+        return isset($this->card);
+    }
+
+    public function clearCard()
+    {
+        unset($this->card);
+    }
+
+    /**
+     * &#64;gotags: gorm:"-" json:"card"
+     *
+     * Generated from protobuf field <code>.im.v1.Card card = 30;</code>
+     * @param \Im\V1\Card $var
+     * @return $this
+     */
+    public function setCard($var)
+    {
+        GPBUtil::checkMessage($var, \Im\V1\Card::class);
+        $this->card = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"top"
+     *
+     * Generated from protobuf field <code>bool top = 31;</code>
+     * @return bool
+     */
+    public function getTop()
+    {
+        return $this->top;
+    }
+
+    /**
+     * &#64;gotags: json:"top"
+     *
+     * Generated from protobuf field <code>bool top = 31;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setTop($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->top = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"view_history"
+     *
+     * Generated from protobuf field <code>bool view_history = 32;</code>
+     * @return bool
+     */
+    public function getViewHistory()
+    {
+        return $this->view_history;
+    }
+
+    /**
+     * &#64;gotags: json:"view_history"
+     *
+     * Generated from protobuf field <code>bool view_history = 32;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setViewHistory($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->view_history = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"no_disturb"
+     *
+     * Generated from protobuf field <code>bool no_disturb = 33;</code>
+     * @return bool
+     */
+    public function getNoDisturb()
+    {
+        return $this->no_disturb;
+    }
+
+    /**
+     * &#64;gotags: json:"no_disturb"
+     *
+     * Generated from protobuf field <code>bool no_disturb = 33;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setNoDisturb($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->no_disturb = $var;
 
         return $this;
     }

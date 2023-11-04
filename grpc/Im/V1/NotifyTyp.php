@@ -101,6 +101,36 @@ class NotifyTyp
      * Generated from protobuf enum <code>APP_WORKS = 14;</code>
      */
     const APP_WORKS = 14;
+    /**
+     * 商机助手
+     *
+     * Generated from protobuf enum <code>APP_NICHE = 15;</code>
+     */
+    const APP_NICHE = 15;
+    /**
+     * 联盟助手
+     *
+     * Generated from protobuf enum <code>APP_PARTNER = 16;</code>
+     */
+    const APP_PARTNER = 16;
+    /**
+     * 活动助手
+     *
+     * Generated from protobuf enum <code>APP_ACTIVITY = 17;</code>
+     */
+    const APP_ACTIVITY = 17;
+    /**
+     * 会议邀请更新
+     *
+     * Generated from protobuf enum <code>APP_MEETING_INVITE = 18;</code>
+     */
+    const APP_MEETING_INVITE = 18;
+    /**
+     * 服务助手
+     *
+     * Generated from protobuf enum <code>APP_SERVE = 19;</code>
+     */
+    const APP_SERVE = 19;
 
     private static $valueToName = [
         self::APP_KNOW => 'APP_KNOW',
@@ -118,6 +148,11 @@ class NotifyTyp
         self::APP_BUSINESS => 'APP_BUSINESS',
         self::APP_CONFIGS => 'APP_CONFIGS',
         self::APP_WORKS => 'APP_WORKS',
+        self::APP_NICHE => 'APP_NICHE',
+        self::APP_PARTNER => 'APP_PARTNER',
+        self::APP_ACTIVITY => 'APP_ACTIVITY',
+        self::APP_MEETING_INVITE => 'APP_MEETING_INVITE',
+        self::APP_SERVE => 'APP_SERVE',
     ];
 
     public static function name($value)

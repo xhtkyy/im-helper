@@ -173,4 +173,34 @@ class GroupSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
         $metadata, $options);
     }
 
+    /**
+     * QueryGroupCardIDDetail 查询群和身份卡详情
+     * @param \Im\V1\GroupCardIDDetailQuery $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function QueryGroupCardIDDetail(\Im\V1\GroupCardIDDetailQuery $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.GroupSrv/QueryGroupCardIDDetail',
+        $argument,
+        ['\Im\V1\Group', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * UserFileHelperCreate 用户初始化，文件助手
+     * @param \Im\V1\ID $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function UserFileHelperCreate(\Im\V1\ID $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.GroupSrv/UserFileHelperCreate',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
 }

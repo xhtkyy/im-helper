@@ -97,6 +97,42 @@ class GroupTypCode
      * Generated from protobuf enum <code>WORK_NOTIFY = 13;</code>
      */
     const WORK_NOTIFY = 13;
+    /**
+     * 文件助手
+     *
+     * Generated from protobuf enum <code>FILE_HELPER = 14;</code>
+     */
+    const FILE_HELPER = 14;
+    /**
+     * 家庭群
+     *
+     * Generated from protobuf enum <code>FAMILY = 15;</code>
+     */
+    const FAMILY = 15;
+    /**
+     * 商机助手
+     *
+     * Generated from protobuf enum <code>NICHE = 16;</code>
+     */
+    const NICHE = 16;
+    /**
+     * 联盟助手
+     *
+     * Generated from protobuf enum <code>PARTNER = 17;</code>
+     */
+    const PARTNER = 17;
+    /**
+     * 活动助手
+     *
+     * Generated from protobuf enum <code>ACTIVITY = 18;</code>
+     */
+    const ACTIVITY = 18;
+    /**
+     * 服务助手
+     *
+     * Generated from protobuf enum <code>SERVE = 19;</code>
+     */
+    const SERVE = 19;
 
     private static $valueToName = [
         self::NORMAL => 'NORMAL',
@@ -113,6 +149,12 @@ class GroupTypCode
         self::APPLY_BUSINESS_CANCEL => 'APPLY_BUSINESS_CANCEL',
         self::APPLY_TEAM => 'APPLY_TEAM',
         self::WORK_NOTIFY => 'WORK_NOTIFY',
+        self::FILE_HELPER => 'FILE_HELPER',
+        self::FAMILY => 'FAMILY',
+        self::NICHE => 'NICHE',
+        self::PARTNER => 'PARTNER',
+        self::ACTIVITY => 'ACTIVITY',
+        self::SERVE => 'SERVE',
     ];
 
     public static function name($value)

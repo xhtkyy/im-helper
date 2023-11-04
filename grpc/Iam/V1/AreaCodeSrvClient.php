@@ -1,7 +1,7 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Iam\V1;
+namespace Iam\v1;
 
 /**
  * 区号服务（手机国际区号）
@@ -10,16 +10,16 @@ class AreaCodeSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
 
     /**
      * CreateAreaCode 创建区域代码
-     * @param \Iam\V1\AreaCodeSchema $argument input argument
+     * @param \Iam\v1\AreaCodeSchema $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function CreateAreaCode(\Iam\V1\AreaCodeSchema $argument,
+    public function CreateAreaCode(\Iam\v1\AreaCodeSchema $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.AreaCodeSrv/CreateAreaCode',
         $argument,
-        ['\Iam\V1\AreaCodeSchema', 'decode'],
+        ['\Iam\v1\AreaCodeSchema', 'decode'],
         $metadata, $options);
     }
 
@@ -34,18 +34,18 @@ class AreaCodeSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.AreaCodeSrv/GetAreaCode',
         $argument,
-        ['\Iam\V1\AreaCodeSchema', 'decode'],
+        ['\Iam\v1\AreaCodeSchema', 'decode'],
         $metadata, $options);
     }
 
     /**
      * UpdateAreaCode 编辑区号
-     * @param \Iam\V1\AreaCodeSchema $argument input argument
+     * @param \Iam\v1\AreaCodeSchema $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return array
      */
-    public function UpdateAreaCode(\Iam\V1\AreaCodeSchema $argument,
+    public function UpdateAreaCode(\Iam\v1\AreaCodeSchema $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.AreaCodeSrv/UpdateAreaCode',
         $argument,
@@ -79,7 +79,7 @@ class AreaCodeSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.AreaCodeSrv/ListAreaCode',
         $argument,
-        ['\Iam\V1\RespAreaCodes', 'decode'],
+        ['\Iam\v1\RespAreaCodes', 'decode'],
         $metadata, $options);
     }
 
