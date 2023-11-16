@@ -26,7 +26,7 @@ class AccountsRegisteredCheckReq extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $mobiles
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $mobiles
      *           &#64;gotags:json:"mobiles"
      * }
      */
@@ -50,7 +50,7 @@ class AccountsRegisteredCheckReq extends \Google\Protobuf\Internal\Message
      * &#64;gotags:json:"mobiles"
      *
      * Generated from protobuf field <code>repeated string mobiles = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMobiles($var)

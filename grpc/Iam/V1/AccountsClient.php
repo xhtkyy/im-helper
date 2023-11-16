@@ -19,37 +19,7 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/AccountCreate',
         $argument,
-        ['\Iam\V1\AccessToken', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * 登录：验证身份，发放临时凭证，获得的凭证仅可使用一次且有效时间极短，仅用于换取访问凭证
-     * @param \Iam\V1\UserAuth $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return array
-     */
-    public function SignUp(\Iam\V1\UserAuth $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/iam.v1.Accounts/SignUp',
-        $argument,
-        ['\Iam\V1\RefreshCode', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * 登录：获得主体应用的访问凭证
-     * @param \Iam\V1\TokenShort $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return array
-     */
-    public function SignIn(\Iam\V1\TokenShort $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/iam.v1.Accounts/SignIn',
-        $argument,
-        ['\Iam\V1\AccessToken', 'decode'],
+        ['\Iam\V1\UserAuthResp', 'decode'],
         $metadata, $options);
     }
 
@@ -78,21 +48,6 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
     public function UserAuthV2(\Iam\V1\UserAuth $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/UserAuthV2',
-        $argument,
-        ['\Iam\V1\UserAuthResp', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * 用户登陆刷新 v2.0
-     * @param \Google\Protobuf\GPBEmpty $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return array
-     */
-    public function UserAuthRefreshV2(\Google\Protobuf\GPBEmpty $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/iam.v1.Accounts/UserAuthRefreshV2',
         $argument,
         ['\Iam\V1\UserAuthResp', 'decode'],
         $metadata, $options);
@@ -289,7 +244,7 @@ class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/iam.v1.Accounts/AccountDelete',
         $argument,
-        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        ['\Iam\V1\AccountDeleteResp', 'decode'],
         $metadata, $options);
     }
 

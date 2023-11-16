@@ -26,7 +26,7 @@ class AuthorizeConfig extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $authorized_scopes
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $authorized_scopes
      *           &#64;gotags: json:"authorizedScopes"
      * }
      */
@@ -50,7 +50,7 @@ class AuthorizeConfig extends \Google\Protobuf\Internal\Message
      * &#64;gotags: json:"authorizedScopes"
      *
      * Generated from protobuf field <code>repeated string authorized_scopes = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAuthorizedScopes($var)

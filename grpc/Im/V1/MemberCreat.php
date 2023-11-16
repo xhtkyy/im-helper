@@ -35,6 +35,12 @@ class MemberCreat extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool from_server = 4;</code>
      */
     protected $from_server = false;
+    /**
+     * 是否扫码调用
+     *
+     * Generated from protobuf field <code>bool from_qrcode = 5;</code>
+     */
+    protected $from_qrcode = false;
 
     /**
      * Constructor.
@@ -49,6 +55,8 @@ class MemberCreat extends \Google\Protobuf\Internal\Message
      *           操作人员身份卡ID
      *     @type bool $from_server
      *           是否服务端调用
+     *     @type bool $from_qrcode
+     *           是否扫码调用
      * }
      */
     public function __construct($data = NULL) {
@@ -162,6 +170,32 @@ class MemberCreat extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->from_server = $var;
+
+        return $this;
+    }
+
+    /**
+     * 是否扫码调用
+     *
+     * Generated from protobuf field <code>bool from_qrcode = 5;</code>
+     * @return bool
+     */
+    public function getFromQrcode()
+    {
+        return $this->from_qrcode;
+    }
+
+    /**
+     * 是否扫码调用
+     *
+     * Generated from protobuf field <code>bool from_qrcode = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFromQrcode($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->from_qrcode = $var;
 
         return $this;
     }

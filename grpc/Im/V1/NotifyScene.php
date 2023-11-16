@@ -59,6 +59,42 @@ class NotifyScene
      * Generated from protobuf enum <code>GROUP_SELF_DEL = 7;</code>
      */
     const GROUP_SELF_DEL = 7;
+    /**
+     * 用户注销下线
+     *
+     * Generated from protobuf enum <code>OFF_LINE = 8;</code>
+     */
+    const OFF_LINE = 8;
+    /**
+     * 身份卡移除
+     *
+     * Generated from protobuf enum <code>CARD_ID_REMOVE = 9;</code>
+     */
+    const CARD_ID_REMOVE = 9;
+    /**
+     * 身份卡增加
+     *
+     * Generated from protobuf enum <code>CARD_ID_ADD = 10;</code>
+     */
+    const CARD_ID_ADD = 10;
+    /**
+     * 修改密码下线
+     *
+     * Generated from protobuf enum <code>PASSWORD_UPDATE = 11;</code>
+     */
+    const PASSWORD_UPDATE = 11;
+    /**
+     * 抢登下线
+     *
+     * Generated from protobuf enum <code>ONLINE_OTHER_DEVICE = 12;</code>
+     */
+    const ONLINE_OTHER_DEVICE = 12;
+    /**
+     * 组织踢出
+     *
+     * Generated from protobuf enum <code>TEAM_DEL = 13;</code>
+     */
+    const TEAM_DEL = 13;
 
     private static $valueToName = [
         self::CREATE => 'CREATE',
@@ -69,6 +105,12 @@ class NotifyScene
         self::OWNER_TRANSFER => 'OWNER_TRANSFER',
         self::GROUP_APPLY => 'GROUP_APPLY',
         self::GROUP_SELF_DEL => 'GROUP_SELF_DEL',
+        self::OFF_LINE => 'OFF_LINE',
+        self::CARD_ID_REMOVE => 'CARD_ID_REMOVE',
+        self::CARD_ID_ADD => 'CARD_ID_ADD',
+        self::PASSWORD_UPDATE => 'PASSWORD_UPDATE',
+        self::ONLINE_OTHER_DEVICE => 'ONLINE_OTHER_DEVICE',
+        self::TEAM_DEL => 'TEAM_DEL',
     ];
 
     public static function name($value)

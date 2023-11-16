@@ -68,7 +68,7 @@ class ESignPSNDetail extends \Google\Protobuf\Internal\Message
      *           &#64;gotags: json:"psnId"
      *     @type \Iam\V1\PSNAccount $psnAccount
      *           &#64;gotags: json:"psnAccount"
-     *     @type \Iam\V1\PsnInfo $psnInfo
+     *     @type \Iam\V1\PSNInfo $psnInfo
      *           &#64;gotags: json:"psnInfo"
      * }
      */
@@ -221,7 +221,7 @@ class ESignPSNDetail extends \Google\Protobuf\Internal\Message
      * &#64;gotags: json:"psnInfo"
      *
      * Generated from protobuf field <code>.iam.v1.PsnInfo psnInfo = 6;</code>
-     * @return \Iam\V1\PsnInfo|null
+     * @return \Iam\V1\PSNInfo|null
      */
     public function getPsnInfo()
     {
@@ -242,12 +242,12 @@ class ESignPSNDetail extends \Google\Protobuf\Internal\Message
      * &#64;gotags: json:"psnInfo"
      *
      * Generated from protobuf field <code>.iam.v1.PsnInfo psnInfo = 6;</code>
-     * @param \Iam\V1\PsnInfo $var
+     * @param \Iam\V1\PSNInfo $var
      * @return $this
      */
     public function setPsnInfo($var)
     {
-        GPBUtil::checkMessage($var, \Iam\V1\PsnInfo::class);
+        GPBUtil::checkMessage($var, \Iam\V1\PSNInfo::class);
         $this->psnInfo = $var;
 
         return $this;

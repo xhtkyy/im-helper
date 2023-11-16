@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ID extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
 
@@ -33,7 +33,7 @@ class ID extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string id = 1;</code>
      * @return string
      */
     public function getId()
@@ -42,7 +42,7 @@ class ID extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
      * @return $this
      */

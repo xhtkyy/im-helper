@@ -196,6 +196,14 @@ class GroupService implements GroupInterface {
      * @throws Exception
      */
     public function updateGroupAvaTar(string $imGroup): bool {
+        $groupInfo = $this->getGroupInfo($imGroup);
+        if(!empty($groupInfo['attachment']['avatar'])
+            && !str_contains($groupInfo['attachment']['avatar'], '|')
+            && filter_var($groupInfo['attachment']['avatar'],FILTER_VALIDATE_URL) !== false
+        ){
+            //存在头像且头像是合法的URL且不带|分隔符代表是用户自定义了头像 将不再更新群头像
+            return true;
+        }
         //获取群成员
         $members   = $this->getGroupMembers($imGroup);
         $allAvatar = [];

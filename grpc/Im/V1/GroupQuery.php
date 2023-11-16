@@ -35,6 +35,12 @@ class GroupQuery extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool addr = 5;</code>
      */
     protected $addr = false;
+    /**
+     * 查询家庭群
+     *
+     * Generated from protobuf field <code>bool family = 6;</code>
+     */
+    protected $family = false;
 
     /**
      * Constructor.
@@ -48,6 +54,8 @@ class GroupQuery extends \Google\Protobuf\Internal\Message
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $card_ids
      *     @type bool $addr
      *           查询通讯录
+     *     @type bool $family
+     *           查询家庭群
      * }
      */
     public function __construct($data = NULL) {
@@ -165,6 +173,32 @@ class GroupQuery extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->addr = $var;
+
+        return $this;
+    }
+
+    /**
+     * 查询家庭群
+     *
+     * Generated from protobuf field <code>bool family = 6;</code>
+     * @return bool
+     */
+    public function getFamily()
+    {
+        return $this->family;
+    }
+
+    /**
+     * 查询家庭群
+     *
+     * Generated from protobuf field <code>bool family = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFamily($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->family = $var;
 
         return $this;
     }

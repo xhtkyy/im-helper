@@ -29,7 +29,7 @@ class AccountsResp extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $total
-     *     @type array<\Iam\V1\AccountSchema>|\Google\Protobuf\Internal\RepeatedField $accounts
+     *     @type \Iam\V1\AccountSchema[]|\Google\Protobuf\Internal\RepeatedField $accounts
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,7 @@ class AccountsResp extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .iam.v1.AccountSchema accounts = 2;</code>
-     * @param array<\Iam\V1\AccountSchema>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Iam\V1\AccountSchema[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAccounts($var)

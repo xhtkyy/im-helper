@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class IDs extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated string ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>repeated string ids = 1;</code>
      */
     private $ids;
 
@@ -33,7 +33,7 @@ class IDs extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>repeated string ids = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getIds()
@@ -42,7 +42,7 @@ class IDs extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>repeated string ids = 1;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

@@ -242,7 +242,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
      *           &#64;gotags: gorm:"-" json:"gender"
      *     @type string $region_code
      *           &#64;gotags: gorm:"-" json:"region_code"
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $orgs
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $orgs
      *           &#64;gotags: gorm:"-" json:"org"
      * }
      */
@@ -988,7 +988,7 @@ class AccountSchema extends \Google\Protobuf\Internal\Message
      * &#64;gotags: gorm:"-" json:"org"
      *
      * Generated from protobuf field <code>repeated string orgs = 28;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setOrgs($var)

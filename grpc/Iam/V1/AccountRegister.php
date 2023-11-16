@@ -37,6 +37,18 @@ class AccountRegister extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string from = 7;</code>
      */
     protected $from = '';
+    /**
+     * 应用
+     *
+     * Generated from protobuf field <code>string app = 8;</code>
+     */
+    protected $app = '';
+    /**
+     * 注册平台，PC,WEB
+     *
+     * Generated from protobuf field <code>string platform = 9;</code>
+     */
+    protected $platform = '';
     protected $auth;
 
     /**
@@ -59,6 +71,10 @@ class AccountRegister extends \Google\Protobuf\Internal\Message
      *           注册所属区域
      *     @type string $from
      *           注册来源
+     *     @type string $app
+     *           应用
+     *     @type string $platform
+     *           注册平台，PC,WEB
      * }
      */
     public function __construct($data = NULL) {
@@ -259,6 +275,58 @@ class AccountRegister extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->from = $var;
+
+        return $this;
+    }
+
+    /**
+     * 应用
+     *
+     * Generated from protobuf field <code>string app = 8;</code>
+     * @return string
+     */
+    public function getApp()
+    {
+        return $this->app;
+    }
+
+    /**
+     * 应用
+     *
+     * Generated from protobuf field <code>string app = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setApp($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->app = $var;
+
+        return $this;
+    }
+
+    /**
+     * 注册平台，PC,WEB
+     *
+     * Generated from protobuf field <code>string platform = 9;</code>
+     * @return string
+     */
+    public function getPlatform()
+    {
+        return $this->platform;
+    }
+
+    /**
+     * 注册平台，PC,WEB
+     *
+     * Generated from protobuf field <code>string platform = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPlatform($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->platform = $var;
 
         return $this;
     }

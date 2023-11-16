@@ -112,4 +112,19 @@ class BusinessSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
         $metadata, $options);
     }
 
+    /**
+     * FriendCheckSearch 通讯录联系人注册关系检查
+     * @param \Im\V1\QueryContacts $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function FriendCheckSearch(\Im\V1\QueryContacts $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.BusinessSrv/FriendCheckSearch',
+        $argument,
+        ['\Im\V1\QueryContactsResp', 'decode'],
+        $metadata, $options);
+    }
+
 }

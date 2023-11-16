@@ -46,11 +46,11 @@ class PSNAuthPageConfig extends \Google\Protobuf\Internal\Message
      *
      *     @type string $psn_default_auth_mode
      *           &#64;gotags: json:"psnDefaultAuthMode"
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $psn_available_auth_modes
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $psn_available_auth_modes
      *           &#64;gotags: json:"psnAvailableAuthModes"
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $advanced_version
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $advanced_version
      *           &#64;gotags: json:"advancedVersion"
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $psn_editable_fields
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $psn_editable_fields
      *           &#64;gotags: json:"psnEditableFields"
      * }
      */
@@ -100,7 +100,7 @@ class PSNAuthPageConfig extends \Google\Protobuf\Internal\Message
      * &#64;gotags: json:"psnAvailableAuthModes"
      *
      * Generated from protobuf field <code>repeated string psn_available_auth_modes = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPsnAvailableAuthModes($var)
@@ -126,7 +126,7 @@ class PSNAuthPageConfig extends \Google\Protobuf\Internal\Message
      * &#64;gotags: json:"advancedVersion"
      *
      * Generated from protobuf field <code>repeated string advanced_version = 3;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdvancedVersion($var)
@@ -152,7 +152,7 @@ class PSNAuthPageConfig extends \Google\Protobuf\Internal\Message
      * &#64;gotags: json:"psnEditableFields"
      *
      * Generated from protobuf field <code>repeated string psn_editable_fields = 4;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPsnEditableFields($var)

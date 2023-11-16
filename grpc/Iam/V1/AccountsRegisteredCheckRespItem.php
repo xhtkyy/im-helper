@@ -31,6 +31,12 @@ class AccountsRegisteredCheckRespItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string openid = 3;</code>
      */
     protected $openid = '';
+    /**
+     * &#64;gotags:json:"avatar"
+     *
+     * Generated from protobuf field <code>string avatar = 4;</code>
+     */
+    protected $avatar = '';
 
     /**
      * Constructor.
@@ -44,6 +50,8 @@ class AccountsRegisteredCheckRespItem extends \Google\Protobuf\Internal\Message
      *           &#64;gotags:json:"mobile"
      *     @type string $openid
      *           &#64;gotags:json:"openid"
+     *     @type string $avatar
+     *           &#64;gotags:json:"avatar"
      * }
      */
     public function __construct($data = NULL) {
@@ -125,6 +133,32 @@ class AccountsRegisteredCheckRespItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->openid = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags:json:"avatar"
+     *
+     * Generated from protobuf field <code>string avatar = 4;</code>
+     * @return string
+     */
+    public function getAvatar()
+    {
+        return $this->avatar;
+    }
+
+    /**
+     * &#64;gotags:json:"avatar"
+     *
+     * Generated from protobuf field <code>string avatar = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAvatar($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->avatar = $var;
 
         return $this;
     }

@@ -26,7 +26,7 @@ class AccountsRegisteredCheckResp extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Iam\V1\AccountsRegisteredCheckRespItem>|\Google\Protobuf\Internal\RepeatedField $contacts
+     *     @type \Iam\V1\AccountsRegisteredCheckRespItem[]|\Google\Protobuf\Internal\RepeatedField $contacts
      *           &#64;gotags:json:"contacts"
      * }
      */
@@ -50,7 +50,7 @@ class AccountsRegisteredCheckResp extends \Google\Protobuf\Internal\Message
      * &#64;gotags:json:"contacts"
      *
      * Generated from protobuf field <code>repeated .iam.v1.AccountsRegisteredCheckRespItem contacts = 1;</code>
-     * @param array<\Iam\V1\AccountsRegisteredCheckRespItem>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Iam\V1\AccountsRegisteredCheckRespItem[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setContacts($var)

@@ -13,7 +13,6 @@ class AreaCode
 {
     /**
      *
-     *
      * Generated from protobuf enum <code>NONE = 0;</code>
      */
     const NONE = 0;

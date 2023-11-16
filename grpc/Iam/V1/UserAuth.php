@@ -20,9 +20,15 @@ class UserAuth extends \Google\Protobuf\Internal\Message
      */
     protected $app = '';
     /**
+     * 登陆区域
+     *
+     * Generated from protobuf field <code>string zone = 6;</code>
+     */
+    protected $zone = '';
+    /**
      * 登陆平台, PC、WEB、POCKET
      *
-     * Generated from protobuf field <code>string platform = 6;</code>
+     * Generated from protobuf field <code>string platform = 7;</code>
      */
     protected $platform = '';
     protected $raw;
@@ -43,6 +49,8 @@ class UserAuth extends \Google\Protobuf\Internal\Message
      *           二维码登陆
      *     @type string $app
      *           登陆应用
+     *     @type string $zone
+     *           登陆区域
      *     @type string $platform
      *           登陆平台, PC、WEB、POCKET
      * }
@@ -203,9 +211,35 @@ class UserAuth extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 登陆区域
+     *
+     * Generated from protobuf field <code>string zone = 6;</code>
+     * @return string
+     */
+    public function getZone()
+    {
+        return $this->zone;
+    }
+
+    /**
+     * 登陆区域
+     *
+     * Generated from protobuf field <code>string zone = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setZone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->zone = $var;
+
+        return $this;
+    }
+
+    /**
      * 登陆平台, PC、WEB、POCKET
      *
-     * Generated from protobuf field <code>string platform = 6;</code>
+     * Generated from protobuf field <code>string platform = 7;</code>
      * @return string
      */
     public function getPlatform()
@@ -216,7 +250,7 @@ class UserAuth extends \Google\Protobuf\Internal\Message
     /**
      * 登陆平台, PC、WEB、POCKET
      *
-     * Generated from protobuf field <code>string platform = 6;</code>
+     * Generated from protobuf field <code>string platform = 7;</code>
      * @param string $var
      * @return $this
      */

@@ -101,6 +101,12 @@ class ConfigTyp
      * Generated from protobuf enum <code>APP_ACCOUNT_WORDS = 14;</code>
      */
     const APP_ACCOUNT_WORDS = 14;
+    /**
+     * 文字设置
+     *
+     * Generated from protobuf enum <code>APP_SYSTEM_ACCOUNT_FIELD = 15;</code>
+     */
+    const APP_SYSTEM_ACCOUNT_FIELD = 15;
 
     private static $valueToName = [
         self::APP_KNOW => 'APP_KNOW',
@@ -118,6 +124,7 @@ class ConfigTyp
         self::APP_ACCOUNT_FILE => 'APP_ACCOUNT_FILE',
         self::APP_ACCOUNT_ADDRESS => 'APP_ACCOUNT_ADDRESS',
         self::APP_ACCOUNT_WORDS => 'APP_ACCOUNT_WORDS',
+        self::APP_SYSTEM_ACCOUNT_FIELD => 'APP_SYSTEM_ACCOUNT_FIELD',
     ];
 
     public static function name($value)
