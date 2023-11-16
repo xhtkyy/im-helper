@@ -77,7 +77,7 @@ class PairService implements PairInterface {
         $pair = $this->getPairInfo($main, $peer, false, false);
         if ($pair->getOrigin() != $type) {
             //如果相同直接成功 不需要操作
-            $attachment             = json_decode($pair->getAttachment()->serializeToJsonString(), true);
+            $attachment             = $pair->getAttachment() ? struct_to_array($pair->getAttachment()) : [];
             $attachment['relation'] = $type;
             $pair->setAttachment(array_to_struct($attachment))->setOrigin($type);
             [$reply, $status] = $this->pairSrvClient->UpdatePair($pair);
