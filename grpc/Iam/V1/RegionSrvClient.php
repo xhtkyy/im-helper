@@ -6,7 +6,7 @@ namespace Iam\V1;
 /**
  * 行政区划服务（区域划分）
  */
-class RegionSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class RegionSrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * CreateRegion 批量创建行政区划

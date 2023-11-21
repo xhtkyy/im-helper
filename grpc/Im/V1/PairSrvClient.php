@@ -6,7 +6,7 @@ namespace Im\V1;
 /**
  * IM关系服务
  */
-class PairSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class PairSrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * CreatePair 创建关系

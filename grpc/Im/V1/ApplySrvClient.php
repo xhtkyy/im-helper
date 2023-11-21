@@ -6,7 +6,7 @@ namespace Im\V1;
 /**
  * 申请相关服务
  */
-class ApplySrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class ApplySrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * CreateApply 创建申请

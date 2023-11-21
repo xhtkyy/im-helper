@@ -5,7 +5,7 @@ namespace Iam\V1;
 
 /**
  */
-class ConfigSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class ConfigSrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * GetConfig 获取配置

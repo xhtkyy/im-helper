@@ -6,7 +6,7 @@ namespace Iam\V1;
 /**
  * 区号服务（手机国际区号）
  */
-class AreaCodeSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class AreaCodeSrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * CreateAreaCode 创建区域代码

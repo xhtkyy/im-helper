@@ -6,7 +6,7 @@ namespace Iam\V1;
 /**
  * 账号服务
  */
-class AccountsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class AccountsClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * 注册账号

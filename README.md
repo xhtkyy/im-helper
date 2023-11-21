@@ -8,5 +8,5 @@ composer require xhtkyy/im-helper dev-main
 
 ```
 //例如
-vendor/xhtkyy/hyperf-tools/bin/grpc-generator -protoPath=../../protos,../../protos/third_party -clientExtendClass=\\Xhtkyy\\HyperfTools\\GrpcClient\\BaseGrpcClient -path=./grpc -proto='../../protos/im/v1/schema.proto'
+vendor/bin/grpc-code-generator -protoPath=../../protos,../../protos/third_party -clientExtendClass=\\Xhtkyy\\GrpcClient\\AbstractClient -path=./grpc -proto='../../protos/im/v1/schema.proto'
 ```

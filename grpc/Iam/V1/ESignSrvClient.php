@@ -6,7 +6,7 @@ namespace Iam\V1;
 /**
  * ESignSrv e签名宝服务
  */
-class ESignSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class ESignSrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * PSNCallback，个人实名认证成功回调

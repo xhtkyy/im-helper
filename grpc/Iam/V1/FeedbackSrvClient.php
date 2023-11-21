@@ -5,7 +5,7 @@ namespace Iam\V1;
 
 /**
  */
-class FeedbackSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class FeedbackSrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * CreateFeedBack 意见反馈

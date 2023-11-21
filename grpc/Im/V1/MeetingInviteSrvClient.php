@@ -6,7 +6,7 @@ namespace Im\V1;
 /**
  * 会议邀请服务
  */
-class MeetingInviteSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class MeetingInviteSrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * CreateMeetings 批量创建会议邀请

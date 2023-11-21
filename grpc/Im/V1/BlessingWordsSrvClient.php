@@ -6,7 +6,7 @@ namespace Im\V1;
 /**
  * 祝福语服务
  */
-class BlessingWordsSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class BlessingWordsSrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * CreateBlessingWords 创建会议邀请

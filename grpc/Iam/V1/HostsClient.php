@@ -6,7 +6,7 @@ namespace Iam\V1;
 /**
  * 主域管理服务
  */
-class HostsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class HostsClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * 注册

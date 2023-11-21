@@ -5,7 +5,7 @@ namespace Im\V1;
 
 /**
  */
-class BusinessSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class BusinessSrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * UserRelaLifted 用户关联关系解除

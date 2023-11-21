@@ -6,7 +6,7 @@ namespace Iam\V1;
 /**
  * 联系人服务
  */
-class ContactsClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class ContactsClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * 发起添加联系人请求，或者确认别人发起的联系人请求
