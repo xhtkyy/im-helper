@@ -89,5 +89,15 @@ interface BusinessSrvInterface
      */
     public function friendCheckSearch(\Im\V1\QueryContacts $request);
 
+    /**
+     * MessageReview 消息审查空接口
+     *
+     * Method <code>messageReview</code>
+     *
+     * @param \Im\V1\MessageReviewReq $request
+     * @return \Google\Protobuf\GPBEmpty
+     */
+    public function messageReview(\Im\V1\MessageReviewReq $request);
+
 }
 

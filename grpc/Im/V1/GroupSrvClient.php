@@ -189,6 +189,66 @@ class GroupSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
     }
 
     /**
+     * CreateGeoGroup 发起面对面建群
+     * @param \Im\V1\GeoGroupJoinReq $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function CreateGeoGroup(\Im\V1\GeoGroupJoinReq $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.GroupSrv/CreateGeoGroup',
+        $argument,
+        ['\Im\V1\GeoGroupJoinWaits', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * ListGeoGroupWaits 面对面建群记录列表
+     * @param \Im\V1\GeoGroupJoinReq $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function ListGeoGroupWaits(\Im\V1\GeoGroupJoinReq $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.GroupSrv/ListGeoGroupWaits',
+        $argument,
+        ['\Im\V1\GeoGroupJoinWaits', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * ExitGeoGroupWait 面对面建群，退出
+     * @param \Im\V1\GeoGroupJoinReq $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function ExitGeoGroupWait(\Im\V1\GeoGroupJoinReq $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.GroupSrv/ExitGeoGroupWait',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * JoinGeoGroup 面对面建群，进群
+     * @param \Im\V1\GeoGroupJoinReq $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function JoinGeoGroup(\Im\V1\GeoGroupJoinReq $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.GroupSrv/JoinGeoGroup',
+        $argument,
+        ['\Im\V1\ID', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * UserFileHelperCreate 用户初始化，文件助手
      * @param \Im\V1\ID $argument input argument
      * @param array $metadata metadata

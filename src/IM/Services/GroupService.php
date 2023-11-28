@@ -5,6 +5,8 @@ namespace Xhtkyy\ImHelper\IM\Services;
 use Exception;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\Grpc\StatusCode;
+use Im\V1\ClientAttr;
+use Im\V1\ClientAttrGroup;
 use Im\V1\Group;
 use Im\V1\GroupCreat;
 use Im\V1\GroupQuery;
@@ -22,7 +24,6 @@ use Im\V1\RespArr;
 use Xhtkyy\ImHelper\Exception\GroupNotFoundException;
 use Xhtkyy\ImHelper\IM\Interface\GroupInterface;
 use Xhtkyy\ImHelper\IM\properties\DepartmentProperty;
-use Xhtkyy\ImHelper\IM\properties\GroupAttachmentProperty;
 use Xhtkyy\ImHelper\IM\properties\GroupProperty;
 use Xhtkyy\ImHelper\IM\properties\MemberProperty;
 
@@ -33,22 +34,32 @@ class GroupService implements GroupInterface {
     protected MemberSrvClient $memberSrvClient;
 
     public function create(DepartmentProperty $department, array $rids, array $members, bool $isAllStaff = false): string {
-        $current      = time();
-        $groupType    = $isAllStaff ? GroupTypCode::COMPANY : GroupTypCode::DEPARTMENT;
-        $group        = (new Group())->setTeam($department->getTeamId()) //所属组织
+        $current   = time();
+        $groupType = $isAllStaff ? GroupTypCode::COMPANY : GroupTypCode::DEPARTMENT;
+        //TODO::
+        $groupAttachment = $department->getAttachment();
+        $clientAttrGroup = (new ClientAttrGroup())->setTeamName($groupAttachment['teamName'])
+            ->setAvatar($groupAttachment['avatar'])
+            ->setHasInviteMember($groupAttachment['hasInviteMember'])
+            ->setHasLookForHistory($groupAttachment['hasLookForHistory'])
+            ->setOpenPictureFile($groupAttachment['openCloudFile'])
+            ->setOpenPictureFile($groupAttachment['openPictureFile']);
+        $group           = (new Group())->setTeam($department->getTeamId()) //所属组织
         ->setOwner($department->getGroupLeader()) //群主 系统创建的根据成都伙伴确认直接使用群主 部门群群主在创建时是集合中第一人
         ->setType($groupType) //类型
         ->setName($department->getDepartmentName()) //群名称
         ->setCreator($department->getCreator()) //创建人
         ->setCreated($current) //创建时间
-        ->setAttachment(array_to_struct($department->getAttachment())) //附加值
+//        ->setAttachment(array_to_struct($department->getAttachment())) //附加值
+        ->setAttachment($clientAttrGroup) //附加值
         ->setCreatorCard($department->getCreatorCard()); //所有者身份卡ID
-        $groupMembers = [];
+        $groupMembers    = [];
         foreach ($members as $member) {
             $groupMembers[] = (new Member())
 //                ->setOpenid($member['openId']) // 个人标识
                 ->setOpenid($member['cardId']) //2023.07.27 秋廷要求将openID的值换成cardId
-                ->setAttachments(array_to_struct($member)) //附加值
+                ->setAttachments($this->setClientAttr($member)) //附加值
+//                ->setAttachments(array_to_struct($member)) //附加值
                 ->setJoined($current); //加入时间
         }
         $creat = (new GroupCreat())->setGroup($group)->setRids($rids)->setMembers($groupMembers);
@@ -69,11 +80,30 @@ class GroupService implements GroupInterface {
         return $status == StatusCode::OK;
     }
 
+    private function setClientAttr(array $member): ClientAttr {
+        return (new ClientAttr())->setAvatar($member['avatar'])
+            ->setCardId($member['cardId'])
+            ->setComment($member['comment'])
+            ->setDepartmentId($member['departmentId'])
+            ->setDepartmentName($member['departmentName'])
+            ->setJobId($member['jobId'])
+            ->setJobName($member['jobName'])
+            ->setNickname($member['nickname'])
+            ->setNoDisturb($member['noDisturb'])
+            ->setOpenId($member['openId'])
+            ->setStaffName($member['staffName'])
+            ->setStayOn($member['stayOn'])
+            ->setTeamId($member['teamId'])
+            ->setTeamName($member['teamName'])
+            ->setViewHistory($member['viewHistory']);
+    }
+
     public function modifyGroupMember(MemberProperty $member, bool $isAdd = true): bool {
         $imMember = (new Member())
 //            ->setOpenid($member->getOpenId())
             ->setOpenid($member->getCardID()) //2023.07.27 秋廷要求将openID的值换成cardId
-            ->setAttachments(array_to_struct($member->getAttachment())) //附加值
+            ->setAttachments($this->setClientAttr($member->toArray()))
+//            ->setAttachments(array_to_struct($member->getAttachment())) //附加值
             ->setGroup($member->getImGroup());
         if ($isAdd) {
             $imMember    = $imMember->setJoined(time());
@@ -197,10 +227,10 @@ class GroupService implements GroupInterface {
      */
     public function updateGroupAvaTar(string $imGroup): bool {
         $groupInfo = $this->getGroupInfo($imGroup);
-        if(!empty($groupInfo['attachment']['avatar'])
+        if (!empty($groupInfo['attachment']['avatar'])
             && !str_contains($groupInfo['attachment']['avatar'], '|')
-            && filter_var($groupInfo['attachment']['avatar'],FILTER_VALIDATE_URL) !== false
-        ){
+            && filter_var($groupInfo['attachment']['avatar'], FILTER_VALIDATE_URL) !== false
+        ) {
             //存在头像且头像是合法的URL且不带|分隔符代表是用户自定义了头像 将不再更新群头像
             return true;
         }
@@ -226,10 +256,13 @@ class GroupService implements GroupInterface {
         if (empty($allAvatar)) {
             return false;
         }
-        $groupAttachment = (new GroupAttachmentProperty())->setTeamName($teamName)
-            ->setAvatar(implode('|', $allAvatar))->toArray();
-
-        $group = (new Group())->setGroup($imGroup)->setAttachment(array_to_struct($groupAttachment))->setUpdated(time());
+//        $groupAttachment = (new GroupAttachmentProperty())->setTeamName($teamName)
+//            ->setAvatar(implode('|', $allAvatar))->toArray();
+//
+//        $group = (new Group())->setGroup($imGroup)->setAttachment(array_to_struct($groupAttachment))->setUpdated(time());
+        $clientAttrGroup = (new ClientAttrGroup())->setTeamName($teamName)
+            ->setAvatar(implode('|', $allAvatar));
+        $group           = (new Group())->setGroup($imGroup)->setAttachment($clientAttrGroup)->setUpdated(time());
         [, $status] = $this->groupSrvClient->UpdateGroup($group);
         return $status == StatusCode::OK;
     }

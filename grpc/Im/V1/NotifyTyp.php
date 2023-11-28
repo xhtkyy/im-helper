@@ -131,6 +131,12 @@ class NotifyTyp
      * Generated from protobuf enum <code>APP_SERVE = 19;</code>
      */
     const APP_SERVE = 19;
+    /**
+     * 身份卡
+     *
+     * Generated from protobuf enum <code>APP_CARD = 20;</code>
+     */
+    const APP_CARD = 20;
 
     private static $valueToName = [
         self::APP_KNOW => 'APP_KNOW',
@@ -153,6 +159,7 @@ class NotifyTyp
         self::APP_ACTIVITY => 'APP_ACTIVITY',
         self::APP_MEETING_INVITE => 'APP_MEETING_INVITE',
         self::APP_SERVE => 'APP_SERVE',
+        self::APP_CARD => 'APP_CARD',
     ];
 
     public static function name($value)

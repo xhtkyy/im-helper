@@ -72,7 +72,7 @@ class Pair extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: gorm:"serializer:json" json:"attachment"
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct attachment = 10;</code>
+     * Generated from protobuf field <code>.im.v1.ClientAttrMem attachment = 10;</code>
      */
     protected $attachment = null;
     /**
@@ -94,11 +94,11 @@ class Pair extends \Google\Protobuf\Internal\Message
      */
     protected $card = null;
     /**
-     * &#64;gotags: json:"top"
+     * &#64;gotags: json:"pin"
      *
-     * Generated from protobuf field <code>bool top = 14;</code>
+     * Generated from protobuf field <code>bool pin = 14;</code>
      */
-    protected $top = false;
+    protected $pin = false;
     /**
      * &#64;gotags: json:"view_history"
      *
@@ -111,6 +111,12 @@ class Pair extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool no_disturb = 16;</code>
      */
     protected $no_disturb = false;
+    /**
+     * &#64;gotags: json:"comment"
+     *
+     * Generated from protobuf field <code>string comment = 17;</code>
+     */
+    protected $comment = '';
 
     /**
      * Constructor.
@@ -136,7 +142,7 @@ class Pair extends \Google\Protobuf\Internal\Message
      *           &#64;gotags: json:"updated"
      *     @type int|string $deleted
      *           &#64;gotags: json:"deleted"
-     *     @type \Google\Protobuf\Struct $attachment
+     *     @type \Im\V1\ClientAttrMem $attachment
      *           &#64;gotags: gorm:"serializer:json" json:"attachment"
      *     @type bool $has_del
      *           &#64;gotags: json:"has_del"
@@ -144,12 +150,14 @@ class Pair extends \Google\Protobuf\Internal\Message
      *           &#64;gotags: json:"unregistered"
      *     @type \Im\V1\Card $card
      *           &#64;gotags: gorm:"-" json:"card"
-     *     @type bool $top
-     *           &#64;gotags: json:"top"
+     *     @type bool $pin
+     *           &#64;gotags: json:"pin"
      *     @type bool $view_history
      *           &#64;gotags: json:"view_history"
      *     @type bool $no_disturb
      *           &#64;gotags: json:"no_disturb"
+     *     @type string $comment
+     *           &#64;gotags: json:"comment"
      * }
      */
     public function __construct($data = NULL) {
@@ -394,8 +402,8 @@ class Pair extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: gorm:"serializer:json" json:"attachment"
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct attachment = 10;</code>
-     * @return \Google\Protobuf\Struct|null
+     * Generated from protobuf field <code>.im.v1.ClientAttrMem attachment = 10;</code>
+     * @return \Im\V1\ClientAttrMem|null
      */
     public function getAttachment()
     {
@@ -415,13 +423,13 @@ class Pair extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: gorm:"serializer:json" json:"attachment"
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct attachment = 10;</code>
-     * @param \Google\Protobuf\Struct $var
+     * Generated from protobuf field <code>.im.v1.ClientAttrMem attachment = 10;</code>
+     * @param \Im\V1\ClientAttrMem $var
      * @return $this
      */
     public function setAttachment($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        GPBUtil::checkMessage($var, \Im\V1\ClientAttrMem::class);
         $this->attachment = $var;
 
         return $this;
@@ -516,27 +524,27 @@ class Pair extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;gotags: json:"top"
+     * &#64;gotags: json:"pin"
      *
-     * Generated from protobuf field <code>bool top = 14;</code>
+     * Generated from protobuf field <code>bool pin = 14;</code>
      * @return bool
      */
-    public function getTop()
+    public function getPin()
     {
-        return $this->top;
+        return $this->pin;
     }
 
     /**
-     * &#64;gotags: json:"top"
+     * &#64;gotags: json:"pin"
      *
-     * Generated from protobuf field <code>bool top = 14;</code>
+     * Generated from protobuf field <code>bool pin = 14;</code>
      * @param bool $var
      * @return $this
      */
-    public function setTop($var)
+    public function setPin($var)
     {
         GPBUtil::checkBool($var);
-        $this->top = $var;
+        $this->pin = $var;
 
         return $this;
     }
@@ -589,6 +597,32 @@ class Pair extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->no_disturb = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"comment"
+     *
+     * Generated from protobuf field <code>string comment = 17;</code>
+     * @return string
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * &#64;gotags: json:"comment"
+     *
+     * Generated from protobuf field <code>string comment = 17;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setComment($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->comment = $var;
 
         return $this;
     }
