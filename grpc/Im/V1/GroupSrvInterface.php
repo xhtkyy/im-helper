@@ -132,6 +132,46 @@ interface GroupSrvInterface
     public function queryGroupCardIDDetail(\Im\V1\GroupCardIDDetailQuery $request);
 
     /**
+     * CreateGeoGroup 发起面对面建群
+     *
+     * Method <code>createGeoGroup</code>
+     *
+     * @param \Im\V1\GeoGroupJoinReq $request
+     * @return \Im\V1\GeoGroupJoinWaits
+     */
+    public function createGeoGroup(\Im\V1\GeoGroupJoinReq $request);
+
+    /**
+     * ListGeoGroupWaits 面对面建群记录列表
+     *
+     * Method <code>listGeoGroupWaits</code>
+     *
+     * @param \Im\V1\GeoGroupJoinReq $request
+     * @return \Im\V1\GeoGroupJoinWaits
+     */
+    public function listGeoGroupWaits(\Im\V1\GeoGroupJoinReq $request);
+
+    /**
+     * ExitGeoGroupWait 面对面建群，退出
+     *
+     * Method <code>exitGeoGroupWait</code>
+     *
+     * @param \Im\V1\GeoGroupJoinReq $request
+     * @return \Google\Protobuf\GPBEmpty
+     */
+    public function exitGeoGroupWait(\Im\V1\GeoGroupJoinReq $request);
+
+    /**
+     * JoinGeoGroup 面对面建群，进群
+     *
+     * Method <code>joinGeoGroup</code>
+     *
+     * @param \Im\V1\GeoGroupJoinReq $request
+     * @return \Im\V1\ID
+     */
+    public function joinGeoGroup(\Im\V1\GeoGroupJoinReq $request);
+
+    /**
      * UserFileHelperCreate 用户初始化，文件助手
      *
      * Method <code>userFileHelperCreate</code>

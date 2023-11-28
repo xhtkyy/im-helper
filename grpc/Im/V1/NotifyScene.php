@@ -95,6 +95,24 @@ class NotifyScene
      * Generated from protobuf enum <code>TEAM_DEL = 13;</code>
      */
     const TEAM_DEL = 13;
+    /**
+     * 面对面建群
+     *
+     * Generated from protobuf enum <code>FACE2FACE = 14;</code>
+     */
+    const FACE2FACE = 14;
+    /**
+     * 账号违规封禁，下线
+     *
+     * Generated from protobuf enum <code>BAN_OFF_LINE = 15;</code>
+     */
+    const BAN_OFF_LINE = 15;
+    /**
+     * 提醒更新
+     *
+     * Generated from protobuf enum <code>UPDATE_NOTICE = 17;</code>
+     */
+    const UPDATE_NOTICE = 17;
 
     private static $valueToName = [
         self::CREATE => 'CREATE',
@@ -111,6 +129,9 @@ class NotifyScene
         self::PASSWORD_UPDATE => 'PASSWORD_UPDATE',
         self::ONLINE_OTHER_DEVICE => 'ONLINE_OTHER_DEVICE',
         self::TEAM_DEL => 'TEAM_DEL',
+        self::FACE2FACE => 'FACE2FACE',
+        self::BAN_OFF_LINE => 'BAN_OFF_LINE',
+        self::UPDATE_NOTICE => 'UPDATE_NOTICE',
     ];
 
     public static function name($value)

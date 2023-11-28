@@ -78,7 +78,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: gorm:"serializer:json" json:"attachments"
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct attachments = 12;</code>
+     * Generated from protobuf field <code>.im.v1.ClientAttr attachments = 12;</code>
      */
     protected $attachments = null;
     /**
@@ -190,11 +190,11 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $card = null;
     /**
-     * &#64;gotags: json:"top"
+     * &#64;gotags: json:"pin"
      *
-     * Generated from protobuf field <code>bool top = 31;</code>
+     * Generated from protobuf field <code>bool pin = 31;</code>
      */
-    protected $top = false;
+    protected $pin = false;
     /**
      * &#64;gotags: json:"view_history"
      *
@@ -207,6 +207,18 @@ class Member extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool no_disturb = 33;</code>
      */
     protected $no_disturb = false;
+    /**
+     * &#64;gotags: json:"nickname"
+     *
+     * Generated from protobuf field <code>string nickname = 34;</code>
+     */
+    protected $nickname = '';
+    /**
+     * &#64;gotags: json:"comment"
+     *
+     * Generated from protobuf field <code>string comment = 35;</code>
+     */
+    protected $comment = '';
 
     /**
      * Constructor.
@@ -234,7 +246,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *           &#64;gotags: json:"removed"
      *     @type int|string $latest
      *           &#64;gotags: json:"latest"
-     *     @type \Google\Protobuf\Struct $attachments
+     *     @type \Im\V1\ClientAttr $attachments
      *           &#64;gotags: gorm:"serializer:json" json:"attachments"
      *     @type bool $addr
      *           &#64;gotags: json:"addr"
@@ -272,12 +284,16 @@ class Member extends \Google\Protobuf\Internal\Message
      *           &#64;gotags: json:"birth"
      *     @type \Im\V1\Card $card
      *           &#64;gotags: gorm:"-" json:"card"
-     *     @type bool $top
-     *           &#64;gotags: json:"top"
+     *     @type bool $pin
+     *           &#64;gotags: json:"pin"
      *     @type bool $view_history
      *           &#64;gotags: json:"view_history"
      *     @type bool $no_disturb
      *           &#64;gotags: json:"no_disturb"
+     *     @type string $nickname
+     *           &#64;gotags: json:"nickname"
+     *     @type string $comment
+     *           &#64;gotags: json:"comment"
      * }
      */
     public function __construct($data = NULL) {
@@ -548,8 +564,8 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: gorm:"serializer:json" json:"attachments"
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct attachments = 12;</code>
-     * @return \Google\Protobuf\Struct|null
+     * Generated from protobuf field <code>.im.v1.ClientAttr attachments = 12;</code>
+     * @return \Im\V1\ClientAttr|null
      */
     public function getAttachments()
     {
@@ -569,13 +585,13 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: gorm:"serializer:json" json:"attachments"
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct attachments = 12;</code>
-     * @param \Google\Protobuf\Struct $var
+     * Generated from protobuf field <code>.im.v1.ClientAttr attachments = 12;</code>
+     * @param \Im\V1\ClientAttr $var
      * @return $this
      */
     public function setAttachments($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        GPBUtil::checkMessage($var, \Im\V1\ClientAttr::class);
         $this->attachments = $var;
 
         return $this;
@@ -1060,27 +1076,27 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * &#64;gotags: json:"top"
+     * &#64;gotags: json:"pin"
      *
-     * Generated from protobuf field <code>bool top = 31;</code>
+     * Generated from protobuf field <code>bool pin = 31;</code>
      * @return bool
      */
-    public function getTop()
+    public function getPin()
     {
-        return $this->top;
+        return $this->pin;
     }
 
     /**
-     * &#64;gotags: json:"top"
+     * &#64;gotags: json:"pin"
      *
-     * Generated from protobuf field <code>bool top = 31;</code>
+     * Generated from protobuf field <code>bool pin = 31;</code>
      * @param bool $var
      * @return $this
      */
-    public function setTop($var)
+    public function setPin($var)
     {
         GPBUtil::checkBool($var);
-        $this->top = $var;
+        $this->pin = $var;
 
         return $this;
     }
@@ -1133,6 +1149,58 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->no_disturb = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"nickname"
+     *
+     * Generated from protobuf field <code>string nickname = 34;</code>
+     * @return string
+     */
+    public function getNickname()
+    {
+        return $this->nickname;
+    }
+
+    /**
+     * &#64;gotags: json:"nickname"
+     *
+     * Generated from protobuf field <code>string nickname = 34;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNickname($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->nickname = $var;
+
+        return $this;
+    }
+
+    /**
+     * &#64;gotags: json:"comment"
+     *
+     * Generated from protobuf field <code>string comment = 35;</code>
+     * @return string
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * &#64;gotags: json:"comment"
+     *
+     * Generated from protobuf field <code>string comment = 35;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setComment($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->comment = $var;
 
         return $this;
     }

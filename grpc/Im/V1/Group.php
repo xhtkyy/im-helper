@@ -90,7 +90,7 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: gorm:"serializer:json" json:"attachment"
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct attachment = 13;</code>
+     * Generated from protobuf field <code>.im.v1.ClientAttrGroup attachment = 13;</code>
      */
     protected $attachment = null;
     /**
@@ -226,7 +226,7 @@ class Group extends \Google\Protobuf\Internal\Message
      *           &#64;gotags: json:"removed"
      *     @type int|string $updated
      *           &#64;gotags: json:"updated"
-     *     @type \Google\Protobuf\Struct $attachment
+     *     @type \Im\V1\ClientAttrGroup $attachment
      *           &#64;gotags: gorm:"serializer:json" json:"attachment"
      *     @type string $name
      *           &#64;gotags: json:"name"
@@ -584,8 +584,8 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: gorm:"serializer:json" json:"attachment"
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct attachment = 13;</code>
-     * @return \Google\Protobuf\Struct|null
+     * Generated from protobuf field <code>.im.v1.ClientAttrGroup attachment = 13;</code>
+     * @return \Im\V1\ClientAttrGroup|null
      */
     public function getAttachment()
     {
@@ -605,13 +605,13 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * &#64;gotags: gorm:"serializer:json" json:"attachment"
      *
-     * Generated from protobuf field <code>.google.protobuf.Struct attachment = 13;</code>
-     * @param \Google\Protobuf\Struct $var
+     * Generated from protobuf field <code>.im.v1.ClientAttrGroup attachment = 13;</code>
+     * @param \Im\V1\ClientAttrGroup $var
      * @return $this
      */
     public function setAttachment($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        GPBUtil::checkMessage($var, \Im\V1\ClientAttrGroup::class);
         $this->attachment = $var;
 
         return $this;

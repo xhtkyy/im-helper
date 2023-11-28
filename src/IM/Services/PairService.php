@@ -48,16 +48,12 @@ class PairService implements PairInterface {
      */
     public function getPairInfo(string $main, string $peer, bool $history = false, bool $is_array = true): array|Pair {
         $condition = (new PairID())->setMain($main)->setPeer($peer)->setHistory($history);
-        var_dump($condition->serializeToJsonString());
         /**
          * @var Pair $reply
          */
         [$reply, $status] = $this->pairSrvClient->GetPair($condition);
         if ($status != StatusCode::OK) {
             throw new Exception('调用PairSrv GetPair失败.');
-        }
-        if ($reply == null) {
-            var_dump($reply);
         }
         return $is_array ? json_decode($reply->serializeToJsonString(), true) : $reply;
     }

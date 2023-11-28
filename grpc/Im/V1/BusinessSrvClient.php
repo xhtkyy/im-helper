@@ -127,4 +127,19 @@ class BusinessSrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
         $metadata, $options);
     }
 
+    /**
+     * MessageReview 消息审查空接口
+     * @param \Im\V1\MessageReviewReq $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return array
+     */
+    public function MessageReview(\Im\V1\MessageReviewReq $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/im.v1.BusinessSrv/MessageReview',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
 }
