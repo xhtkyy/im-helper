@@ -5,6 +5,8 @@ namespace Xhtkyy\ImHelper\IM\Services;
 use Exception;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\Grpc\StatusCode;
+use Im\V1\ClientAttr;
+use Im\V1\ClientAttrMem;
 use Im\V1\Pair;
 use Im\V1\PairID;
 use Im\V1\PairSrvClient;
@@ -20,14 +22,21 @@ class PairService implements PairInterface {
      * @throws Exception
      */
     public function createPair(PairProperty $pairProperty, array $members): array {
-        $attachment = [
-            'creatorCardId' => $pairProperty->getMain(),
-            'member'        => $members,
-            'relation'      => $pairProperty->getType()
-        ];
-        $pair       = (new Pair())->setMain($pairProperty->getMain())
+//        $attachment = [
+//            'creatorCardId' => $pairProperty->getMain(),
+//            'member'        => $members,
+//            'relation'      => $pairProperty->getType()
+//        ];
+        $attachment = [];
+        foreach ($members as $member) {
+            $attachment[] = $this->setClientAttr($member);
+        }
+        $pair = (new Pair())->setMain($pairProperty->getMain())
             ->setPeer($pairProperty->getPeer())
-            ->setAttachment(array_to_struct($attachment))
+//            ->setAttachment(array_to_struct($attachment))
+            ->setAttachment((new ClientAttrMem())->setRelation($pairProperty->getType())
+                ->setCreatorCardId($pairProperty->getMain())
+                ->setMember($attachment))
             ->setOrigin($pairProperty->getType());
         [$reply, $status] = $this->pairSrvClient->CreatePair($pair);
         if ($status != StatusCode::OK) {
@@ -41,6 +50,24 @@ class PairService implements PairInterface {
             'main' => $reply->getMain(),
             'peer' => $reply->getPeer()
         ];
+    }
+
+    private function setClientAttr(array $member): ClientAttr {
+        return (new ClientAttr())->setAvatar($member['avatar'])
+            ->setCardId($member['cardId'])
+            ->setComment($member['comment'])
+            ->setDepartmentId($member['departmentId'])
+            ->setDepartmentName($member['departmentName'])
+            ->setJobId($member['jobId'])
+            ->setJobName($member['jobName'])
+            ->setNickname($member['nickname'])
+            ->setNoDisturb($member['noDisturb'])
+            ->setOpenId($member['openId'])
+            ->setStaffName($member['staffName'])
+            ->setStayOn($member['stayOn'])
+            ->setTeamId($member['teamId'])
+            ->setTeamName($member['teamName'])
+            ->setViewHistory($member['viewHistory']);
     }
 
     /**
@@ -76,9 +103,15 @@ class PairService implements PairInterface {
         $pair = $this->getPairInfo($main, $peer, false, false);
         if ($pair->getOrigin() != $type) {
             //如果相同直接成功 不需要操作
-            $attachment             = $pair->getAttachment() ? struct_to_array($pair->getAttachment()) : [];
-            $attachment['relation'] = $type;
-            $pair->setAttachment(array_to_struct($attachment))->setOrigin($type);
+//            $attachment             = $pair->getAttachment() ? struct_to_array($pair->getAttachment()) : [];
+//            $attachment['relation'] = $type;
+//            $pair->setAttachment(array_to_struct($attachment))->setOrigin($type);
+            /**
+             * @var ClientAttrMem $attachment
+             */
+            $attachment = $pair->getAttachment();
+            $attachment->setRelation($type);
+            $pair->setAttachment($attachment)->setOrigin($type);
             [$reply, $status] = $this->pairSrvClient->UpdatePair($pair);
             if ($status != StatusCode::OK) {
                 throw new Exception('PairSrv UpdatePair失败，原因：' . $reply);
