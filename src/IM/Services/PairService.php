@@ -61,13 +61,10 @@ class PairService implements PairInterface {
             ->setJobId($member['jobId'])
             ->setJobName($member['jobName'])
             ->setNickname($member['nickname'])
-            ->setNoDisturb($member['noDisturb'])
             ->setOpenId($member['openId'])
             ->setStaffName($member['staffName'])
-            ->setStayOn($member['stayOn'])
             ->setTeamId($member['teamId'])
-            ->setTeamName($member['teamName'])
-            ->setViewHistory($member['viewHistory']);
+            ->setTeamName($member['teamName']);
     }
 
     /**
