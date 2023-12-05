@@ -15,7 +15,7 @@ namespace Xhtkyy\ImHelper\IM\properties;
  * "noDisturb": null, // 免打扰 后面变int了
  * "openId": "25yio0000nlngalpmc", // openid
  * "staffName": "斗破苍穹萧炎", // 员工名称/ 个人名称
- * "stayOn": null, // 置顶
+ * "stayOn": null, // 置顶 后面变int了
  * "teamId": "87", // 组织Id
  * "teamName": "艳阳高照集团", // 组织名
  * "viewHistory": true // 是否允许查看历史记录
@@ -33,7 +33,7 @@ class MemberAttachmentProperty extends Property {
     public int $noDisturb = 0; //免打扰
     public string $openId = ''; //openid
     public string $staffName = ''; //  员工名称/个人名称
-    public ?string $stayOn = null; //置顶
+    public int $stayOn = 0; //置顶
     public string $teamId = ''; //组织Id
     public string $teamName = ''; //组织名
     public bool $viewHistory = true; //是否允许查看历史记录
