@@ -12,7 +12,7 @@ namespace Xhtkyy\ImHelper\IM\properties;
  * "jobId": null, // 岗位id
  * "jobName": null, // 岗位名
  * "nickname": null, // 昵称
- * "noDisturb": null, // 免打扰
+ * "noDisturb": null, // 免打扰 后面变int了
  * "openId": "25yio0000nlngalpmc", // openid
  * "staffName": "斗破苍穹萧炎", // 员工名称/ 个人名称
  * "stayOn": null, // 置顶
@@ -30,7 +30,7 @@ class MemberAttachmentProperty extends Property {
     public ?string $jobId = null; //岗位id
     public ?string $jobName = null; //岗位名
     public ?string $nickname = null; //昵称
-    public ?string $noDisturb = null; //免打扰
+    public int $noDisturb = 0; //免打扰
     public string $openId = ''; //openid
     public string $staffName = ''; //  员工名称/个人名称
     public ?string $stayOn = null; //置顶
