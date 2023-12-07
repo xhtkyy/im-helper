@@ -102,7 +102,7 @@ class GroupService implements GroupInterface {
         $imMember = (new Member())
 //            ->setOpenid($member->getOpenId())
             ->setOpenid($member->getCardID()) //2023.07.27 秋廷要求将openID的值换成cardId
-            ->setAttachments($this->setClientAttr($member->toArray()))
+            ->setAttachments($this->setClientAttr($member->getAttachment()))
 //            ->setAttachments(array_to_struct($member->getAttachment())) //附加值
             ->setGroup($member->getImGroup());
         if ($isAdd) {
