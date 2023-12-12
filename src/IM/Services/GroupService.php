@@ -229,7 +229,6 @@ class GroupService implements GroupInterface {
      * @throws Exception
      */
     public function updateGroupAvaTar(string $imGroup): bool {
-        return true;
         $groupInfo = $this->getGroupInfo($imGroup);
         if (!empty($groupInfo['attachment']['avatar'])
             && !str_contains($groupInfo['attachment']['avatar'], '|')
