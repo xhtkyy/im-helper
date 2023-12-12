@@ -6,7 +6,7 @@ namespace Iam\V1;
 /**
  * 用户档案服务
  */
-class ProfilesClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class ProfilesClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * 获取当前账号的个人档案，此处的 ID 为不含前缀与属地的裸 ID

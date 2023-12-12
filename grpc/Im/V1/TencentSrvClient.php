@@ -5,7 +5,7 @@ namespace Im\V1;
 
 /**
  */
-class TencentSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class TencentSrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * VoiceTextResult 语音转文本结果

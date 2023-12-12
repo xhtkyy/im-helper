@@ -5,7 +5,7 @@ namespace Im\V1;
 
 /**
  */
-class CardSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class CardSrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * CreateCard 创建新的身份卡

@@ -6,7 +6,7 @@ namespace Im\V1;
 /**
  * ALiSrv 阿里相关服务
  */
-class ALiSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class ALiSrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * VoiceTextResult 语音转文本结果

@@ -3,6 +3,7 @@
 namespace Xhtkyy\ImHelper\IM\Services;
 
 use Exception;
+use Hyperf\Contract\StdoutLoggerInterface;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\Grpc\StatusCode;
 use Im\V1\ClientAttr;
@@ -32,6 +33,8 @@ class GroupService implements GroupInterface {
     protected GroupSrvClient $groupSrvClient;
     #[Inject]
     protected MemberSrvClient $memberSrvClient;
+    #[Inject]
+    protected StdoutLoggerInterface $logger;
 
     public function create(DepartmentProperty $department, array $rids, array $members, bool $isAllStaff = false): string {
         $current   = time();
@@ -245,16 +248,25 @@ class GroupService implements GroupInterface {
                 continue;
             }
             if (empty($teamName)) {
-                $teamName = $attachments['teamName'];
+                $teamName = $attachments['teamName'] ?? '';
             }
-            if ($attachments['avatar']) {
+            if (!empty($attachments['avatar'])) {
                 //有头像用头像
                 $allAvatar[] = $attachments['avatar'];
             } else {
                 $allAvatar[] = $attachments['staffName'];
             }
         }
-        if (empty($allAvatar)) {
+        if (empty($teamName)) {
+            //如果还没有 取群的
+            $teamName = empty($groupInfo['attachment']['teamName']) ? '' : $groupInfo['attachment']['teamName'];
+        }
+        if (empty($allAvatar) || empty($teamName)) {
+            $data = json_encode([
+                'allAvatar' => $allAvatar,
+                'teamName'  => $teamName
+            ], JSON_UNESCAPED_UNICODE);
+            $this->logger->warning("修改群头像失败，原因是未获取到群头像数据或者组织名称数据，获取数据为：{$data}");
             return false;
         }
 //        $groupAttachment = (new GroupAttachmentProperty())->setTeamName($teamName)

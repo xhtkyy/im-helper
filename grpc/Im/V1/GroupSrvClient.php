@@ -6,7 +6,7 @@ namespace Im\V1;
 /**
  * IM群组服务
  */
-class GroupSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class GroupSrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * CreateGroup 创建群组

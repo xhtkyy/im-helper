@@ -6,7 +6,7 @@ namespace Im\V1;
 /**
  * GuideSrv 引导服务
  */
-class GuideSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class GuideSrvClient extends \Xhtkyy\GrpcClient\AbstractClient {
 
     /**
      * CreateGuid 获取引导状态
