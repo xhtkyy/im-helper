@@ -66,6 +66,7 @@ class GroupService implements GroupInterface {
                 ->setJoined($current); //加入时间
         }
         $creat = (new GroupCreat())->setGroup($group)->setRids($rids)->setMembers($groupMembers);
+        $this->logger->info("创建群聊请求参数：".$creat->serializeToJsonString());
         /**
          * @var Group $reply
          */
@@ -111,8 +112,10 @@ class GroupService implements GroupInterface {
         if ($isAdd) {
             $imMember    = $imMember->setJoined(time());
             $memberCreat = (new MemberCreat())->setFromServer(true)->setRid($member->getRid())->setMember($imMember);
+            $this->logger->info("新增群成员请求参数：".$memberCreat->serializeToJsonString());
             [, $status] = $this->memberSrvClient->CreateMember($memberCreat);
         } else {
+            $this->logger->info("更新群成员信息请求参数：".$imMember->serializeToJsonString());
             [, $status] = $this->memberSrvClient->UpdateMember($imMember);
         }
         return $status == StatusCode::OK;
@@ -124,6 +127,7 @@ class GroupService implements GroupInterface {
             ->setGroup($member->getImGroup())
             ->setFromServer(true) //代表服务端调用
             ->setRid($member->getRid());
+        $this->logger->info("删除群成员请求参数：".$imMember->serializeToJsonString());
         [, $status] = $this->memberSrvClient->DeleteMember($imMember);
         return $status == StatusCode::OK;
     }
@@ -135,6 +139,7 @@ class GroupService implements GroupInterface {
         }
         //部门对接群相关修改 目前仅支持部门名称的修改 修改和业务关联的 其他的交回IM处理 先过滤
         if ($imGroup->getName()) {
+            $this->logger->info("更新群信息请求参数：".$imGroup->serializeToJsonString());
             //有修改就进来，没修改直接返回成功
             [, $status] = $this->groupSrvClient->UpdateGroup($imGroup);
             return $status == StatusCode::OK;
@@ -275,6 +280,7 @@ class GroupService implements GroupInterface {
         $clientAttrGroup = (new ClientAttrGroup())->setTeamName($teamName)
             ->setAvatar(implode('|', $allAvatar));
         $group           = (new Group())->setGroup($imGroup)->setAttachment($clientAttrGroup)->setUpdated(time());
+        $this->logger->info("修改群头像请求参数：".$group->serializeToJsonString());
         [, $status] = $this->groupSrvClient->UpdateGroup($group);
         return $status == StatusCode::OK;
     }
