@@ -24,8 +24,6 @@ abstract class NoticeTemplateAbstract
 
     protected string $scene_class = "";
 
-    protected array $pool = [];
-
     protected array $scene = [];
 
     protected array $config = [];
@@ -40,10 +38,7 @@ abstract class NoticeTemplateAbstract
         if (!class_exists($template)) {
             throw new TemplateNotFoundException();
         }
-        if (!isset($this->pool[$template])) {
-            $this->pool[$template] = new $template;
-        }
-        return $this->pool[$template];
+        return new $template;
     }
 
     /**
