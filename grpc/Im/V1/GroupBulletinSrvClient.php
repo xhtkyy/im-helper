@@ -3,10 +3,12 @@
 
 namespace Im\V1;
 
+use Xhtkyy\GrpcClient\AbstractClient;
+
 /**
  * GroupBulletinSrv 群公告
  */
-class GroupBulletinSrvClient extends \Xhtkyy\HyperfTools\GrpcClient\BaseGrpcClient {
+class GroupBulletinSrvClient extends AbstractClient {
 
     /**
      * GetGroupBulletin 查询公告详情
