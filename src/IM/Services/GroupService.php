@@ -28,7 +28,8 @@ use Xhtkyy\ImHelper\IM\properties\DepartmentProperty;
 use Xhtkyy\ImHelper\IM\properties\GroupProperty;
 use Xhtkyy\ImHelper\IM\properties\MemberProperty;
 
-class GroupService implements GroupInterface {
+class GroupService implements GroupInterface
+{
     #[Inject]
     protected GroupSrvClient $groupSrvClient;
     #[Inject]
@@ -36,8 +37,9 @@ class GroupService implements GroupInterface {
     #[Inject]
     protected StdoutLoggerInterface $logger;
 
-    public function create(DepartmentProperty $department, array $rids, array $members, bool $isAllStaff = false): string {
-        $current   = time();
+    public function create(DepartmentProperty $department, array $rids, array $members, bool $isAllStaff = false): string
+    {
+        $current = time();
         $groupType = $isAllStaff ? GroupTypCode::COMPANY : GroupTypCode::DEPARTMENT;
         //TODO::
         $groupAttachment = $department->getAttachment();
@@ -47,7 +49,7 @@ class GroupService implements GroupInterface {
             ->setHasLookForHistory($groupAttachment['hasLookForHistory'])
             ->setOpenPictureFile($groupAttachment['openCloudFile'])
             ->setOpenPictureFile($groupAttachment['openPictureFile']);
-        $group           = (new Group())->setTeam($department->getTeamId()) //所属组织
+        $group = (new Group())->setTeam($department->getTeamId()) //所属组织
         ->setOwner($department->getGroupLeader()) //群主 系统创建的根据成都伙伴确认直接使用群主 部门群群主在创建时是集合中第一人
         ->setType($groupType) //类型
         ->setName($department->getDepartmentName()) //群名称
@@ -56,7 +58,7 @@ class GroupService implements GroupInterface {
 //        ->setAttachment(array_to_struct($department->getAttachment())) //附加值
         ->setAttachment($clientAttrGroup) //附加值
         ->setCreatorCard($department->getCreatorCard()); //所有者身份卡ID
-        $groupMembers    = [];
+        $groupMembers = [];
         foreach ($members as $member) {
             $groupMembers[] = (new Member())
 //                ->setOpenid($member['openId']) // 个人标识
@@ -66,7 +68,7 @@ class GroupService implements GroupInterface {
                 ->setJoined($current); //加入时间
         }
         $creat = (new GroupCreat())->setGroup($group)->setRids($rids)->setMembers($groupMembers);
-        $this->logger->info("创建群聊请求参数：".$creat->serializeToJsonString());
+        $this->logger->info("创建群聊请求参数：" . $creat->serializeToJsonString());
         /**
          * @var Group $reply
          */
@@ -78,13 +80,15 @@ class GroupService implements GroupInterface {
         return $imGroup;
     }
 
-    public function delete(string $imGroup): bool {
+    public function delete(string $imGroup): bool
+    {
         $groupID = (new ID())->setId($imGroup);
         [, $status] = $this->groupSrvClient->DeleteGroup($groupID);
         return $status == StatusCode::OK;
     }
 
-    private function setClientAttr(array $member): ClientAttr {
+    private function setClientAttr(array $member): ClientAttr
+    {
         return (new ClientAttr())->setAvatar($member['avatar'])
             ->setCardId($member['cardId'])
             ->setComment($member['comment'])
@@ -102,7 +106,8 @@ class GroupService implements GroupInterface {
             ->setViewHistory($member['viewHistory']);
     }
 
-    public function modifyGroupMember(MemberProperty $member, bool $isAdd = true): bool {
+    public function modifyGroupMember(MemberProperty $member, bool $isAdd = true): bool
+    {
         $imMember = (new Member())
 //            ->setOpenid($member->getOpenId())
             ->setOpenid($member->getCardID()) //2023.07.27 秋廷要求将openID的值换成cardId
@@ -110,36 +115,38 @@ class GroupService implements GroupInterface {
 //            ->setAttachments(array_to_struct($member->getAttachment())) //附加值
             ->setGroup($member->getImGroup());
         if ($isAdd) {
-            $imMember    = $imMember->setJoined(time());
+            $imMember = $imMember->setJoined(time());
             $memberCreat = (new MemberCreat())->setFromServer(true)->setRid($member->getRid())->setMember($imMember);
-            $this->logger->info("新增群成员请求参数：".$memberCreat->serializeToJsonString());
+            $this->logger->info("新增群成员请求参数：" . $memberCreat->serializeToJsonString());
             [, $status] = $this->memberSrvClient->CreateMember($memberCreat);
         } else {
-            $this->logger->info("更新群成员信息请求参数：".$imMember->serializeToJsonString());
+            $this->logger->info("更新群成员信息请求参数：" . $imMember->serializeToJsonString());
             [, $status] = $this->memberSrvClient->UpdateMember($imMember);
         }
         return $status == StatusCode::OK;
     }
 
-    public function deleteGroupMember(MemberProperty $member): bool {
+    public function deleteGroupMember(MemberProperty $member): bool
+    {
         $imMember = (new MemberID())
             ->setOpenid($member->getCardID()) //这里经过验证也要传cardID
             ->setGroup($member->getImGroup())
             ->setFromServer(true) //代表服务端调用
             ->setRid($member->getRid());
-        $this->logger->info("删除群成员请求参数：".$imMember->serializeToJsonString());
+        $this->logger->info("删除群成员请求参数：" . $imMember->serializeToJsonString());
         [, $status] = $this->memberSrvClient->DeleteMember($imMember);
         return $status == StatusCode::OK;
     }
 
-    public function updateGroup(GroupProperty $group): bool {
+    public function updateGroup(GroupProperty $group): bool
+    {
         $imGroup = (new Group())->setGroup($group->getImGroup())->setUpdated(time());
         if (!empty($group->getGroupName())) {
             $imGroup->setName($group->getGroupName()); //群名称
         }
         //部门对接群相关修改 目前仅支持部门名称的修改 修改和业务关联的 其他的交回IM处理 先过滤
         if ($imGroup->getName()) {
-            $this->logger->info("更新群信息请求参数：".$imGroup->serializeToJsonString());
+            $this->logger->info("更新群信息请求参数：" . $imGroup->serializeToJsonString());
             //有修改就进来，没修改直接返回成功
             [, $status] = $this->groupSrvClient->UpdateGroup($imGroup);
             return $status == StatusCode::OK;
@@ -150,7 +157,8 @@ class GroupService implements GroupInterface {
     /**
      * @throws Exception
      */
-    public function getGroupInfo(string $imGroup): array {
+    public function getGroupInfo(string $imGroup): array
+    {
         $groupID = (new ID())->setId($imGroup);
         /**
          * @var Group|string $reply
@@ -162,15 +170,17 @@ class GroupService implements GroupInterface {
             }
             throw new Exception('调用groupSrv GetGroup失败.');
         }
+        if (empty($reply->getGroup())) throw new GroupNotFoundException();
         return json_decode($reply->serializeToJsonString(), true);
     }
 
     /**
      * @throws Exception
      */
-    public function getGroupMembers(string $imGroup, int $index = 0, int $size = 10000): array {
+    public function getGroupMembers(string $imGroup, int $index = 0, int $size = 10000): array
+    {
         $memberQuery = (new MemberQuery())->setGroup($imGroup);
-        $pagination  = (new Pagination())
+        $pagination = (new Pagination())
             ->setIndex($index)
             ->setSize($size)
             ->setMember($memberQuery);
@@ -197,7 +207,8 @@ class GroupService implements GroupInterface {
      * @return array
      * @throws Exception
      */
-    public function getList($teamId, array $cardIds, int $page = 1, int $pageSize = 20): array {
+    public function getList($teamId, array $cardIds, int $page = 1, int $pageSize = 20): array
+    {
         /**
          * @var RespArr|string $reply
          */
@@ -214,12 +225,14 @@ class GroupService implements GroupInterface {
         return $reply->hasGroups() ? json_decode($reply->getGroups()->serializeToJsonString(), true)['arr'] : [];
     }
 
-    public function closeSyncDisk(string $groupId): bool {
+    public function closeSyncDisk(string $groupId): bool
+    {
         [, $status] = $this->groupSrvClient->CloseGroupFileSync((new ID())->setId($groupId));
         return $status == StatusCode::OK;
     }
 
-    public function transferGroup(string $imGroup, string $oldOwner, string $newOwner): bool {
+    public function transferGroup(string $imGroup, string $oldOwner, string $newOwner): bool
+    {
         [, $status] = $this->groupSrvClient->TransferGroup((new GroupTransfer())
             ->setGroup($imGroup)
             ->setOldOwner($oldOwner)
@@ -233,7 +246,8 @@ class GroupService implements GroupInterface {
      * @return bool
      * @throws Exception
      */
-    public function updateGroupAvaTar(string $imGroup): bool {
+    public function updateGroupAvaTar(string $imGroup): bool
+    {
         $groupInfo = $this->getGroupInfo($imGroup);
         if (!empty($groupInfo['attachment']['avatar'])
             && !str_contains($groupInfo['attachment']['avatar'], '|')
@@ -243,9 +257,9 @@ class GroupService implements GroupInterface {
             return true;
         }
         //获取群成员
-        $members   = $this->getGroupMembers($imGroup);
+        $members = $this->getGroupMembers($imGroup);
         $allAvatar = [];
-        $teamName  = '';
+        $teamName = '';
         foreach ($members as $member) {
             $attachments = $member['attachments'] ?? [];
             if (empty($attachments)) {
@@ -268,7 +282,7 @@ class GroupService implements GroupInterface {
         if (empty($allAvatar) || empty($teamName)) {
             $data = json_encode([
                 'allAvatar' => $allAvatar,
-                'teamName'  => $teamName
+                'teamName' => $teamName
             ], JSON_UNESCAPED_UNICODE);
             $this->logger->warning("修改群头像失败，原因是未获取到群头像数据或者组织名称数据，获取数据为：{$data}");
             return false;
@@ -279,8 +293,8 @@ class GroupService implements GroupInterface {
 //        $group = (new Group())->setGroup($imGroup)->setAttachment(array_to_struct($groupAttachment))->setUpdated(time());
         $clientAttrGroup = (new ClientAttrGroup())->setTeamName($teamName)
             ->setAvatar(implode('|', $allAvatar));
-        $group           = (new Group())->setGroup($imGroup)->setAttachment($clientAttrGroup)->setUpdated(time());
-        $this->logger->info("修改群头像请求参数：".$group->serializeToJsonString());
+        $group = (new Group())->setGroup($imGroup)->setAttachment($clientAttrGroup)->setUpdated(time());
+        $this->logger->info("修改群头像请求参数：" . $group->serializeToJsonString());
         [, $status] = $this->groupSrvClient->UpdateGroup($group);
         return $status == StatusCode::OK;
     }
